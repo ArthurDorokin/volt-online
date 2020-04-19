@@ -1,0 +1,41 @@
+.infoProduct {
+    width: 100%;
+    background: #272727;
+    padding: 40px 0;
+}
+.infoProduct .infoProductСarousel {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+}
+.infoProduct .infoProductСarousel img{
+    border-radius: 10px;
+    max-width: 220px;
+}
+.infoProduct .infoProductСarousel .infoProductСarousel-item{
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 14px;
+    max-width: 300px;
+    max-height: 200px;
+    padding: 20px 10px 20px 10px;
+}
+.infoProduct .slick-slide {
+    /*width: 230px!important;*/
+}
+.infoProduct .slick-arrow {
+    top: 90px;
+}
+.infoProduct .infoProductСarousel a{
+    color: #ffffff;
+    outline: none;
+    text-decoration: none;
+}
+.infoProduct .infoProductСarousel span{
+    font-size: 11px;
+    color: #ACACAC;
+    display: inline-flex;
+}
+.infoProduct .infoProductСarousel p{
+    font-size: 14px;
+}

@@ -1,0 +1,10 @@
+.aboutCompany {
+    width: 100%;
+    background-repeat: no-repeat;
+    background: url(/img/aboutCompany/2131.jpg);
+    background-position: center;
+}
+.aboutCompany .wrapAboutCompany {
+    color: #ffffff;
+    padding: 100px 0;
+}

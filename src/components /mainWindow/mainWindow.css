@@ -1,0 +1,37 @@
+.mainWindow{
+    height: 500px;
+    background: linear-gradient(90deg, rgba(236,134,0,1) 0%, rgba(236,134,0,1) 0%, rgba(252,176,69,1) 100%);
+}
+.mainWindow .wrap-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 500px;
+}
+.mainWindow .img {
+    position: relative;
+    width: 500px;
+    height: 400px;
+}
+.mainWindow .img:after {
+    content: '';
+    background: url("/img/mainWindow/kisspngele477.png") no-repeat;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: -80px;
+    background-size: contain;
+}
+.mainWindow .img:before {
+    content: '';
+    background: url("/img/mainWindow/eed.ce1lf_Lurgx.png") no-repeat;
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    right: 0;
+    background-size: contain;
+}
+.mainWindow .title {
+   color: #ffffff;
+}

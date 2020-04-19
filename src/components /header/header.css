@@ -1,0 +1,98 @@
+.header {
+    background: #181818;
+    color: #ffffff;
+}
+.header .container .header-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.header .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .logo img{
+    max-width: 200px;
+}
+.header .phone{
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+.header .phone a{
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    margin: 0 0 0 50px;
+}
+.header .phone p{
+    margin: 0 0 0 20px;
+    cursor: pointer;
+
+}
+.header .phone a:nth-of-type(1):before {
+    content: '';
+    position: absolute;
+    background: url("/img/header/yellow_phone_icon-iconscom_59581.svg");
+    width: 23px;
+    height: 23px;
+    background-size: contain;
+    top: -2px;
+    left: -30px;
+}
+.header .phone a:nth-of-type(2):before {
+    content: '';
+    position: absolute;
+    background: url("/img/header/yellow_phone_icon-iconscom_59581.svg");
+    width: 23px;
+    height: 23px;
+    background-size: contain;
+    top: -2px;
+    left: -30px;
+}
+.header .infoTime{
+    display: flex;
+    align-items: center;
+}
+.header .infoTime img{
+    width: 40px;
+}
+.header .infoTime .schedule{
+    margin: 0 15px 0 0;
+}
+.header .infoTime .schedule p{
+    margin: 5px 0;
+}
+.header .infoTime .schedule p:nth-of-type(1){
+    position: relative;
+}
+.header .infoTime .schedule p:nth-of-type(1):before{
+    content: '';
+    position: absolute;
+    background: url("/img/header/preferencessystemtime_9451.svg");
+    width: 23px;
+    height: 23px;
+    background-size: contain;
+    top: -2px;
+    left: -30px;
+}
+.header .header-navigation {
+
+    background: #272727;
+}
+.header .header-navigation ul {
+    width: 55%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 20px 0 0 0;
+}
+.header .header-navigation ul li a{
+    font-size: 15px;
+    color: #ffffff;
+    text-decoration: none;
+}
