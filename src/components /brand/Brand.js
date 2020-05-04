@@ -1,26 +1,42 @@
-import React from "react";
+import React, {Component} from "react";
 import './brand.css'
+import {brandsList} from '../brand/constans.js';
 
-const Brand = () => (
-    <div className="brand">
-        <div className="container">
-            <h2>Выбери свой траснпорт</h2>
-            <h4>Подходи с умом к выбору электротранспорта</h4>
-            <div className="wrapBrand">
-                <div className="item-brand"><img src="../img/brand/53508345147055.jpg" alt=""/></div>
-                <div className="item-brand"><img src="../img/brand/airwheel-55959239942914.jpg" alt=""/></div>
-                <div className="item-brand"><img src="../img/brand/haibike-62043624330681.jpg" alt=""/></div>
-                <div className="item-brand"><img src="../img/brand/mijia-55441774294507.jpg" alt=""/></div>
-                <div className="item-brand"><img src="../img/brand/ninebot-16575698044570.jpg" alt=""/></div>
-                <div className="item-brand"><img src="../img/brand/segway-73042728411437.jpg" alt=""/></div>
-                <div className="item-brand"><img src="../img/brand/smart-balance-23882022779447.jpg" alt=""/></div>
-                <div className="item-brand"><img src="../img/brand/xiaomi-65854573268282.jpg" alt=""/></div>
-                <div className="btn-more-brand">
-                    <span>Показать еще</span>
+class Brand extends Component {
+    state = {active: false};
+
+    toggleClass = () => {
+        const active = this.state.active;
+        this.setState({
+            active: !active
+        })
+    };
+
+    render() {
+        return (
+            <div className="brand">
+                <div className="container">
+                    <h2>Выбери свой траснпорт</h2>
+                    <h4>Подходи с умом к выбору электротранспорта</h4>
+                    <div className="wrapBrand">
+                        <div className={`${"wrapB"} ${this.state.active ? "active" : ""}`}>
+                            {brandsList.brands.map((item) =>
+                                <div className="item-brand" key={item.id}>
+                                    <a href={item.link}><img src={item.img} alt={item.alt}/></a>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="btn-more-brand"
+                             onClick={this.toggleClass}>
+                            <span>{this.state.active ? 'Свернуть' : 'Показать еще'}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-);
+        )
+    }
+
+};
 
 export default Brand

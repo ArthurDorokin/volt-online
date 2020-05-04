@@ -1,6 +1,6 @@
 import React from "react";
 import './header.css'
-
+import {header} from "../header/constans"
 const Header = () => (
     <div className="header">
 
@@ -33,12 +33,9 @@ const Header = () => (
                 <div className="header-navigation">
                     <div className="container">
                     <ul>
-                        <li><a href="#">Электроскейты</a></li>
-                        <li><a href="#">Электросамокаты</a></li>
-                        <li><a href="#">Электровелосипеды</a></li>
-                        <li><a href="#">Моноколеса</a></li>
-                        <li><a href="#">Гироскутеры</a></li>
-                        <li><a href="#">Сегвеи</a></li>
+                        {header.headerList.map((item) =>
+                            <li key={item.id}><a href={item.link}>{item.name}</a></li>
+                        )}
                     </ul>
                 </div>
                 </div>
