@@ -1,0 +1,29 @@
+.notFound {
+    display: flex;
+    flex-direction: column;
+}
+.notFound .mainWindow{
+    height: 61vh;
+}
+
+.notFound + .footer {
+    /*position: relative;*/
+    background: #181818;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.notFound .mainWindow .wrap-content {
+    height: 50vh;
+}
+.notFound h1{
+    text-align: center;
+}
+.notFound p{
+    text-align: center;
+    font-size: 55px;
+    letter-spacing: 5px;
+}

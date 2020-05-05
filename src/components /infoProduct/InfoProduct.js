@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import './infoProduct.css'
-import {InfoProductCarousel} from './infoProductCarousel'
+import {InfoProductCarousel} from './InfoProductCarousel'
 
 const InfoProduct = () => (
     <div className="infoProduct">

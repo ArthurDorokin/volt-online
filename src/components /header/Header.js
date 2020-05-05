@@ -9,7 +9,7 @@ const Header = () => (
                 <div className="header-info">
                     <div className="wrap">
                         <div className="logo">
-                            <img src="../img/header/57812582766728.jpg" alt=""/>
+                            <a href="/"><img src="../img/header/57812582766728.jpg" alt=""/></a>
                         </div>
                         <div className="phone">
                             <a href="tel:044 000-00-00">044 000-00-00</a>

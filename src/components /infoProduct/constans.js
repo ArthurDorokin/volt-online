@@ -6,7 +6,7 @@ const infoProductCarousel = {
             img: "../img/infoProduct/chto-takoe-sigvey-75570803612318_small.jpg",
             alt: "chto takoe sigvey",
             infoDate: "15 июля 2019",
-            description: "Из чего состоит гироскутер?"
+            description: "Что такое Сигвей?"
         },
         {
             id: 1,
@@ -18,19 +18,19 @@ const infoProductCarousel = {
         },
         {
             id: 2,
-            link: "/interesnye-fakty-pro-elektrovelosiped/",
+            link: "/iz-chego-sostoit-giroskyter/",
             img: "../img/infoProduct/f6f6f644-49297480808130_small.jpg",
-            alt: "interesnye fakty pro elektrovelosiped",
+            alt: "giroskyter",
             infoDate: "15 июля 2019",
-            description: "Интересные факты про электровелосипед"
+            description: "Из чего состоит гироскутер?"
         },
         {
             id: 3,
-            link: "/chto-takoe-sigvey/",
+            link: "/interesnye-fakty-pro-elektrovelosiped/",
             img: "../img/infoProduct/interesnye-fakty-pro-elektrovelosiped-68516127179010_small.jpg",
-            alt: "chto takoe sigvey",
+            alt: "interesnye fakty pro elektrovelosiped",
             infoDate: "15 июля 2019",
-            description: "Что такое Сигвей?"
+            description: "Интересные факты про электровелосипед"
         },
         {
             id: 4,
