@@ -3,7 +3,6 @@ import './header.css'
 import {header} from "../header/constans"
 const Header = () => (
     <div className="header">
-
             <div className="wrapper">
                 <div className="container">
                 <div className="header-info">

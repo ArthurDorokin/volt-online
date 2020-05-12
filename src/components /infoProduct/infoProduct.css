@@ -72,6 +72,7 @@
 .article-text .sidebar-article .sideMenu-list {
     position: sticky;
     top: 50px;
+    padding: 0;
 }
 
 .article-text .sidebar-article .sideMenu-list li {

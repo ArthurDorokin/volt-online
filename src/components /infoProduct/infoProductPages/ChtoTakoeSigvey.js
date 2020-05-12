@@ -9,24 +9,23 @@ export const ChtoTakoeSigvey = () => {
                 <div className="sidebar-article">
                     <ul className="sideMenu-list">
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="#!">Каталог</a></div>
+                            <div className="sideMenu-t"><a href="/catalog/">Каталог</a></div>
                         </li>
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="#!">О нас</a></div>
+                            <div className="sideMenu-t"><a href="/o-nas/">О нас</a></div>
                         </li>
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="#!">Оплата и
+                            <div className="sideMenu-t"><a href="/oplata-i-dostavka/">Оплата и
                                 доставка</a></div>
                         </li>
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="#!">Обмен и
+                            <div className="sideMenu-t"><a href="/obmen-i-vozvrat/">Обмен и
                                 возврат</a></div>
                         </li>
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="#!">Контактная
+                            <div className="sideMenu-t"><a href="/contacts/">Контактная
                                 информация</a></div>
                         </li>
-
                     </ul>
                 </div>
                 <div className="main-content">

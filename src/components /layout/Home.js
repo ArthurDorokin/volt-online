@@ -5,7 +5,6 @@ import Content from "../content";
 import AboutCompany from "../aboutCompany";
 import InfoProduct from "../infoProduct";
 
-
 class Home extends Component{
     render() {
         return (

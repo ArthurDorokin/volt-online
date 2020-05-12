@@ -1,0 +1,55 @@
+.sideMenu-list .sideMenu-t a {
+    padding: 0 0 0 5px;
+}
+
+.sideMenu-list .sideMenu-t.active a {
+    pointer-events: none;
+    background: #f4f4f4;
+    padding: 5px;
+}
+
+.contacts .wrap {
+    display: flex;
+}
+
+.contacts .wrap .street {
+    margin: 0 0 0 100px;
+}
+
+.contacts .info p {
+    color: #272727;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+.contacts .info a {
+    text-decoration: none;
+    color: #272727;
+    font-size: 17px;
+    line-height: 22px;
+}
+.contacts .num {
+    position: relative;
+    margin: 0 0 0 25px;
+}
+
+.contacts #icon-phone,
+.contacts #icon-email,
+.contacts #icon-viber,
+.contacts #icon-telegram,
+.contacts #icon-skype,
+.contacts #icon-whatsapp {
+    width: 20px;
+    opacity: .6;
+    left: -25px;
+    position: absolute;
+}
+.contacts .mail,
+.contacts .skype,
+.contacts .viber,
+.contacts .telegram,
+.contacts .whats-app {
+    position: relative;
+    margin: 15px 0 15px 25px;
+}
+

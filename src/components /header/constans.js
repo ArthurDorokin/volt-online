@@ -2,7 +2,7 @@ const header = {
     headerList: [
         {
             id: 0,
-            link:"/elektrovelosipedy/",
+            link:"/skeyt/",
             name:"Электроскейты",
         },
         {
