@@ -50,6 +50,117 @@ h4 {
     right: -9px;
 }
 
+/*catalog*/
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.catalog .item-catalog {
+    width: 240px;
+    margin: 0 0 33px 0;
+    position: relative;
+    border: 1px solid #dddddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 3px;
+    transition: .3s;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.catalog .item-catalog:hover {
+    border: 1px solid #FF7901;
+    transition: .3s;
+}
+
+.catalog .item-catalog .catalogCard-info .info-title {
+    font-weight: 100;
+}
+
+.catalog .item-catalog .catalogCard-info .info-price {
+    font-weight: bold;
+    margin: 0;
+}
+
+.catalog .item-catalog .catalog-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 330px;
+}
+
+.catalog .productSticker {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.catalog .productSticker .productView {
+    display: table-caption;
+}
+
+.catalog .productSticker .productSticker-item__promo {
+    background: #e93f11;
+    color: #ffffff;
+    font-size: 10px;
+    padding: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.catalog .productSticker .productSticker-item__new {
+    background: #3da5ca;
+    color: #ffffff;
+    font-size: 10px;
+    padding: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.catalog .productSticker .productSticker-item__popular {
+    background: #7baf35;
+    color: #ffffff;
+    font-size: 10px;
+    padding: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.catalog .btn-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 0 0;
+}
+
+.catalog .btn-product button {
+    background: #FF7901;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 7px 15px 7px 15px;
+    border-radius: 3px;
+}
+
+.catalog .productSticker .productSticker-item__promo p,
+.catalog .productSticker .productSticker-item__new p,
+.catalog .productSticker .productSticker-item__popular p {
+    margin: 0;
+    line-height: 15px;
+    font-size: 10px;
+}
+/*catalog*/
+
+
 @media (max-width: 1390px) {
     .brand .wrapBrand .btn-more-brand{
         display: block;
