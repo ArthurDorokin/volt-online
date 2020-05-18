@@ -1,30 +1,16 @@
 import React, {Component} from "react";
 import InfoProduct from "../infoProduct";
-import {catalog} from "../sidebar/constant"
-import Select from 'react-select';
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
+import {catalog, selectSort} from "../sidebar/constant"
+//import SelectSort from '../sidebar/SelectSort';
+import SelectRange from '../sidebar/SelectRange';
+import SelectIcon from '../sidebar/SelectIcon';
+import Select from "react-select";
 
-const { createSliderWithTooltip } = Slider;
-const Range = createSliderWithTooltip(Slider.Range);
-
-const selectSort = [
-    {value: 0, label: 'по популярности'},
-    {value: 1, label: 'сначала дешевле'},
-    {value: 2, label: 'по названию'},
-];
-
-const selectCheckbox = [
-    {value: 0, label: "распродажа"},
-    {value: 1, label: "новинка"},
-    {value: 2, label: "хит"},
-];
 
 class Catalog extends Component {
     state = {
+        catalog,
         valueSort: {label: this.props, value: this.props},
-        valueCheckbox: {name: this.props, value: this.props},
-        sliderValues: [9000, 15000],
         activeRange: false
     }
 
@@ -36,22 +22,25 @@ class Catalog extends Component {
     };
 
     handleChange = valueSort => {
-        this.setState({value: valueSort});
-        console.log(`Option selected:`, valueSort);
+        if (valueSort.value == 0) {
+            const byPopularityDate = this.state.catalog;
+            const sortPopularityDate = byPopularityDate.sort((a, b) => a.id > b.id ? 1 : -1);
+            this.setState({catalog: sortPopularityDate});
+        }
+        if (valueSort.value == 1) {
+            const byPriceDate = this.state.catalog;
+            const sortPriceDate = byPriceDate.sort((a, b) => a.price.toLowerCase() > b.price.toLowerCase() ? 1 : -1);
+            this.setState({catalog: sortPriceDate});
+        }
+        if (valueSort.value == 2) {
+            const byNameDate = this.state.catalog;
+            const sortNameData = byNameDate.sort((a, b) => a.info > b.info ? 1 : -1);
+            this.setState({catalog: sortNameData});
+        }
     };
 
-
-    handleChangeCheckbox = valueCheckbox => {
-        this.setState({value: valueCheckbox});
-        console.log(`select checkbox:`, valueCheckbox);
-    };
-
-    handleChange124 = sliderValues => {
-        this.setState({ sliderValues });
-    };
     render() {
-
-        const {selectedOption, selectCheck, sliderValues} = this.state;
+        const {selectedOption} = this.state;
 
         return (
             <div className="info-page">
@@ -68,13 +57,8 @@ class Catalog extends Component {
                                         <div className="filter-icon">
                                             Иконки
                                         </div>
-                                        <div className="filter-iconList">
-                                            <Select
-                                                value={selectCheck}
-                                                onChange={this.handleChangeCheckbox}
-                                                options={selectCheckbox}
-                                            />
-                                        </div>
+
+                                        <SelectIcon/>
                                     </div>
                                     <div className={`${"wrap-price"} ${this.state.activeRange ? "active" : ""}`}>
                                         <div className="filter-price-title"
@@ -83,31 +67,16 @@ class Catalog extends Component {
                                             <span></span>
                                         </div>
                                     </div>
-                                    {/*{sliderValues[0]} - {sliderValues[1]}*/}
-                                    <div className="filter-price">
 
-                                        <Range
-                                            marks={{
-                                                7899: `грн 7899`,
-                                                23899: `грн 23899`
-                                            }}
-                                            min={7899}
-                                            max={23899}
-                                            defaultValue={sliderValues}
-                                            onChange={this.handleChange124}
-                                            tipFormatter={value => `${value}`}
-                                            tipProps={{
-                                                placement: "top",
-                                                visible: true
-                                            }}
-                                        />
-                                    </div>
+                                    <SelectRange/>
+
                                 </div>
                             </div>
                             <div className="sort">
                                 <div className="filter-title-sort">
                                     Сортировка
                                 </div>
+
                                 <div className="sortList">
                                     <Select
                                         value={selectedOption}
@@ -116,10 +85,11 @@ class Catalog extends Component {
                                         defaultValue={{label: "по популярности", value: 0}}
                                     />
                                 </div>
+
                             </div>
                         </div>
                         <div className="catalog">
-                            {catalog.catalogItem.map((item) =>
+                            {catalog.map((item) =>
                                 <div className="item-catalog" key={item.id}>
                                     <div className="catalog-product">
                                         <a href={item.link} className="link-product">

@@ -1,5 +1,4 @@
-const catalog = {
-    catalogItem : [
+const catalog = [
         {
             id: 0,
             link: "/elektrosamokat-sns-aluminium-65-duymov-black/",
@@ -15,7 +14,7 @@ const catalog = {
             img: "../img/content/elektroskeyt-gtf-jetskate-classic-one-edition-64377766348990_small4.png",
             alt: "Электроскейт",
             info: "Электроскейт Like.Bike Teens Skate",
-            price: "7 999 грн",
+            price: "13 999 грн",
             buy: "Купить"
         },
         {
@@ -33,7 +32,7 @@ const catalog = {
             img: "../img/content/monokoleso-inmotion-scv-v5f-black-76769264824427_small4.jpg",
             alt: "Моноколесо",
             info: "Моноколесо InMotion SCV V5F Black",
-            price: "15 999 грн",
+            price: "16 000 грн",
             buy: "Купить"
         },
         {
@@ -42,7 +41,7 @@ const catalog = {
             img: "../img/content/elektroskeyt-like.bike-teens-skate-90979434112967_small4.jpg",
             alt: "Электроскейт",
             info: "Электроскейт Like.Bike Teens Skate",
-            price: "7 999 грн",
+            price: "15 568 грн",
             buy: "Купить"
         },
         {
@@ -69,7 +68,7 @@ const catalog = {
             img: "../img/content/elektrosamokat-sns-t9-12589246203178_small4.png",
             alt: "Электросамокат",
             info: "Электросамокат SNS T9",
-            price: "8 199 грн",
+            price: "18 199 грн",
             buy: "Купить"
         },
         {
@@ -87,7 +86,7 @@ const catalog = {
             img: "../img/content/elektrovelosiped-zpao-sport250-20568225961503_small4.jpg",
             alt: "Электровелосипед",
             info: "Электровелосипед OIO CITY BIKE Elite White",
-            price: "22 990 грн",
+            price: "11 000 грн",
             buy: "Купить"
         },
         {
@@ -99,9 +98,21 @@ const catalog = {
             price: "23 899 грн",
             buy: "Купить"
         }
-    ]
-};
+    ];
 
+const selectSort = [
+    {value: 0, label: 'по популярности'},
+    {value: 1, label: 'сначала дешевле'},
+    {value: 2, label: 'по названию'},
+];
+
+const selectCheckbox = [
+    {value: 0, label: "распродажа"},
+    {value: 1, label: "новинка"},
+    {value: 2, label: "хит"},
+];
 export {
-    catalog
+    catalog,
+    selectSort,
+    selectCheckbox
 }
