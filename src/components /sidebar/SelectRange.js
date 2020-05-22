@@ -21,7 +21,8 @@ class SelectRange extends Component {
 
         return (
             <div className="filter-price">
-                {/*{sliderValues[0]} - {sliderValues[1]}*/}
+                {console.log(sliderValues[0])}
+                {console.log(sliderValues[1])}
                 <Range
                     marks={{
                         10999: `грн 10999`,

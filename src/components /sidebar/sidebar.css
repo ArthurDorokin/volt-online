@@ -111,7 +111,7 @@
 }
 
 .article-text .sortPanel .filter .wrap-icon .filter-iconList {
-    width: 130px;
+    width: 160px;
     margin: 0 0 0 15px;
 }
 
@@ -206,4 +206,96 @@
 
 .rc-slider-track {
     background-color: #ff7901;
+}
+
+.article-text .catalog .productSticker .productSticker-item__promo {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.article-text .catalog .productSticker .productSticker-item__promo.sale {
+    background: #e93f11;
+}
+
+.article-text .catalog .productSticker .productSticker-item__promo.hit {
+    background: #3da5ca;
+}
+
+.article-text .catalog .productSticker .productSticker-item__promo.new {
+    background: #7baf35;
+}
+
+.article-text .catalog {
+    margin: 40px -15px 0 -15px;
+    justify-content: flex-start;
+}
+
+.article-text .catalog .item-catalog {
+    margin: 0 16px 33px 16px;
+}
+
+.article-text .sortPanel .wrap-price.active + .filter-price {
+    flex-direction: column;
+    padding: 20px;
+    height: 90px;
+}
+.article-text .sortPanel .filter-price .wrapRange{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+}
+.rc-slider-mark-text {
+    width: 30px;
+}
+.rc-slider-mark-text {
+    left: 98%;
+}
+.article-text .controlPanel  {
+    position: absolute;
+}
+.article-text .controlPanel .btnPanelOk {
+    border: 1px solid #ff7901;
+    color: #ff7901;
+    width: 40px;
+    height: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    left: -150px;
+    top: -10px;
+}
+.article-text .controlPanel .btnClose {
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    left: 142px;
+    cursor: pointer;
+    border: 1px solid #ff7901;
+    height: 20px;
+    width: 20px;
+}
+.article-text .controlPanel .btnClose span:nth-of-type(1) {
+    width: 10px;
+    height: 1px;
+    background: #ff7901;
+    display: block;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 9px;
+    right: 5px;
+}
+.article-text .controlPanel .btnClose span:nth-of-type(2) {
+    width: 10px;
+    height: 1px;
+    background: #ff7901;
+    display: block;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 9px;
+    right: 5px;
 }
