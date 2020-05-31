@@ -40,7 +40,7 @@ import ChtoTakoeSigvey from './components /infoProduct/infoProductPages/ChtoTako
 
 //Route infoSidebar -->
 import Catalog from './components /sidebar/Catalog.js'
-import Onas from "./component s/sidebar/Onas";
+import Onas from "./components /sidebar/Onas";
 import Oplatadostavka from "./components /sidebar/Oplatadostavka";
 import Obmenvozvrat from "./components /sidebar/Obmenvozvrat";
 import Contacts from "./components /sidebar/Contacts";
