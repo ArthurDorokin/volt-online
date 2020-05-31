@@ -204,3 +204,11 @@
 .slick-prev.slick-disabled:after, .slick-next.slick-disabled:after {
     opacity: .25;
 }
+
+.products .catalog {
+    margin: 40px -15px 0 -15px;
+    justify-content: flex-start;
+}
+.products .catalog .item-catalog {
+    margin: 0 16px 33px 16px;
+}

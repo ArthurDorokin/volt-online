@@ -55,7 +55,7 @@
     margin: 15px 0 15px 25px;
 }
 
-.info-page .sortPanel {
+.sortPanel {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
@@ -83,77 +83,77 @@
     width: 100%;
 }
 
-.article-text .sortPanel .sort {
+.sortPanel .sort {
     display: flex;
     align-items: center;
 }
 
-.article-text .sortPanel .sort .sortList {
+.sortPanel .sort .sortList {
     width: 200px;
 }
 
-.article-text .sortPanel .filter {
+.sortPanel .filter {
     display: flex;
     align-items: center;
 }
 
-.article-text .sortPanel .filter .wrap-icon {
+.sortPanel .filter .wrap-icon {
     display: flex;
     align-items: center;
     position: relative;
     margin: 0 0 0 30px;
 }
 
-.article-text .sortPanel .filter .wrap-icon .filter-icon {
+.sortPanel .filter .wrap-icon .filter-icon {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-.article-text .sortPanel .filter .wrap-icon .filter-iconList {
+.sortPanel .filter .wrap-icon .filter-iconList {
     width: 160px;
     margin: 0 0 0 15px;
 }
 
-.article-text .sortPanel .filter-title {
+.sortPanel .filter-title {
     color: rgba(0, 0, 0, .5);
     font-size: 14px;
 }
 
-.article-text .sortPanel .filter-icon span {
+.sortPanel .filter-icon span {
     position: relative;
     display: block;
 }
 
 
-.article-text .sort .filter-title-sort {
+.sort .filter-title-sort {
     color: rgba(0, 0, 0, .5);
     font-size: 14px;
     margin: 0 20px 0 0;
 }
 
-.article-text .sortPanel .filterParams {
+.sortPanel .filterParams {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.article-text .sortPanel .filterParams .filter-price {
+.sortPanel .filterParams .filter-price {
     display: none;
 }
 
-.article-text .sortPanel .filterParams .wrap-price {
+.sortPanel .filterParams .wrap-price {
     margin: 0 0 0 30px;
 }
 
-.article-text .sortPanel .filter-price-title {
+.sortPanel .filter-price-title {
     position: relative;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-.article-text .sortPanel .wrap-price.active + .filter-price {
+.sortPanel .wrap-price.active + .filter-price {
     display: flex;
     align-items: center;
     padding: 35px;
@@ -167,12 +167,12 @@
     width: 300px;
 }
 
-.article-text .sortPanel .filter-price-title span {
+.sortPanel .filter-price-title span {
     position: relative;
     display: block;
 }
 
-.article-text .sortPanel .filter-price-title span:after {
+.sortPanel .filter-price-title span:after {
     content: '';
     position: absolute;
     width: 8px;
@@ -183,7 +183,7 @@
     left: 7px;
 }
 
-.article-text .sortPanel .filter-price-title span:before {
+.sortPanel .filter-price-title span:before {
     content: '';
     position: absolute;
     width: 8px;
@@ -194,7 +194,7 @@
     left: 2px;
 }
 
-.article-text .input-range {
+.sortPanel  .input-range {
     height: 1rem;
     position: relative;
     width: 300px;
@@ -214,17 +214,6 @@
     left: 5px;
 }
 
-.article-text .catalog .productSticker .productSticker-item__promo.sale {
-    background: #e93f11;
-}
-
-.article-text .catalog .productSticker .productSticker-item__promo.hit {
-    background: #3da5ca;
-}
-
-.article-text .catalog .productSticker .productSticker-item__promo.new {
-    background: #7baf35;
-}
 
 .article-text .catalog {
     margin: 40px -15px 0 -15px;
@@ -235,12 +224,12 @@
     margin: 0 16px 33px 16px;
 }
 
-.article-text .sortPanel .wrap-price.active + .filter-price {
+.sortPanel .wrap-price.active + .filter-price {
     flex-direction: column;
     padding: 20px;
     height: 90px;
 }
-.article-text .sortPanel .filter-price .wrapRange{
+.sortPanel .filter-price .wrapRange{
     width: 100%;
     height: 70px;
     display: flex;
@@ -252,10 +241,10 @@
 .rc-slider-mark-text {
     left: 98%;
 }
-.article-text .controlPanel  {
+.sortPanel  .controlPanel  {
     position: absolute;
 }
-.article-text .controlPanel .btnPanelOk {
+.sortPanel  .controlPanel .btnPanelOk {
     border: 1px solid #ff7901;
     color: #ff7901;
     width: 40px;
@@ -269,7 +258,7 @@
     left: -150px;
     top: -10px;
 }
-.article-text .controlPanel .btnClose {
+.sortPanel  .controlPanel .btnClose {
     border-radius: 5px;
     position: absolute;
     top: -10px;
@@ -279,7 +268,7 @@
     height: 20px;
     width: 20px;
 }
-.article-text .controlPanel .btnClose span:nth-of-type(1) {
+.sortPanel  .controlPanel .btnClose span:nth-of-type(1) {
     width: 10px;
     height: 1px;
     background: #ff7901;
@@ -289,7 +278,7 @@
     top: 9px;
     right: 5px;
 }
-.article-text .controlPanel .btnClose span:nth-of-type(2) {
+.sortPanel  .controlPanel .btnClose span:nth-of-type(2) {
     width: 10px;
     height: 1px;
     background: #ff7901;
