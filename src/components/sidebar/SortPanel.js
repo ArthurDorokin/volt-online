@@ -8,45 +8,46 @@ const {createSliderWithTooltip} = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
 
 class SortPanel extends Component {
-        state = {
-            default: {
-                catalog
-            },
-            catalog,
-            valueSort: {label: this.props, value: this.props},
-            valueCheckbox: {name: this.props, value: this.props},
-            sliderValues: [12000, 15000],
-            activeRange: false
-        }
-
+    state = {
+        default: {
+            catalog
+        },
+        catalog,
+        valueSort: {label: this.props, value: this.props},
+        valueCheckbox: {name: this.props, value: this.props},
+        sliderValues: [12000, 15000],
+        activeRange: false
+    };
 
 //<---------- sort icon left
     handleChangeCheckbox = (valueCheckbox) => {
 
         this.setState({catalog});
         if (valueCheckbox.value == 0) {
-            console.log(valueCheckbox);
-
             const byFilterIconData = this.state.default.catalog;
             const sortFilterIconDataOne = byFilterIconData.filter((item) => item.filterIcon.val === 0);
+            console.log(sortFilterIconDataOne);
             this.setState({catalog: sortFilterIconDataOne});
+            this.props.handleChangeCheckbox(sortFilterIconDataOne)
         }
         if (valueCheckbox.value == 1) {
-            console.log(valueCheckbox);
             const byFilterIconData = this.state.default.catalog;
             const sortFilterIconDataTwo = byFilterIconData.filter((item) => item.filterIcon.val === 1);
+            console.log(sortFilterIconDataTwo);
             this.setState({catalog: sortFilterIconDataTwo});
+            this.props.handleChangeCheckbox(sortFilterIconDataTwo)
         }
         if (valueCheckbox.value == 2) {
-            console.log(valueCheckbox);
             const byFilterIconData = this.state.default.catalog;
             const sortFilterIconDataThree = byFilterIconData.filter((item) => item.filterIcon.val === 2);
+            console.log(sortFilterIconDataThree);
             this.setState({catalog: sortFilterIconDataThree});
+            this.props.handleChangeCheckbox(sortFilterIconDataThree)
         }
         if (valueCheckbox.value == 3) {
-            console.log(valueCheckbox);
             const byRestIconData = this.state.default.catalog;
             this.setState({catalog: byRestIconData});
+            this.props.handleChangeCheckbox(byRestIconData)
         }
     };
     //---------->
@@ -76,6 +77,7 @@ class SortPanel extends Component {
         const numRangeFilterData = byFilterIconData.filter((item) => (numRange[0] <= item.price.replace(/\s/g, '') && item.price.replace(/\s/g, '') <= numRange[1]));
         console.log(numRangeFilterData);
         this.setState({catalog: numRangeFilterData});
+        this.props.addStateNumRange(numRangeFilterData);
 
         const active = this.state.activeRange;
         this.setState({
@@ -87,22 +89,25 @@ class SortPanel extends Component {
     //<---------- sort right
     handleChange = valueSort => {
         if (valueSort.value == 0) {
-            console.log(valueSort);
             const byPopularityDate = this.state.catalog;
             const sortPopularityDate = byPopularityDate.sort((a, b) => a.id > b.id ? 1 : -1);
+            console.log(sortPopularityDate);
             this.setState({catalog: sortPopularityDate});
+            this.props.handleChange(sortPopularityDate);
         }
         if (valueSort.value == 1) {
-            console.log(valueSort);
             const byPriceDate = this.state.catalog;
             const sortPriceDate = byPriceDate.sort((a, b) => a.price > b.price ? 1 : -1);
+            console.log(sortPriceDate);
             this.setState({catalog: sortPriceDate});
+            this.props.handleChange(sortPriceDate);
         }
         if (valueSort.value == 2) {
             const byNameDate = this.state.catalog;
-            console.log(valueSort);
             const sortNameData = byNameDate.sort((a, b) => a.info > b.info ? 1 : -1);
+            console.log(sortNameData);
             this.setState({catalog: sortNameData});
+            this.props.handleChange(sortNameData);
         }
     };
 
