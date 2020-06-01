@@ -4,8 +4,9 @@ import SortPanel from "../../sidebar/SortPanel";
 
 class Skeyt extends Component {
     state = {
-        catalog,
+        catalog
     };
+
     addStateNumRange = (catalog) => {
         this.setState({catalog})
     };

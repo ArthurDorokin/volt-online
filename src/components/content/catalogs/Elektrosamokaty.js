@@ -4,7 +4,7 @@ import SortPanel from "../../sidebar/SortPanel";
 
 class Elektrosamokaty extends Component {
     state = {
-        catalog,
+        catalog
     };
 
     addStateNumRange = (catalog) => {

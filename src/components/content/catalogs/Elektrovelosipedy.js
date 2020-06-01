@@ -4,7 +4,7 @@ import SortPanel from "../../sidebar/SortPanel";
 
 class Elektrovelosipedy extends Component {
     state = {
-        catalog,
+        catalog
     };
 
     addStateNumRange = (catalog) => {
@@ -32,7 +32,7 @@ class Elektrovelosipedy extends Component {
                     <div className="wrap-product">
                         <div className="products">
                             <div className="catalog">
-                                {catalog.filter((item) => item.typeProduct === 3).map((item) =>
+                                {this.state.catalog.filter((item) => item.typeProduct === 3).map((item) =>
                                     <div className="item-catalog" key={item.id}>
                                         <div className="catalog-product">
                                             <a href={item.link} className="link-product">
