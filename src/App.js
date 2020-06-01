@@ -3,47 +3,47 @@ import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import AboutCompany from "./components/aboutCompany";
-import Layout from "./components/layout/Layout";
-import Home from "./components/layout/Home";
-import NotFound from "./components/notFound/NotFound";
+import AboutCompany from "./components /aboutCompany";
+import Layout from "./components /layout/Layout";
+import Home from "./components /layout/Home";
+import NotFound from "./components /notFound/NotFound";
 
 //brandInfo -->
-import Airwheel from './components/brand/brandInfo/Airwheel.js'
-import Citycoco from './components/brand/brandInfo/Citycoco.js'
-import Haibike from './components/brand/brandInfo/Haibike.js'
-import Mijia from './components/brand/brandInfo/Mijia.js'
-import Ninebot from './components/brand/brandInfo/Ninebot.js'
-import Segway from './components/brand/brandInfo/Segway.js'
-import SmartBalance from './components/brand/brandInfo/SmartBalance.js'
-import Xiaomi from './components/brand/brandInfo/Xiaomi.js'
+import Airwheel from './components /brand/brandInfo/Airwheel.js'
+import Citycoco from './components /brand/brandInfo/Citycoco.js'
+import Haibike from './components /brand/brandInfo/Haibike.js'
+import Mijia from './components /brand/brandInfo/Mijia.js'
+import Ninebot from './components /brand/brandInfo/Ninebot.js'
+import Segway from './components /brand/brandInfo/Segway.js'
+import SmartBalance from './components /brand/brandInfo/SmartBalance.js'
+import Xiaomi from './components /brand/brandInfo/Xiaomi.js'
 // <-- brandInfo
 
 //catalogProduct -->
-import Skeyt from './components/content/catalogs/Skeyt.js'
-import Elektrosamokaty from './components/content/catalogs/Elektrosamokaty.js'
-import Elektrovelosipedy from './components/content/catalogs/Elektrovelosipedy.js'
-import Monokolesa from './components/content/catalogs/Monokolesa.js'
-import Giroskutery from './components/content/catalogs/Giroskutery.js'
-import Segvei from './components/content/catalogs/Segvei.js'
+import Skeyt from './components /content/catalogs/Skeyt.js'
+import Elektrosamokaty from './components /content/catalogs/Elektrosamokaty.js'
+import Elektrovelosipedy from './components /content/catalogs/Elektrovelosipedy.js'
+import Monokolesa from './components /content/catalogs/Monokolesa.js'
+import Giroskutery from './components /content/catalogs/Giroskutery.js'
+import Segvei from './components /content/catalogs/Segvei.js'
 // <-- catalogProduct
 
 //Route infoProduct -->
-import VidyElektrosamokatov from './components/infoProduct/infoProductPages/VidyElektrosamokatov.js'
-import NauchitsyaKatatsya from './components/infoProduct/infoProductPages/NauchitsyaKatatsya.js'
-import SostoitGiroskyter from './components/infoProduct/infoProductPages/SostoitGiroskyter.js'
-import ElektrosamokatPrintsip from './components/infoProduct/infoProductPages/ElektrosamokatPrintsip.js'
-import InteresnyeFakty from './components/infoProduct/infoProductPages/InteresnyeFakty.js'
-import SkorostMonokolesa from './components/infoProduct/infoProductPages/SkorostMonokolesa.js'
-import ChtoTakoeSigvey from './components/infoProduct/infoProductPages/ChtoTakoeSigvey.js'
+import VidyElektrosamokatov from './components /infoProduct/infoProductPages/VidyElektrosamokatov.js'
+import NauchitsyaKatatsya from './components /infoProduct/infoProductPages/NauchitsyaKatatsya.js'
+import SostoitGiroskyter from './components /infoProduct/infoProductPages/SostoitGiroskyter.js'
+import ElektrosamokatPrintsip from './components /infoProduct/infoProductPages/ElektrosamokatPrintsip.js'
+import InteresnyeFakty from './components /infoProduct/infoProductPages/InteresnyeFakty.js'
+import SkorostMonokolesa from './components /infoProduct/infoProductPages/SkorostMonokolesa.js'
+import ChtoTakoeSigvey from './components /infoProduct/infoProductPages/ChtoTakoeSigvey.js'
 // <-- Route infoProduct
 
 //Route infoSidebar -->
-import Catalog from './components/sidebar/Catalog.js'
-import Onas from "./components/sidebar/Onas";
-import Oplatadostavka from "./components/sidebar/Oplatadostavka";
-import Obmenvozvrat from "./components/sidebar/Obmenvozvrat";
-import Contacts from "./components/sidebar/Contacts";
+import Catalog from './components /sidebar/Catalog.js'
+import Onas from "./components /sidebar/Onas";
+import Oplatadostavka from "./components /sidebar/Oplatadostavka";
+import Obmenvozvrat from "./components /sidebar/Obmenvozvrat";
+import Contacts from "./components /sidebar/Contacts";
 // <-- Route infoSidebar
 
 
