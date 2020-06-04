@@ -7,6 +7,7 @@ import AboutCompany from "./components/aboutCompany";
 import Layout from "./components/layout/Layout";
 import Home from "./components/layout/Home";
 import NotFound from "./components/notFound/NotFound";
+import CardProduct from "./components/cardProduct/CardProduct"
 
 //brandInfo -->
 import Airwheel from './components/brand/brandInfo/Airwheel.js'
@@ -51,6 +52,7 @@ const App = () => (
     <Layout className="App">
         <Switch>
             <Route exact path="/" component={Home}/>
+            <Route exact path="/elektroskeyt-gtf-jetskate-classic-one-edition/" component={CardProduct}/>
             {/*brandInfo*/}
             <Route path="/airwheel/" component={Airwheel}/>
             <Route path="/citycoco/" component={Citycoco}/>
