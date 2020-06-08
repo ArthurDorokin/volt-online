@@ -62,6 +62,7 @@
     width: 17.5%;
     margin: 45px 30px 45px 0;
 }
+
 .wrap-cardProduct .tabs-info-order {
     border-top: 1px solid #d2c8c8;
     padding: 30px 0 0 0;
@@ -78,6 +79,7 @@
     font-weight: bold;
     color: #181818;
 }
+
 .wrap-cardProduct .tabs-info-order .name {
     font-weight: bold;
     color: #848483;
@@ -87,6 +89,13 @@
 }
 .wrap-cardProduct .tabs-info-order .tabs {
     display: flex;
+}
+
+.wrap-cardProduct .tabs-info-order .tab-name{
+    display: none;
+}
+.wrap-cardProduct .tabs-info-order .tab-name.active{
+    display: block;
 }
 .wrap-cardProduct .description-for-product .about-product {
     line-height: 27px;

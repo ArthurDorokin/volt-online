@@ -33,15 +33,26 @@ class CardProduct extends Component {
                                 </div>
                                 <div className="tabs-info-order">
                                     <div className="tabs">
-                                        {tabs.map((item) =>
-                                            <div className="name">{item.title}</div>
-                                        )}
+                                        <div className="name active">Доставка</div>
+                                        <div className="name">Оплата</div>
+                                        <div className="name">Гарантия</div>
                                     </div>
-                                    <div className="tab-name">
+                                    <div className="tab-name delivery active">
                                         <ul>
-                                            {tabs.map((item) =>
-                                                <li>{item.listContent}</li>
-                                            )}
+                                            <li>Новой почтой по Украине — 30 грн.</li>
+                                            <li>Курьером к двери по Киеву — 40 грн.</li>
+                                        </ul>
+                                    </div>
+                                    <div className="tab-name payment">
+                                        <ul>
+                                            <li>Наличными при получении.</li>
+                                            <li>Кредитной картой в privat24, LiqPay.</li>
+                                            <li>Через кассу или терминал самообслуживания Приватбанк.</li>
+                                        </ul>
+                                    </div>
+                                    <div className="tab-name guarantee">
+                                        <ul>
+                                            <li>Гарантия от производителя 12 месяцев</li>
                                         </ul>
                                     </div>
                                 </div>
