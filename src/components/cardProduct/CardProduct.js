@@ -1,8 +1,15 @@
 import React, {Component} from "react";
 import './cardProduct.css'
 
+
 class CardProduct extends Component {
+
     render() {
+        const tabs = [
+            {title: 'Доставка', listContent: 'London is the capital city of England.'},
+            {title: 'Оплата', listContent: 'Paris is the capital of France.'},
+            {title: 'Гарантия', listContent: 'Tokyo is the capital of Japan.'},
+        ];
         return (
             <div className="content">
                 <div className="container">
@@ -14,36 +21,27 @@ class CardProduct extends Component {
                                     alt="Электроскейт"/>
                             </div>
                             <div className="description">
-                                <div className="title">Электроскейт Like.Bike Teens Skate</div>
+                                <div className="title"><h2>Электроскейт Like.Bike Teens Skate</h2></div>
                                 <div className="info-in-product">
                                     <div className="in-stock">В наличии</div>
                                     <div className="vendor-code">Артикул: <span>5rfw3a</span></div>
                                 </div>
                                 <div className="price">7 999 грн</div>
                                 <div className="order">
-                                    <div className="buy"></div>
-                                    <div className="quick-order"></div>
+                                    <div className="buy">Купить</div>
+                                    <div className="quick-order">Быстрый заказ</div>
                                 </div>
                                 <div className="tabs-info-order">
-                                    <div className="delivery">
-                                        <div className="name">Доставка</div>
-                                        <ul>
-                                            <li>Новой почтой по Украине — 30 грн.</li>
-                                            <li>Курьером к двери по Киеву — 40 грн.</li>
-                                        </ul>
+                                    <div className="tabs">
+                                        {tabs.map((item) =>
+                                            <div className="name">{item.title}</div>
+                                        )}
                                     </div>
-                                    <div className="payment">
-                                        <div className="name">Оплата</div>
+                                    <div className="tab-name">
                                         <ul>
-                                            <li>Наличными при получении.</li>
-                                            <li>Кредитной картой в privat24, LiqPay.</li>
-                                            <li>Через кассу или терминал самообслуживания Приватбанк.</li>
-                                        </ul>
-                                    </div>
-                                    <div className="guarantee">
-                                        <div className="name">Гарантия</div>
-                                        <ul>
-                                            <li>Гарантия от производителя 12 месяцев</li>
+                                            {tabs.map((item) =>
+                                                <li>{item.listContent}</li>
+                                            )}
                                         </ul>
                                     </div>
                                 </div>
@@ -51,6 +49,7 @@ class CardProduct extends Component {
                         </div>
                         <div className="description-for-product">
                             <div className="about-product">
+                                <h4>Описание</h4>
                                 Диаметр колёс: 8' дюймов. Количество амортизаторов: Передний и задний. Вес: 12 кг.
                                 Батарея: Li-ion 36V/8800 mAH. Мощность моторов: 350W. Нагрузка: до 100 кг. Скорость: до
                                 30 км/ч. Влагозащита: IP54. Подсветка: LED фара. Материал рамы - Aluminium. Бортовой
@@ -113,8 +112,8 @@ class CardProduct extends Component {
                     </div>
                 </div>
             </div>
-    )
+        )
     }
-    }
+}
 
-    export default CardProduct
+export default CardProduct

@@ -1,0 +1,101 @@
+.content {
+    margin: 50px 0 0 0;
+}
+.wrap-cardProduct h2 {
+    font-size: 26px;
+}
+.wrap-cardProduct .info-in-product {
+    display: flex;
+    font-size: 14px;
+}
+.wrap-cardProduct .price{
+    font-size: 24px;
+    margin: 30px 0 0 0;
+    padding: 0 0 25px 0;
+    border-bottom: 1px solid #d2c8c8;
+}
+.wrap-cardProduct .info-in-product .in-stock{
+    color: #67d821;
+    margin: 0 35px 0 0;
+}
+.wrap-cardProduct .order {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 270px;
+    margin: 30px 0 30px 0;
+}
+.wrap-cardProduct .order .buy{
+    background: #FF7901;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 7px 15px 7px 15px;
+    border-radius: 3px;
+}
+.wrap-cardProduct .order .quick-order{
+    border: 1px solid #FF7901;
+    outline: none;
+    color: #181818;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 7px 15px 7px 15px;
+    border-radius: 3px;
+}
+.wrap-cardProduct .main-product {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.wrap-cardProduct .main-product .img{
+    width: 400px;
+}
+.wrap-cardProduct .main-product .img img{
+    width: 100%;
+}
+.wrap-cardProduct .see-also {
+   display: flex;
+}
+.wrap-cardProduct .see-also .item-product{
+    width: 17.5%;
+    margin: 45px 30px 45px 0;
+}
+.wrap-cardProduct .tabs-info-order {
+    border-top: 1px solid #d2c8c8;
+    padding: 30px 0 0 0;
+    font-size: 14px;
+}
+.wrap-cardProduct .tabs-info-order ul li{
+    margin: 0 0 10px 0;
+    list-style: circle;
+}
+.wrap-cardProduct .tabs-info-order ul {
+   padding: 0 0 0 18px;
+}
+.wrap-cardProduct .tabs-info-order .name.active {
+    font-weight: bold;
+    color: #181818;
+}
+.wrap-cardProduct .tabs-info-order .name {
+    font-weight: bold;
+    color: #848483;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px 0 0;
+}
+.wrap-cardProduct .tabs-info-order .tabs {
+    display: flex;
+}
+.wrap-cardProduct .description-for-product .about-product {
+    line-height: 27px;
+    border-top: 1px solid #d2c8c8;
+    margin: 100px 0 0 0;
+    padding: 20px 0 0 0;
+}
+.wrap-cardProduct .description-for-product h4 {
+    color: #181818;
+    font-size: 16px;
+    font-weight: bold;
+}
