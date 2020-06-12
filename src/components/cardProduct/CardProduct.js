@@ -1,15 +1,14 @@
 import React, {Component} from "react";
+import {tabsCard, catalog} from "../sidebar/constant";
+
 import './cardProduct.css'
 
 
 class CardProduct extends Component {
+    state = {tabIndex: 0};
 
     render() {
-        const tabs = [
-            {title: 'Доставка', listContent: 'London is the capital city of England.'},
-            {title: 'Оплата', listContent: 'Paris is the capital of France.'},
-            {title: 'Гарантия', listContent: 'Tokyo is the capital of Japan.'},
-        ];
+
         return (
             <div className="content">
                 <div className="container">
@@ -33,24 +32,33 @@ class CardProduct extends Component {
                                 </div>
                                 <div className="tabs-info-order">
                                     <div className="tabs">
-                                        <div className="name active">Доставка</div>
-                                        <div className="name">Оплата</div>
-                                        <div className="name">Гарантия</div>
+                                        <div className={`${"name"} ${this.state.tabIndex === 0 ? `${"active"}` : null}`}
+                                             onClick={() => this.setState({tabIndex: 0})}>Доставка
+                                        </div>
+                                        <div className={`${"name"} ${this.state.tabIndex === 1 ? `${"active"}` : null}`}
+                                             onClick={() => this.setState({tabIndex: 1})}>Оплата
+                                        </div>
+                                        <div className={`${"name"} ${this.state.tabIndex === 2 ? `${"active"}` : null}`}
+                                             onClick={() => this.setState({tabIndex: 2})}>Гарантия
+                                        </div>
                                     </div>
-                                    <div className="tab-name delivery active">
+                                    <div
+                                        className={`${"tab-name"} ${this.state.tabIndex === 0 ? `${"active"}` : null}`}>
                                         <ul>
                                             <li>Новой почтой по Украине — 30 грн.</li>
                                             <li>Курьером к двери по Киеву — 40 грн.</li>
                                         </ul>
                                     </div>
-                                    <div className="tab-name payment">
+                                    <div
+                                        className={`${"tab-name"} ${this.state.tabIndex === 1 ? `${"active"}` : null}`}>
                                         <ul>
                                             <li>Наличными при получении.</li>
                                             <li>Кредитной картой в privat24, LiqPay.</li>
                                             <li>Через кассу или терминал самообслуживания Приватбанк.</li>
                                         </ul>
                                     </div>
-                                    <div className="tab-name guarantee">
+                                    <div
+                                        className={`${"tab-name"} ${this.state.tabIndex === 2 ? `${"active"}` : null}`}>
                                         <ul>
                                             <li>Гарантия от производителя 12 месяцев</li>
                                         </ul>
@@ -61,62 +69,46 @@ class CardProduct extends Component {
                         <div className="description-for-product">
                             <div className="about-product">
                                 <h4>Описание</h4>
-                                Диаметр колёс: 8' дюймов. Количество амортизаторов: Передний и задний. Вес: 12 кг.
-                                Батарея: Li-ion 36V/8800 mAH. Мощность моторов: 350W. Нагрузка: до 100 кг. Скорость: до
-                                30 км/ч. Влагозащита: IP54. Подсветка: LED фара. Материал рамы - Aluminium. Бортовой
-                                компьютер, LCD-дисплей. Двойная тормозная система - Электрический и задний дисковый
-                                тормоз, механический. Запас хода - до 25 км.
+                                Электроскейт GTF Jetskate Classic One Edition с электродвигателем — это легкий, стильный, качественный электрический скейтборд. Интересная альтернатива обычному скейтборду, которая создана для энергичных и активных молодых людей.
+                                <h4>Особености</h4>
+                                <ul>
+                                    <li>Пульт дистанционного управления</li>
+                                    <li>Колеса диаметром 3" позволяют не беспокоиться о неровной дороге и даже лежачих полицейских</li>
+                                    <li>Мотор мощностью 180 Вт тянет даже в гору с наклоном 10 градусов</li>
+                                    <li>Размер деки максимально удобен для быстрой езды и хорошей управляемости</li>
+                                </ul>
                             </div>
                             <div className="see-also">
-                                <div className="item-product">
-                                    <div className="catalog-product"><a
-                                        href="/elektrovelosiped-oio-city-bike-elite-white/" className="link-product">
-                                        <div className="catalog-img"><img
-                                            src="../img/content/elektrovelosiped-oio-city-bike-elite-white-97933455367029_small4.jpg"
-                                            alt="Электровелосипед"/></div>
-                                    </a>
-                                        <div className="productSticker">
-                                            <div className="productView">
-                                                <div className="productSticker-item__promo"><p>РАСПРОДАЖА</p></div>
-                                                <div className="productSticker-item__new"><p>НОВИНКА</p></div>
-                                                <div className="productSticker-item__popular"><p>ХИТ</p></div>
+                                <h4>Смотрите также</h4>
+                                <div className="wrap-also">
+                                    {catalog.filter((item) => item.typeProduct === 2).map((item) =>
+                                        <div className="item-product" key={item.id}>
+                                            <div className="catalog-product">
+                                                <a href={item.link} className="link-product">
+                                                    <div className="catalog-img">
+                                                        <img
+                                                            src={item.img} alt={item.alt}/>
+                                                    </div>
+                                                </a>
+                                                <div className="productSticker">
+                                                    <div className="productView">
+                                                        <div
+                                                            className={`${"productSticker-item__promo"} ${item.filterIcon.classFilter}`}>
+                                                            <p>{item.filterIcon.name}</p></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="catalogCard-info">
+                                                <div className="info-title">{item.info}</div>
+                                                <div className="btn-product">
+                                                    <div className="info-price">{item.price}</div>
+                                                    <div className="btn-buy">
+                                                        <button>{item.buy}</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="catalogCard-info">
-                                        <div className="info-title">Электровелосипед ZPAO SPORT’250</div>
-                                        <div className="btn-product">
-                                            <div className="info-price">18 600 грн</div>
-                                            <div className="btn-buy">
-                                                <button>Купить</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="item-product">
-                                    <div className="catalog-product"><a
-                                        href="/elektrovelosiped-oio-city-bike-elite-white/" className="link-product">
-                                        <div className="catalog-img"><img
-                                            src="../img/content/elektrovelosiped-oio-city-bike-elite-white-97933455367029_small4.jpg"
-                                            alt="Электровелосипед"/></div>
-                                    </a>
-                                        <div className="productSticker">
-                                            <div className="productView">
-                                                <div className="productSticker-item__promo"><p>РАСПРОДАЖА</p></div>
-                                                <div className="productSticker-item__new"><p>НОВИНКА</p></div>
-                                                <div className="productSticker-item__popular"><p>ХИТ</p></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="catalogCard-info">
-                                        <div className="info-title">Электровелосипед ZPAO SPORT’250</div>
-                                        <div className="btn-product">
-                                            <div className="info-price">18 600 грн</div>
-                                            <div className="btn-buy">
-                                                <button>Купить</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

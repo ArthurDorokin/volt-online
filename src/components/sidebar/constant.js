@@ -195,8 +195,37 @@ const selectCheckbox = [
     {value: 2, label: "хит"},
     {value: 3, label: 'все'}
 ];
+
+const tabsCard = [
+    {
+        id: 0,
+        title: 'Доставка',
+        list: {
+            p: "Новой почтой по Украине  — 30 грн.",
+            p1: "Курьером к двери по Киеву — 40 грн.",
+        }
+    },
+    {
+        id: 1,
+        title: 'Оплата',
+        list: {
+            p: "Наличными при получении.",
+            p1: "Кредитной картой в privat24, LiqPay.",
+            p2: "Через кассу или терминал самообслуживания Приватбанк.",
+        }
+    },
+    {
+        id: 2,
+        title: 'Гарантия',
+        list: {
+            p: "Гарантия от производителя 12 месяцев",
+        }
+    }
+
+]
 export {
     catalog,
     selectSort,
-    selectCheckbox
+    selectCheckbox,
+    tabsCard
 }
