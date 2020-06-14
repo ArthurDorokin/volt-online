@@ -26,21 +26,18 @@ class SortPanel extends Component {
         if (valueCheckbox.value == 0) {
             const byFilterIconData = this.state.default.catalog;
             const sortFilterIconDataOne = byFilterIconData.filter((item) => item.filterIcon.val === 0);
-            console.log(sortFilterIconDataOne);
             this.setState({catalog: sortFilterIconDataOne});
             this.props.handleChangeCheckbox(sortFilterIconDataOne)
         }
         if (valueCheckbox.value == 1) {
             const byFilterIconData = this.state.default.catalog;
             const sortFilterIconDataTwo = byFilterIconData.filter((item) => item.filterIcon.val === 1);
-            console.log(sortFilterIconDataTwo);
             this.setState({catalog: sortFilterIconDataTwo});
             this.props.handleChangeCheckbox(sortFilterIconDataTwo)
         }
         if (valueCheckbox.value == 2) {
             const byFilterIconData = this.state.default.catalog;
             const sortFilterIconDataThree = byFilterIconData.filter((item) => item.filterIcon.val === 2);
-            console.log(sortFilterIconDataThree);
             this.setState({catalog: sortFilterIconDataThree});
             this.props.handleChangeCheckbox(sortFilterIconDataThree)
         }
@@ -75,7 +72,6 @@ class SortPanel extends Component {
         const numRange = this.state.sliderValues;
         const byFilterIconData = this.state.default.catalog;
         const numRangeFilterData = byFilterIconData.filter((item) => (numRange[0] <= item.price.replace(/\s/g, '') && item.price.replace(/\s/g, '') <= numRange[1]));
-        console.log(numRangeFilterData);
         this.setState({catalog: numRangeFilterData});
         this.props.addStateNumRange(numRangeFilterData);
 
@@ -91,21 +87,18 @@ class SortPanel extends Component {
         if (valueSort.value == 0) {
             const byPopularityDate = this.state.catalog;
             const sortPopularityDate = byPopularityDate.sort((a, b) => a.id > b.id ? 1 : -1);
-            console.log(sortPopularityDate);
             this.setState({catalog: sortPopularityDate});
             this.props.handleChange(sortPopularityDate);
         }
         if (valueSort.value == 1) {
             const byPriceDate = this.state.catalog;
             const sortPriceDate = byPriceDate.sort((a, b) => a.price > b.price ? 1 : -1);
-            console.log(sortPriceDate);
             this.setState({catalog: sortPriceDate});
             this.props.handleChange(sortPriceDate);
         }
         if (valueSort.value == 2) {
             const byNameDate = this.state.catalog;
             const sortNameData = byNameDate.sort((a, b) => a.info > b.info ? 1 : -1);
-            console.log(sortNameData);
             this.setState({catalog: sortNameData});
             this.props.handleChange(sortNameData);
         }

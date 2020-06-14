@@ -52,7 +52,7 @@ class Monokolesa extends Component {
                                         <div className="catalogCard-info">
                                             <div className="info-title">{item.info}</div>
                                             <div className="btn-product">
-                                                <div className="info-price">{item.price}</div>
+                                                <div className="info-price">{item.price} грн</div>
                                                 <div className="btn-buy">
                                                     <button>{item.buy}</button>
                                                 </div>

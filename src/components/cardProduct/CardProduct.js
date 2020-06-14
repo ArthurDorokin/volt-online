@@ -1,33 +1,33 @@
 import React, {Component} from "react";
-import {tabsCard, catalog} from "../sidebar/constant";
+import {catalog} from "../sidebar/constant";
 
 import './cardProduct.css'
 
 
 class CardProduct extends Component {
-    state = {tabIndex: 0};
+    state = {
+        tabIndex: 0
+    }
 
     render() {
-
+        const {cardInfo} = this.props;
         return (
             <div className="content">
                 <div className="container">
                     <div className="wrap-cardProduct">
                         <div className="main-product">
                             <div className="img">
-                                <img
-                                    src="../img/content/elektroskeyt-gtf-jetskate-classic-one-edition-64377766348990_small4.png"
-                                    alt="Электроскейт"/>
+                                <img src={cardInfo.img} alt={cardInfo.alt}/>
                             </div>
                             <div className="description">
-                                <div className="title"><h2>Электроскейт Like.Bike Teens Skate</h2></div>
+                                <div className="title"><h2>{cardInfo.info}</h2></div>
                                 <div className="info-in-product">
                                     <div className="in-stock">В наличии</div>
                                     <div className="vendor-code">Артикул: <span>5rfw3a</span></div>
                                 </div>
-                                <div className="price">7 999 грн</div>
+                                <div className="price">{cardInfo.price} грн</div>
                                 <div className="order">
-                                    <div className="buy">Купить</div>
+                                    <div className="buy">{cardInfo.buy}</div>
                                     <div className="quick-order">Быстрый заказ</div>
                                 </div>
                                 <div className="tabs-info-order">
@@ -69,11 +69,15 @@ class CardProduct extends Component {
                         <div className="description-for-product">
                             <div className="about-product">
                                 <h4>Описание</h4>
-                                Электроскейт GTF Jetskate Classic One Edition с электродвигателем — это легкий, стильный, качественный электрический скейтборд. Интересная альтернатива обычному скейтборду, которая создана для энергичных и активных молодых людей.
+                                Электроскейт GTF Jetskate Classic One Edition с электродвигателем — это легкий,
+                                стильный, качественный электрический скейтборд. Интересная альтернатива обычному
+                                скейтборду, которая создана для энергичных и активных молодых людей.
                                 <h4>Особености</h4>
                                 <ul>
                                     <li>Пульт дистанционного управления</li>
-                                    <li>Колеса диаметром 3" позволяют не беспокоиться о неровной дороге и даже лежачих полицейских</li>
+                                    <li>Колеса диаметром 3" позволяют не беспокоиться о неровной дороге и даже лежачих
+                                        полицейских
+                                    </li>
                                     <li>Мотор мощностью 180 Вт тянет даже в гору с наклоном 10 градусов</li>
                                     <li>Размер деки максимально удобен для быстрой езды и хорошей управляемости</li>
                                 </ul>
@@ -81,7 +85,7 @@ class CardProduct extends Component {
                             <div className="see-also">
                                 <h4>Смотрите также</h4>
                                 <div className="wrap-also">
-                                    {catalog.filter((item) => item.typeProduct === 2).map((item) =>
+                                    {catalog.filter((item) => item.typeProduct === cardInfo.typeProduct).map((item) =>
                                         <div className="item-product" key={item.id}>
                                             <div className="catalog-product">
                                                 <a href={item.link} className="link-product">

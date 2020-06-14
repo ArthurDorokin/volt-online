@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -45,48 +45,73 @@ import Onas from "./components/sidebar/Onas";
 import Oplatadostavka from "./components/sidebar/Oplatadostavka";
 import Obmenvozvrat from "./components/sidebar/Obmenvozvrat";
 import Contacts from "./components/sidebar/Contacts";
+import {catalog} from "./components/sidebar/constant";
+
 // <-- Route infoSidebar
 
+class App extends Component {
+    state = {
+        catalog,
+        selectProduct: ''
+    };
 
-const App = () => (
-    <Layout className="App">
-        <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/elektroskeyt-gtf-jetskate-classic-one-edition/" component={CardProduct}/>
-            {/*brandInfo*/}
-            <Route path="/airwheel/" component={Airwheel}/>
-            <Route path="/citycoco/" component={Citycoco}/>
-            <Route path="/haibike/" component={Haibike}/>
-            <Route path="/mijia/" component={Mijia}/>
-            <Route path="/ninebot/" component={Ninebot}/>
-            <Route path="/segway/" component={Segway}/>
-            <Route path="/smartBalance/" component={SmartBalance}/>
-            <Route path="/xiaomi/" component={Xiaomi}/>
-            {/*catalogProduct*/}
-            <Route path="/skeyt/" component={Skeyt}/>
-            <Route path="/elektrosamokaty/" component={Elektrosamokaty}/>
-            <Route path="/elektrovelosipedy/" component={Elektrovelosipedy}/>
-            <Route path="/monokolesa/" component={Monokolesa}/>
-            <Route path="/giroskutery/" component={Giroskutery}/>
-            <Route path="/segvei/" component={Segvei}/>
-            {/*infoProduct*/}
-            <Route path="/vidy-elektrosamokatov/" component={VidyElektrosamokatov}/>
-            <Route path="/kak-nauchitsya-katatsya-na-monokolese/" component={NauchitsyaKatatsya}/>
-            <Route path="/iz-chego-sostoit-giroskyter/" component={SostoitGiroskyter}/>
-            <Route path="/elektrosamokat.-printsip-raboty/" component={ElektrosamokatPrintsip}/>
-            <Route path="/interesnye-fakty-pro-elektrovelosiped/" component={InteresnyeFakty}/>
-            <Route path="/skorost-monokolesa/" component={SkorostMonokolesa}/>
-            <Route path="/chto-takoe-sigvey/" component={ChtoTakoeSigvey}/>
-            {/*infoProduct*/}
-            <Route path="/catalog/" component={Catalog}/>
-            <Route path="/o-nas/" component={Onas}/>
-            <Route path="/oplata-i-dostavka/" component={Oplatadostavka}/>
-            <Route path="/obmen-i-vozvrat/" component={Obmenvozvrat}/>
-            <Route path="/contacts/" component={Contacts}/>
-            {/*404*/}
-            <Route path='*' exact={true} component={NotFound}/>
-        </Switch>
-    </Layout>
-);
+    render() {
+        // const updateSelectProduct = (selectProduct) => {
+        //     this.setState(selectProduct)
+        // };
+
+        const cardInfo = this.state.selectProduct;
+        const CardProductWrap = function(props) {
+            return (<CardProduct {...props} cardInfo={cardInfo} />);
+        };
+        // const CatalogWrap = function(props) {
+        //     return (<Catalog {...props} updateSelectProduct={updateSelectProduct} />);
+        // };
+
+        console.log(this.state.selectProduct);
+        return (
+            <Layout className="App">
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/elektrosamokat-sns-aluminium-65-duymov-black/" component={CardProductWrap} />
+
+                    {/*brandInfo*/}
+                    <Route path="/airwheel/" component={Airwheel}/>
+                    <Route path="/citycoco/" component={Citycoco}/>
+                    <Route path="/haibike/" component={Haibike}/>
+                    <Route path="/mijia/" component={Mijia}/>
+                    <Route path="/ninebot/" component={Ninebot}/>
+                    <Route path="/segway/" component={Segway}/>
+                    <Route path="/smartBalance/" component={SmartBalance}/>
+                    <Route path="/xiaomi/" component={Xiaomi}/>
+                    {/*catalogProduct*/}
+                    <Route path="/skeyt/" component={Skeyt}/>
+                    <Route path="/elektrosamokaty/" component={Elektrosamokaty}/>
+                    <Route path="/elektrovelosipedy/" component={Elektrovelosipedy}/>
+                    <Route path="/monokolesa/" component={Monokolesa}/>
+                    <Route path="/giroskutery/" component={Giroskutery}/>
+                    <Route path="/segvei/" component={Segvei}/>
+                    {/*infoProduct*/}
+                    <Route path="/vidy-elektrosamokatov/" component={VidyElektrosamokatov}/>
+                    <Route path="/kak-nauchitsya-katatsya-na-monokolese/" component={NauchitsyaKatatsya}/>
+                    <Route path="/iz-chego-sostoit-giroskyter/" component={SostoitGiroskyter}/>
+                    <Route path="/elektrosamokat.-printsip-raboty/" component={ElektrosamokatPrintsip}/>
+                    <Route path="/interesnye-fakty-pro-elektrovelosiped/" component={InteresnyeFakty}/>
+                    <Route path="/skorost-monokolesa/" component={SkorostMonokolesa}/>
+                    <Route path="/chto-takoe-sigvey/" component={ChtoTakoeSigvey}/>
+                    {/*infoProduct*/}
+                    <Route path="/catalog/" component={Catalog} />
+                    <Route path="/o-nas/" component={Onas}/>
+                    <Route path="/oplata-i-dostavka/" component={Oplatadostavka}/>
+                    <Route path="/obmen-i-vozvrat/" component={Obmenvozvrat}/>
+                    <Route path="/contacts/" component={Contacts}/>
+                    {/*404*/}
+                    <Route path='*' exact={true} component={NotFound}/>
+                </Switch>
+            </Layout>
+        )
+    }
+
+};
 
 export default App;
