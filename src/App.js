@@ -52,7 +52,7 @@ import {catalog} from "./components/sidebar/constant";
 class App extends Component {
     state = {
         catalog,
-        selectProduct: 0
+        selectProduct: 5
     };
 
     //take the value of the card -->
@@ -76,7 +76,7 @@ class App extends Component {
         {console.log(this.state.selectProduct)}
         return (
             <Layout>
-                <p>{this.state.selectProduct.id}</p>
+                {/*<p>{this.state.selectProduct.id}</p>*/}
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path="/monokoleso-inmotion-scv-v5f-black/"

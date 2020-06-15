@@ -12,7 +12,7 @@ class CardProduct extends Component {
         console.log(stateProduct);
         return (
             <div className="content">
-                {/*<p>Props: {stateProduct}</p>*/}
+                <p>Props: {stateProduct.id}</p>
                 <div className="container">
                     <div className="wrap-cardProduct">
                         <div className="main-product">
