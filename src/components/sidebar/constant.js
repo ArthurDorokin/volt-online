@@ -1,7 +1,7 @@
 const catalog = [
     {
         id: 0,
-        link: "/elektrosamokat-sns-aluminium-65-duymov-black/",
+        //link: "/elektrosamokat-sns-aluminium-65-duymov-black/",
         img: "../img/content/elektrosamokat-sns-aluminium-65-duymov-black-91963412592561_small4.png",
         alt: "Электросамокат",
         info: "Электросамокат OIO CITY BIKE Elite White",

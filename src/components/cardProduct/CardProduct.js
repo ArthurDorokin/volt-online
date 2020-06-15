@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {catalog} from "../sidebar/constant";
-
 import './cardProduct.css'
 
 
@@ -8,26 +7,27 @@ class CardProduct extends Component {
     state = {
         tabIndex: 0
     }
-
     render() {
-        const {cardInfo} = this.props;
+        const {stateProduct} = this.props;
+        console.log(stateProduct);
         return (
             <div className="content">
+                {/*<p>Props: {stateProduct}</p>*/}
                 <div className="container">
                     <div className="wrap-cardProduct">
                         <div className="main-product">
                             <div className="img">
-                                <img src={cardInfo.img} alt={cardInfo.alt}/>
+                                <img src='/' alt='/'/>
                             </div>
                             <div className="description">
-                                <div className="title"><h2>{cardInfo.info}</h2></div>
+                                <div className="title"><h2>//////</h2></div>
                                 <div className="info-in-product">
                                     <div className="in-stock">В наличии</div>
                                     <div className="vendor-code">Артикул: <span>5rfw3a</span></div>
                                 </div>
-                                <div className="price">{cardInfo.price} грн</div>
+                                <div className="price">////// грн</div>
                                 <div className="order">
-                                    <div className="buy">{cardInfo.buy}</div>
+                                    <div className="buy">///////</div>
                                     <div className="quick-order">Быстрый заказ</div>
                                 </div>
                                 <div className="tabs-info-order">
@@ -82,39 +82,39 @@ class CardProduct extends Component {
                                     <li>Размер деки максимально удобен для быстрой езды и хорошей управляемости</li>
                                 </ul>
                             </div>
-                            <div className="see-also">
-                                <h4>Смотрите также</h4>
-                                <div className="wrap-also">
-                                    {catalog.filter((item) => item.typeProduct === cardInfo.typeProduct).map((item) =>
-                                        <div className="item-product" key={item.id}>
-                                            <div className="catalog-product">
-                                                <a href={item.link} className="link-product">
-                                                    <div className="catalog-img">
-                                                        <img
-                                                            src={item.img} alt={item.alt}/>
-                                                    </div>
-                                                </a>
-                                                <div className="productSticker">
-                                                    <div className="productView">
-                                                        <div
-                                                            className={`${"productSticker-item__promo"} ${item.filterIcon.classFilter}`}>
-                                                            <p>{item.filterIcon.name}</p></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="catalogCard-info">
-                                                <div className="info-title">{item.info}</div>
-                                                <div className="btn-product">
-                                                    <div className="info-price">{item.price}</div>
-                                                    <div className="btn-buy">
-                                                        <button>{item.buy}</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
+                            {/*<div className="see-also">*/}
+                            {/*    <h4>Смотрите также</h4>*/}
+                            {/*    <div className="wrap-also">*/}
+                            {/*        {catalog.filter((item) => item.typeProduct === stateProduct.typeProduct).map((item) =>*/}
+                            {/*            <div className="item-product" key={item.id}>*/}
+                            {/*                <div className="catalog-product">*/}
+                            {/*                    <a href={item.link} className="link-product">*/}
+                            {/*                        <div className="catalog-img">*/}
+                            {/*                            <img*/}
+                            {/*                                src={item.img} alt={item.alt}/>*/}
+                            {/*                        </div>*/}
+                            {/*                    </a>*/}
+                            {/*                    <div className="productSticker">*/}
+                            {/*                        <div className="productView">*/}
+                            {/*                            <div*/}
+                            {/*                                className={`${"productSticker-item__promo"} ${item.filterIcon.classFilter}`}>*/}
+                            {/*                                <p>{item.filterIcon.name}</p></div>*/}
+                            {/*                        </div>*/}
+                            {/*                    </div>*/}
+                            {/*                </div>*/}
+                            {/*                <div className="catalogCard-info">*/}
+                            {/*                    <div className="info-title">{item.info}</div>*/}
+                            {/*                    <div className="btn-product">*/}
+                            {/*                        <div className="info-price">{item.price} грн</div>*/}
+                            {/*                        <div className="btn-buy">*/}
+                            {/*                            <button>{item.buy}</button>*/}
+                            {/*                        </div>*/}
+                            {/*                    </div>*/}
+                            {/*                </div>*/}
+                            {/*            </div>*/}
+                            {/*        )}*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                         </div>
                     </div>
                 </div>

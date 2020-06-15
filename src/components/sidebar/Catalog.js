@@ -6,8 +6,7 @@ import SortPanel from "./SortPanel";
 
 class Catalog extends Component {
     state = {
-        catalog,
-        selectProduct: ''
+        catalog
     };
 
     addStateNumRange = (catalog) => {
@@ -23,34 +22,12 @@ class Catalog extends Component {
     };
 
 
-    //take the value of the card -->
-    onCharSelected = (id) => {
-        this.setCharacter(id)
-
-    };
-
-    setCharacter = (id = 0) => {
-        const catalog = this.state.catalog;
-        const res = catalog.filter(item => item.id === id);
-        const [char] = res;
-        this.setState({selectProduct: {...char}});
-    };
-
-    componentDidMount() {
-        this.setCharacter()
-
-    };
-    // take the value of the card  <--
-
     render() {
-
-        {console.log(this.state.selectProduct)}
         return (
             <div className="info-page">
                 <div className="article-text">
                     <div className="main-content">
                         <h1>Catalog</h1>
-s
                         <SortPanel
                             addStateNumRange={this.addStateNumRange}
                             handleChangeCheckbox={this.handleChangeCheckbox}
@@ -58,7 +35,7 @@ s
                         />
                         <div className="catalog">
                             {this.state.catalog.map((item) =>
-                                <div className="item-catalog" onClick={() => this.onCharSelected(item.id)}
+                                <div className="item-catalog" onClick={() => this.props.onCardSelected(item.id)}
                                      key={item.id}>
                                     <div className="catalog-product">
                                         <a href={item.link} className="link-product">

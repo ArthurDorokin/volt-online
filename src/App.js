@@ -52,29 +52,35 @@ import {catalog} from "./components/sidebar/constant";
 class App extends Component {
     state = {
         catalog,
-        selectProduct: ''
+        selectProduct: 0
     };
 
+    //take the value of the card -->
+    onCardSelected = (id) => {
+        this.setCharacter(id);
+    };
+
+    setCharacter = (id = this.state.selectProduct) => {
+        const catalog = this.state.catalog;
+        const res = catalog.filter(item => item.id === id);
+        const [card] = res;
+        this.setState({selectProduct: {...card}});
+    };
+
+    componentDidMount() {
+        this.setCharacter();
+    };
+    // take the value of the card  <--
+
     render() {
-        // const updateSelectProduct = (selectProduct) => {
-        //     this.setState(selectProduct)
-        // };
-
-        const cardInfo = this.state.selectProduct;
-        const CardProductWrap = function(props) {
-            return (<CardProduct {...props} cardInfo={cardInfo} />);
-        };
-        // const CatalogWrap = function(props) {
-        //     return (<Catalog {...props} updateSelectProduct={updateSelectProduct} />);
-        // };
-
-        console.log(this.state.selectProduct);
+        {console.log(this.state.selectProduct)}
         return (
-            <Layout className="App">
+            <Layout>
+                <p>{this.state.selectProduct.id}</p>
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route exact path="/elektrosamokat-sns-aluminium-65-duymov-black/" component={CardProductWrap} />
-
+                    <Route path="/monokoleso-inmotion-scv-v5f-black/"
+                           render={(props) => <CardProduct {...props} stateProduct={this.state.selectProduct} {...props} />}/>
                     {/*brandInfo*/}
                     <Route path="/airwheel/" component={Airwheel}/>
                     <Route path="/citycoco/" component={Citycoco}/>
@@ -100,7 +106,8 @@ class App extends Component {
                     <Route path="/skorost-monokolesa/" component={SkorostMonokolesa}/>
                     <Route path="/chto-takoe-sigvey/" component={ChtoTakoeSigvey}/>
                     {/*infoProduct*/}
-                    <Route path="/catalog/" component={Catalog} />
+                    <Route path="/catalog/"
+                           render={(props) => <Catalog {...props} onCardSelected={this.onCardSelected} {...props} />}/>
                     <Route path="/o-nas/" component={Onas}/>
                     <Route path="/oplata-i-dostavka/" component={Oplatadostavka}/>
                     <Route path="/obmen-i-vozvrat/" component={Obmenvozvrat}/>
