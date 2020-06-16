@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {catalog} from "../sidebar/constant";
+import {catalog, selectProduct} from "../sidebar/constant";
 import './cardProduct.css'
 
 
@@ -8,11 +8,12 @@ class CardProduct extends Component {
         tabIndex: 0
     }
     render() {
+      //  alert(this.props.selectProduct)
         const {stateProduct} = this.props;
+
         console.log(stateProduct);
         return (
             <div className="content">
-                <p>Props: {stateProduct.id}</p>
                 <div className="container">
                     <div className="wrap-cardProduct">
                         <div className="main-product">

@@ -45,35 +45,39 @@ import Onas from "./components/sidebar/Onas";
 import Oplatadostavka from "./components/sidebar/Oplatadostavka";
 import Obmenvozvrat from "./components/sidebar/Obmenvozvrat";
 import Contacts from "./components/sidebar/Contacts";
-import {catalog} from "./components/sidebar/constant";
+import {catalog,selectProduct} from "./components/sidebar/constant";
 
 // <-- Route infoSidebar
 
 class App extends Component {
     state = {
         catalog,
-        selectProduct: 5
+        selectProduct: null
     };
 
     //take the value of the card -->
     onCardSelected = (id) => {
         this.setCharacter(id);
+        //console.log(id);
+        //alert(this.state.selectProduct.id)
     };
 
-    setCharacter = (id = this.state.selectProduct) => {
+    setCharacter = (id = 0) => {
         const catalog = this.state.catalog;
         const res = catalog.filter(item => item.id === id);
         const [card] = res;
         this.setState({selectProduct: {...card}});
+        //alert([card])
+        //console.log({...card})
     };
 
-    componentDidMount() {
+    UNSAFE_componentWillMount() {
         this.setCharacter();
     };
     // take the value of the card  <--
 
     render() {
-        {console.log(this.state.selectProduct)}
+        {console.log(this.state.selectProduct.id)}
         return (
             <Layout>
                 {/*<p>{this.state.selectProduct.id}</p>*/}

@@ -183,6 +183,8 @@ const catalog = [
     }
 ];
 
+const selectProduct = [{}]
+
 const selectSort = [
     {value: 0, label: 'по популярности'},
     {value: 1, label: 'сначала дешевле'},
@@ -227,5 +229,6 @@ export {
     catalog,
     selectSort,
     selectCheckbox,
-    tabsCard
+    tabsCard,
+    selectProduct
 }
