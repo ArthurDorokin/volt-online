@@ -8,12 +8,11 @@ class CardProduct extends Component {
         tabIndex: 0
     }
     render() {
-      //  alert(this.props.selectProduct)
-        const {stateProduct} = this.props;
 
-        console.log(stateProduct);
         return (
             <div className="content">
+                <p>Props: {this.props.name}</p>
+                <p>{console.log(this.props.stateProduct)}</p>
                 <div className="container">
                     <div className="wrap-cardProduct">
                         <div className="main-product">

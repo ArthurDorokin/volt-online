@@ -35,7 +35,7 @@ class Catalog extends Component {
                         />
                         <div className="catalog">
                             {this.state.catalog.map((item) =>
-                                <div className="item-catalog" onClick={() => this.props.onCardSelected(item.id)}
+                                <div className="item-catalog" onClick={() => this.props.setCharacter(item.id)}
                                      key={item.id}>
                                     <div className="catalog-product">
                                         <a href={item.link} className="link-product">

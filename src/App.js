@@ -50,41 +50,45 @@ import {catalog,selectProduct} from "./components/sidebar/constant";
 // <-- Route infoSidebar
 
 class App extends Component {
-    state = {
-        catalog,
-        selectProduct: null
-    };
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            catalog,
+            selectProduct: 5,
+            name: 'Yulia',
+        };
+    }
     //take the value of the card -->
-    onCardSelected = (id) => {
-        this.setCharacter(id);
-        //console.log(id);
-        //alert(this.state.selectProduct.id)
-    };
 
-    setCharacter = (id = 0) => {
+    setCharacter = (id = this.state.selectProduct) => {
         const catalog = this.state.catalog;
         const res = catalog.filter(item => item.id === id);
         const [card] = res;
-        this.setState({selectProduct: {...card}});
-        //alert([card])
-        //console.log({...card})
+        console.log({...card})
+        this.setState({name: 'artur'});
     };
 
-    UNSAFE_componentWillMount() {
-        this.setCharacter();
-    };
+    //componentWillMount() {
+        //this.setCharacter();
+        //this.setState({name: 'artur'});
+
+        //this.setState({selectProduct: res});
+        //this.setState({selectProduct: 3});
+    //};
     // take the value of the card  <--
 
+
     render() {
-        {console.log(this.state.selectProduct.id)}
+          {console.log(this.state.selectProduct)}
+          {console.log(this.state.name)}
         return (
             <Layout>
                 {/*<p>{this.state.selectProduct.id}</p>*/}
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path="/monokoleso-inmotion-scv-v5f-black/"
-                           render={(props) => <CardProduct {...props} stateProduct={this.state.selectProduct} {...props} />}/>
+                           render={(props) => <CardProduct {...props} stateProduct={this.state.selectProduct} name={this.state.name} {...props} />}/>
                     {/*brandInfo*/}
                     <Route path="/airwheel/" component={Airwheel}/>
                     <Route path="/citycoco/" component={Citycoco}/>
@@ -111,7 +115,7 @@ class App extends Component {
                     <Route path="/chto-takoe-sigvey/" component={ChtoTakoeSigvey}/>
                     {/*infoProduct*/}
                     <Route path="/catalog/"
-                           render={(props) => <Catalog {...props} onCardSelected={this.onCardSelected} {...props} />}/>
+                           render={(props) => <Catalog {...props} setCharacter={this.setCharacter} {...props} />}/>
                     <Route path="/o-nas/" component={Onas}/>
                     <Route path="/oplata-i-dostavka/" component={Oplatadostavka}/>
                     <Route path="/obmen-i-vozvrat/" component={Obmenvozvrat}/>
