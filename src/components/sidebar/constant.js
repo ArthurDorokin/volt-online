@@ -1,7 +1,7 @@
 const catalog = [
     {
         id: 0,
-        //link: "/elektrosamokat-sns-aluminium-65-duymov-black/",
+        link: "/elektrosamokat-sns-aluminium-65-duymov-black/",
         img: "../img/content/elektrosamokat-sns-aluminium-65-duymov-black-91963412592561_small4.png",
         alt: "Электросамокат",
         info: "Электросамокат OIO CITY BIKE Elite White",
@@ -13,7 +13,7 @@ const catalog = [
     },
     {
         id: 1,
-        //link: "/elektroskeyt-gtf-jetskate-classic-one-edition/",
+        link: "/elektroskeyt-gtf-jetskate-classic-one-edition/",
         img: "../img/content/elektroskeyt-gtf-jetskate-classic-one-edition-64377766348990_small4.png",
         alt: "Электроскейт",
         info: "Электроскейт Like.Bike Teens Skate",
@@ -25,7 +25,7 @@ const catalog = [
     },
     {
         id: 2,
-        //link: "/elektrovelosiped-oio-city-bike-elite-white/",
+        link: "/elektrovelosiped-oio-city-bike-elite-white/",
         img: "../img/content/elektrovelosiped-oio-city-bike-elite-white-97933455367029_small4.jpg",
         alt: "Электровелосипед",
         info: "Электровелосипед ZPAO SPORT’250",

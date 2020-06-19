@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
 import AboutCompany from "./components/aboutCompany";
 import Layout from "./components/layout/Layout";
 import Home from "./components/layout/Home";
@@ -59,6 +59,7 @@ class App extends Component {
             name: 'Yulia',
         };
     }
+
     //take the value of the card -->
 
     setCharacter = (id = this.state.selectProduct) => {
@@ -68,23 +69,12 @@ class App extends Component {
         console.log({...card})
         this.setState({name: 'artur'});
     };
-
-    //componentWillMount() {
-        //this.setCharacter();
-        //this.setState({name: 'artur'});
-
-        //this.setState({selectProduct: res});
-        //this.setState({selectProduct: 3});
-    //};
     // take the value of the card  <--
 
 
     render() {
-          {console.log(this.state.selectProduct)}
-          {console.log(this.state.name)}
         return (
             <Layout>
-                {/*<p>{this.state.selectProduct.id}</p>*/}
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path="/monokoleso-inmotion-scv-v5f-black/"
