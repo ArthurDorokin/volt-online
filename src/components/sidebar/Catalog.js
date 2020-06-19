@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {NavLink} from "react-router-dom";
 import InfoProduct from "../infoProduct";
 import {catalog} from "../sidebar/constant"
 import 'rc-slider/assets/index.css';
@@ -35,15 +36,15 @@ class Catalog extends Component {
                         />
                         <div className="catalog">
                             {this.state.catalog.map((item) =>
-                                <div className="item-catalog" onClick={() => this.props.setCharacter(item.id)}
+                                <div className="item-catalog"
                                      key={item.id}>
                                     <div className="catalog-product">
-                                        <a href={item.link} className="link-product">
+                                        <NavLink to={item.link ? item.link : ''} onClick={() => this.props.setCharacter(item.id)} className="link-product">
                                             <div className="catalog-img">
                                                 <img
                                                     src={item.img} alt={item.alt}/>
                                             </div>
-                                        </a>
+                                        </NavLink>
                                         <div className="productSticker">
                                             <div className="productView">
                                                 <div

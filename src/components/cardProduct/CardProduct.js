@@ -8,26 +8,24 @@ class CardProduct extends Component {
         tabIndex: 0
     }
     render() {
-
+       const {stateProduct} = this.props
         return (
             <div className="content">
-                <p>Props: {this.props.name}</p>
-                <p>{console.log(this.props.stateProduct)}</p>
                 <div className="container">
                     <div className="wrap-cardProduct">
                         <div className="main-product">
                             <div className="img">
-                                <img src='/' alt='/'/>
+                                <img src={stateProduct.img} alt={stateProduct.alt}/>
                             </div>
                             <div className="description">
-                                <div className="title"><h2>//////</h2></div>
+                                <div className="title"><h2>{stateProduct.info}</h2></div>
                                 <div className="info-in-product">
                                     <div className="in-stock">В наличии</div>
                                     <div className="vendor-code">Артикул: <span>5rfw3a</span></div>
                                 </div>
-                                <div className="price">////// грн</div>
+                                <div className="price">{stateProduct.price} грн</div>
                                 <div className="order">
-                                    <div className="buy">///////</div>
+                                    <div className="buy">{stateProduct.buy}</div>
                                     <div className="quick-order">Быстрый заказ</div>
                                 </div>
                                 <div className="tabs-info-order">

@@ -55,19 +55,16 @@ class App extends Component {
 
         this.state = {
             catalog,
-            selectProduct: 5,
-            name: 'Yulia',
+            selectProduct: '',
         };
     }
 
     //take the value of the card -->
-
-    setCharacter = (id = this.state.selectProduct) => {
+    setCharacter = (id) => {
         const catalog = this.state.catalog;
         const res = catalog.filter(item => item.id === id);
         const [card] = res;
-        console.log({...card})
-        this.setState({name: 'artur'});
+        this.setState({selectProduct: {...card}});
     };
     // take the value of the card  <--
 
@@ -78,7 +75,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path="/monokoleso-inmotion-scv-v5f-black/"
-                           render={(props) => <CardProduct {...props} stateProduct={this.state.selectProduct} name={this.state.name} {...props} />}/>
+                           render={(props) => <CardProduct stateProduct={this.state.selectProduct}/>}/>
                     {/*brandInfo*/}
                     <Route path="/airwheel/" component={Airwheel}/>
                     <Route path="/citycoco/" component={Citycoco}/>
