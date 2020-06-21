@@ -19,8 +19,8 @@ class Layout extends Component {
 
         return (
             <div className='layout'>
-                <ScrollToTop />
                 <main>
+                    <ScrollToTop />
                     <Header/>
                     <div className="breadcrumb">
                         <div className="container">
