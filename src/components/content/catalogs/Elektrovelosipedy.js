@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {catalog} from "../../sidebar/constant";
 import SortPanel from "../../sidebar/SortPanel";
+import {NavLink} from "react-router-dom";
 
 class Elektrovelosipedy extends Component {
     state = {
@@ -35,12 +36,12 @@ class Elektrovelosipedy extends Component {
                                 {this.state.catalog.filter((item) => item.typeProduct === 3).map((item) =>
                                     <div className="item-catalog" key={item.id}>
                                         <div className="catalog-product">
-                                            <a href={item.link} className="link-product">
+                                            <NavLink to={item.link ? item.link : ''} className="link-product">
                                                 <div className="catalog-img">
                                                     <img
                                                         src={item.img} alt={item.alt}/>
                                                 </div>
-                                            </a>
+                                            </NavLink>
                                             <div className="productSticker">
                                                 <div className="productView">
                                                     <div

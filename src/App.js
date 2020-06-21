@@ -45,19 +45,15 @@ import Onas from "./components/sidebar/Onas";
 import Oplatadostavka from "./components/sidebar/Oplatadostavka";
 import Obmenvozvrat from "./components/sidebar/Obmenvozvrat";
 import Contacts from "./components/sidebar/Contacts";
-import {catalog,selectProduct} from "./components/sidebar/constant";
+import {catalog, selectProduct} from "./components/sidebar/constant";
 
 // <-- Route infoSidebar
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            catalog,
-            selectProduct: '',
-        };
-    }
+    state = {
+        catalog,
+        selectProduct: '',
+    };
 
     //take the value of the card -->
     setCharacter = (id) => {
@@ -66,6 +62,7 @@ class App extends Component {
         const [card] = res;
         this.setState({selectProduct: {...card}});
     };
+
     // take the value of the card  <--
 
 
@@ -74,7 +71,7 @@ class App extends Component {
             <Layout>
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/monokoleso-inmotion-scv-v5f-black/"
+                    <Route path="/card-product/elektrosamokat-sns-aluminium-65-duymov-black/"
                            render={(props) => <CardProduct stateProduct={this.state.selectProduct}/>}/>
                     {/*brandInfo*/}
                     <Route path="/airwheel/" component={Airwheel}/>

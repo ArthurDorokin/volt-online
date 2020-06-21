@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {catalog, selectProduct} from "../sidebar/constant";
 import './cardProduct.css'
-
+import {NavLink} from "react-router-dom";
 
 class CardProduct extends Component {
     state = {
@@ -86,12 +86,12 @@ class CardProduct extends Component {
                                     {catalog.filter((item) => item.typeProduct === stateProduct.typeProduct).map((item) =>
                                         <div className="item-product" key={item.id}>
                                             <div className="catalog-product">
-                                                <a href={item.link} className="link-product">
+                                                <NavLink to={item.link ? item.link : ''} className="link-product">
                                                     <div className="catalog-img">
                                                         <img
                                                             src={item.img} alt={item.alt}/>
                                                     </div>
-                                                </a>
+                                                </NavLink>
                                                 <div className="productSticker">
                                                     <div className="productView">
                                                         <div

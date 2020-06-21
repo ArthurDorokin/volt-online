@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {infoProductCarousel} from '../infoProduct/constans.js';
 import Slider from "react-slick";
 import {NavLink} from 'react-router-dom'
+
 export const InfoProductCarousel = () => {
     const settings = {
         dots: false,
@@ -15,11 +16,11 @@ export const InfoProductCarousel = () => {
         <Slider {...settings}>
             {infoProductCarousel.infoCarousel.map((item) =>
                 <div className="infoProductСarousel-item" key={item.id}>
-                    <a href={item.link}>
+                    <NavLink to={item.link ? item.link : ''}>
                         <img src={item.img} alt={item.alt}/>
                         <span>{item.infoDate}</span>
                         <p>{item.description}</p>
-                    </a>
+                    </NavLink>
                 </div>
             )}
         </Slider>

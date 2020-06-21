@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import InfoProduct from "../index";
-
+import {NavLink} from "react-router-dom";
 
 export const VidyElektrosamokatov = () => {
     return (
@@ -9,22 +9,22 @@ export const VidyElektrosamokatov = () => {
                 <div className="sidebar-article">
                     <ul className="sideMenu-list">
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="/catalog/">Каталог</a></div>
+                            <div className="sideMenu-t"><NavLink to="/catalog/">Каталог</NavLink></div>
                         </li>
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="/o-nas/">О нас</a></div>
+                            <div className="sideMenu-t"><NavLink to="/o-nas/">О нас</NavLink></div>
                         </li>
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="/oplata-i-dostavka/">Оплата и
-                                доставка</a></div>
+                            <div className="sideMenu-t"><NavLink to="/oplata-i-dostavka/">Оплата и
+                                доставка</NavLink></div>
                         </li>
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="/obmen-i-vozvrat/">Обмен и
-                                возврат</a></div>
+                            <div className="sideMenu-t"><NavLink to="/obmen-i-vozvrat/">Обмен и
+                                возврат</NavLink></div>
                         </li>
                         <li className="sideMenu-i">
-                            <div className="sideMenu-t"><a href="/contacts/">Контактная
-                                информация</a></div>
+                            <div className="sideMenu-t"><NavLink to="/contacts/">Контактная
+                                информация</NavLink></div>
                         </li>
                     </ul>
                 </div>

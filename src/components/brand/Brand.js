@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './brand.css'
 import {brandsList} from '../brand/constans.js';
+import {NavLink} from "react-router-dom";
 
 class Brand extends Component {
     state = {active: false};
@@ -22,7 +23,7 @@ class Brand extends Component {
                         <div className={`${"wrapB"} ${this.state.active ? "active" : ""}`}>
                             {brandsList.brands.map((item) =>
                                 <div className="item-brand" key={item.id}>
-                                    <a href={item.link}><img src={item.img} alt={item.alt}/></a>
+                                    <NavLink to={item.link ? item.link : ''}><img src={item.img} alt={item.alt}/></NavLink>
                                 </div>
                             )}
                         </div>

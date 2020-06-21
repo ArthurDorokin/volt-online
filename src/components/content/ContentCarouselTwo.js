@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Slider from "react-slick";
+import {NavLink} from "react-router-dom";
 
 export const ContentCarouselTwo = ({carouselTwoProps}) => {
 
@@ -16,12 +17,12 @@ export const ContentCarouselTwo = ({carouselTwoProps}) => {
             {carouselTwoProps.carouselItem.map((item) =>
                 <div className="item-product" key={item.id}>
                     <div className="catalog-product">
-                        <a href={item.link} className="link-product">
+                        <NavLink to={item.link ? item.link : ''} className="link-product">
                             <div className="catalog-img">
                                 <img
                                     src={item.img} alt={item.alt}/>
                             </div>
-                        </a>
+                        </NavLink>
                         <div className="productSticker">
                             <div className="productView">
                                 <div className="productSticker-item__promo"><p>РАСПРОДАЖА</p></div>

@@ -1,5 +1,6 @@
 import React from "react";
 import {catalog, client, contactInfo} from '../footer/constans.js';
+import {NavLink} from "react-router-dom";
 import './footer.css'
 
 const Footer = () => (
@@ -7,7 +8,7 @@ const Footer = () => (
         <div className="container">
             <div className="footerWrap">
                 <div className="logo-footer">
-                    <a href="/"><img src="../img/header/57812582766728.jpg" alt=""/></a>
+                    <NavLink to="/"><img src="../img/header/57812582766728.jpg" alt=""/></NavLink>
                     <p>© 2014—2020
                         Демонстрационный интернет-магазин</p>
                 </div>
@@ -15,7 +16,7 @@ const Footer = () => (
                     <h5>Каталог</h5>
                     <ul>
                         {catalog.catalogList.map((item) =>
-                            <li key={item.id}><a href={item.link}>{item.name}</a></li>
+                            <li key={item.id}><NavLink to={item.link ? item.link : ''}>{item.name}</NavLink></li>
                         )}
                     </ul>
                 </div>
@@ -23,7 +24,7 @@ const Footer = () => (
                     <h5>Клиентам</h5>
                     <ul>
                         {client.clientList.map((item) =>
-                            <li key={item.id}><a href={item.link}>{item.name}</a></li>
+                            <li key={item.id}><NavLink to={item.link ? item.link : ''}>{item.name}</NavLink></li>
                         )}
                     </ul>
                 </div>
@@ -31,7 +32,7 @@ const Footer = () => (
                     <h5>Контактная информация</h5>
                     <ul>
                         {contactInfo.contactInfoList.map((item) =>
-                            <li key={item.id}><a href={item.link}>{item.name}</a></li>
+                            <li key={item.id}><NavLink to={item.link ? item.link : ''}>{item.name}</NavLink></li>
                         )}
                     </ul>
                 </div>

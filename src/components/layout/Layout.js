@@ -3,11 +3,12 @@ import Header from "../header";
 import Footer from "../footer";
 import withBreadcrumbs from "react-router-breadcrumbs-hoc";
 import Home from "./Home";
+import {NavLink} from "react-router-dom";
 
 const Breadcrumbs = withBreadcrumbs()(({breadcrumbs}) => (
     <div className="breadcrumbs">
         {breadcrumbs.map(({breadcrumb, match}, index) => (
-            <a key={match.url} href={match.url || ""}>{breadcrumb}</a>
+            <NavLink key={match.url} to={match.url || ""}>{breadcrumb}</NavLink>
         ))}
     </div>
 ));
