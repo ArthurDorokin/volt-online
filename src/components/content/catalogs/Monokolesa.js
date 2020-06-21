@@ -36,7 +36,7 @@ class Monokolesa extends Component {
                                 {this.state.catalog.filter((item) => item.typeProduct === 4).map((item) =>
                                     <div className="item-catalog" key={item.id}>
                                         <div className="catalog-product">
-                                            <NavLink to={item.link ? item.link : ''} className="link-product">
+                                            <NavLink to={item.link ? item.link : ''} onClick={() => this.props.setCharacter(item.id)} className="link-product">
                                                 <div className="catalog-img">
                                                     <img
                                                         src={item.img} alt={item.alt}/>

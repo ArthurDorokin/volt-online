@@ -24,7 +24,7 @@ class Elektrosamokaty extends Component {
         return (
             <div className="main-catalogs">
                 <div className="container">
-                    <h1>Электровелосипеды</h1>
+                    <h1>Электросамокаты</h1>
                     <SortPanel
                         addStateNumRange={this.addStateNumRange}
                         handleChangeCheckbox={this.handleChangeCheckbox}
@@ -36,7 +36,7 @@ class Elektrosamokaty extends Component {
                                 {this.state.catalog.filter((item) => item.typeProduct === 1).map((item) =>
                                     <div className="item-catalog" key={item.id}>
                                         <div className="catalog-product">
-                                            <NavLink to={item.link ? item.link : ''} className="link-product">
+                                            <NavLink to={item.link ? item.link : ''} onClick={() => this.props.setCharacter(item.id)} className="link-product">
                                                 <div className="catalog-img">
                                                     <img
                                                         src={item.img} alt={item.alt}/>

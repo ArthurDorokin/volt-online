@@ -10,7 +10,7 @@ const Header = () => (
                 <div className="header-info">
                     <div className="wrap">
                         <div className="logo">
-                            <NavLink to="/"><img src="../img/header/57812582766728.jpg" alt=""/></NavLink>
+                            <NavLink to="/"><img src="/img/header/57812582766728.jpg" alt=""/></NavLink>
                         </div>
                         <div className="phone">
                             <NavLink to="tel:044 000-00-00">044 000-00-00</NavLink>
@@ -25,7 +25,7 @@ const Header = () => (
                             <p><strong>Сб:</strong> 12:00–18:00</p>
                         </div>
                         <div className="cart">
-                            <img src="../img/header/63007shoppingcart_109353.svg" alt=""/>
+                            <img src="/img/header/63007shoppingcart_109353.svg" alt=""/>
                         </div>
                     </div>
                 </div>

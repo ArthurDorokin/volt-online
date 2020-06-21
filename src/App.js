@@ -71,8 +71,8 @@ class App extends Component {
             <Layout>
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/card-product/elektrosamokat-sns-aluminium-65-duymov-black/"
-                           render={(props) => <CardProduct stateProduct={this.state.selectProduct}/>}/>
+                    <Route path="/card-product/"
+                           render={(props) => <CardProduct stateProduct={this.state.selectProduct} setCharacter={this.setCharacter}/>}/>
                     {/*brandInfo*/}
                     <Route path="/airwheel/" component={Airwheel}/>
                     <Route path="/citycoco/" component={Citycoco}/>
@@ -83,12 +83,18 @@ class App extends Component {
                     <Route path="/smartBalance/" component={SmartBalance}/>
                     <Route path="/xiaomi/" component={Xiaomi}/>
                     {/*catalogProduct*/}
-                    <Route path="/skeyt/" component={Skeyt}/>
-                    <Route path="/elektrosamokaty/" component={Elektrosamokaty}/>
-                    <Route path="/elektrovelosipedy/" component={Elektrovelosipedy}/>
-                    <Route path="/monokolesa/" component={Monokolesa}/>
-                    <Route path="/giroskutery/" component={Giroskutery}/>
-                    <Route path="/segvei/" component={Segvei}/>
+                    <Route path="/skeyt/"
+                           render={(props) => <Skeyt setCharacter={this.setCharacter}/>}/>
+                    <Route path="/elektrosamokaty/"
+                           render={(props) => <Elektrosamokaty setCharacter={this.setCharacter}/>}/>
+                    <Route path="/elektrovelosipedy/"
+                           render={(props) => <Elektrovelosipedy setCharacter={this.setCharacter}/>}/>
+                    <Route path="/monokolesa/"
+                           render={(props) => <Monokolesa setCharacter={this.setCharacter}/>}/>
+                    <Route path="/giroskutery/"
+                           render={(props) => <Giroskutery setCharacter={this.setCharacter}/>}/>
+                    <Route path="/segvei/"
+                           render={(props) => <Segvei setCharacter={this.setCharacter}/>}/>
                     {/*infoProduct*/}
                     <Route path="/vidy-elektrosamokatov/" component={VidyElektrosamokatov}/>
                     <Route path="/kak-nauchitsya-katatsya-na-monokolese/" component={NauchitsyaKatatsya}/>

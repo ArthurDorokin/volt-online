@@ -86,7 +86,7 @@ class CardProduct extends Component {
                                     {catalog.filter((item) => item.typeProduct === stateProduct.typeProduct).map((item) =>
                                         <div className="item-product" key={item.id}>
                                             <div className="catalog-product">
-                                                <NavLink to={item.link ? item.link : ''} className="link-product">
+                                                <NavLink to={item.link ? item.link : ''} onClick={() => this.props.setCharacter(item.id)} className="link-product">
                                                     <div className="catalog-img">
                                                         <img
                                                             src={item.img} alt={item.alt}/>

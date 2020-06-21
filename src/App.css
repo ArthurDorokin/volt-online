@@ -177,7 +177,9 @@ h4 {
 .productSticker .productSticker-item__promo.new {
     background: #7baf35;
 }
-
+.catalog-img img {
+    width: 100%;
+}
 /*catalog*/
 
 
