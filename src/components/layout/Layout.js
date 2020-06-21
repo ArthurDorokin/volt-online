@@ -4,6 +4,7 @@ import Footer from "../footer";
 import withBreadcrumbs from "react-router-breadcrumbs-hoc";
 import Home from "./Home";
 import {NavLink} from "react-router-dom";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 const Breadcrumbs = withBreadcrumbs()(({breadcrumbs}) => (
     <div className="breadcrumbs">
@@ -18,6 +19,7 @@ class Layout extends Component {
 
         return (
             <div className='layout'>
+                <ScrollToTop />
                 <main>
                     <Header/>
                     <div className="breadcrumb">
