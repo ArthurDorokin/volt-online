@@ -4,14 +4,15 @@ import Brand from "../brand";
 import Content from "../content";
 import AboutCompany from "../aboutCompany";
 import InfoProduct from "../infoProduct";
+import BasketProduct from "../basketProduct/BascketProduct";
 
 class Home extends Component{
     render() {
-        //const { setCharacter } = this.props;
         return (
             <div className="home">
                 <MainWindow/>
                 <Brand/>
+                <BasketProduct toggleClass={this.props.toggleClass}/>
                 <Content setCharacter={this.props.setCharacter} />
                 <AboutCompany/>
                 <InfoProduct/>

@@ -1,0 +1,57 @@
+.layout.active .wrapBasketBg {
+    display: block;
+}
+.wrapBasketBg {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    z-index: 15;
+    display: none;
+}
+.basketProduct {
+    position: relative;
+    top: 10%;
+    right: 0;
+    left: 0;
+    display: flex;
+    background: #ffffff;
+    width: 800px;
+    margin: 0 auto;
+    height: 630px;
+    padding: 30px;
+}
+.wrapBasketBg .basketProduct .title {
+    width: 100%;
+}
+.wrapBasketBg .basketProduct .title .wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.wrapBasketBg .basketProduct .close {
+    position: relative;
+    width: 20px;
+    cursor: pointer;
+}
+.wrapBasketBg .basketProduct .close span:nth-of-type(1) {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    top: 0;
+    right: 0;
+    background: #000000;
+    transform: rotate(45deg);
+}
+.wrapBasketBg .basketProduct .close span:nth-of-type(2) {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    top: 0;
+    right: 0;
+    background: #000000;
+    transform: rotate(-45deg);
+}

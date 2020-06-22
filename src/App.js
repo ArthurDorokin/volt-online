@@ -47,6 +47,7 @@ import Obmenvozvrat from "./components/sidebar/Obmenvozvrat";
 import Contacts from "./components/sidebar/Contacts";
 import {catalog, selectProduct} from "./components/sidebar/constant";
 import Content from "./components/content";
+import Brand from "./components/brand";
 
 // <-- Route infoSidebar
 
@@ -54,6 +55,7 @@ class App extends Component {
     state = {
         catalog,
         selectProduct: '',
+        active: false
     };
 
     //take the value of the card -->
@@ -66,13 +68,22 @@ class App extends Component {
 
     // take the value of the card  <--
 
+    // toggleClass basket
+    toggleClass = () => {
+        const active = this.state.active;
+        this.setState({
+            active: !active
+        })
+    }
+    // toggleClass basket
+
 
     render() {
         return (
-            <Layout>
+            <Layout toggleClass={this.toggleClass}>
                 <Switch>
                     <Route exact path="/"
-                           render={(props) => <Home setCharacter={this.setCharacter}/>}/>
+                           render={(props) => <Home setCharacter={this.setCharacter} toggleClass={this.toggleClass}/>}/>
                     <Route path="/card-product/"
                            render={(props) => <CardProduct stateProduct={this.state.selectProduct} setCharacter={this.setCharacter}/>}/>
                     {/*brandInfo*/}

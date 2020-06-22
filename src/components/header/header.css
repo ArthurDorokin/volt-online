@@ -96,3 +96,6 @@
     color: #ffffff;
     text-decoration: none;
 }
+.header .cart{
+    cursor: pointer;
+}

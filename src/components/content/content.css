@@ -54,21 +54,15 @@
 }
 
 .content .carousel-init {
-    /*width: 100%;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: space-between;*/
     margin: 0 0 120px 0;
 }
 
 .content .item-product {
-    /*width: 17.5%;*/
     position: relative;
     border: 1px solid #dddddd;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /*padding: 10px;*/
     border-radius: 3px;
     transition: .3s;
     outline: none;

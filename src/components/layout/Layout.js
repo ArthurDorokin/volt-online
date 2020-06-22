@@ -15,16 +15,17 @@ const Breadcrumbs = withBreadcrumbs()(({breadcrumbs}) => (
 ));
 
 class Layout extends Component {
-    render() {
 
+
+    render() {
         return (
-            <div className='layout'>
+            <div className={`${"layout"} ${this.props.active ? "active" : ""}`}>
                 <main>
-                    <ScrollToTop />
-                    <Header/>
+                    <ScrollToTop/>
+                    <Header toggleClass={this.props.toggleClass} />
                     <div className="breadcrumb">
                         <div className="container">
-                            {(window.location.href) === 'http://localhost:3000/' ? "" : <Breadcrumbs/> }
+                            {(window.location.href) === 'http://localhost:3000/' ? "" : <Breadcrumbs/>}
                         </div>
                     </div>
                     {this.props.children}
