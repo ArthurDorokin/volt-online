@@ -177,6 +177,17 @@ h4 {
 .productSticker .productSticker-item__promo.new {
     background: #7baf35;
 }
+.content .productSticker .productSticker-item__promo.sale {
+    background: #e93f11;
+}
+
+.content .productSticker .productSticker-item__promo.hit {
+    background: #3da5ca;
+}
+
+.content .productSticker .productSticker-item__promo.new {
+    background: #7baf35;
+}
 .catalog-img img {
     width: 100%;
 }

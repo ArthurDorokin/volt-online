@@ -25,9 +25,9 @@ export const ContentCarouselThree = ({carouselThreeProps, setCharacter}) => {
                         </NavLink>
                         <div className="productSticker">
                             <div className="productView">
-                                <div className="productSticker-item__promo"><p>РАСПРОДАЖА</p></div>
-                                <div className="productSticker-item__new"><p>НОВИНКА</p></div>
-                                <div className="productSticker-item__popular"><p>ХИТ</p></div>
+                                <div
+                                    className={`${"productSticker-item__promo"} ${item.filterIcon.classFilter}`}>
+                                    <p>{item.filterIcon.name}</p></div>
                             </div>
                         </div>
                     </div>
