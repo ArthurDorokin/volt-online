@@ -3,7 +3,7 @@ import './content.css'
 import {ContentCarouselOne} from './ContentCarouselOne';
 import {ContentCarouselTwo} from './ContentCarouselTwo';
 import {ContentCarouselThree} from './ContentCarouselThree';
-import {carouselOne, carouselTwo, carouselThree} from "../content/constant"
+import {catalog} from "../sidebar/constant"
 import {Banner} from './Banner';
 
 class Content extends Component {
@@ -13,14 +13,14 @@ class Content extends Component {
                 <div className="container">
                     <div className="wrap-content">
                         <div className="carousel-init carousel-one">
-                            <ContentCarouselOne carouselOneProps={carouselOne}/>
+                            <ContentCarouselOne carouselOneProps={catalog} setCharacter={this.props.setCharacter}/>
                         </div>
                         <div className="carousel-init carousel-two">
-                            <ContentCarouselTwo carouselTwoProps={carouselTwo}/>
+                            <ContentCarouselTwo carouselTwoProps={catalog} setCharacter={this.props.setCharacter}/>
                         </div>
                         <Banner />
                         <div className="carousel-init carousel-three">
-                            <ContentCarouselThree carouselThreeProps={carouselThree}/>
+                            <ContentCarouselThree carouselThreeProps={catalog} setCharacter={this.props.setCharacter}/>
                         </div>
                     </div>
                 </div>

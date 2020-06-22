@@ -7,11 +7,12 @@ import InfoProduct from "../infoProduct";
 
 class Home extends Component{
     render() {
+        //const { setCharacter } = this.props;
         return (
             <div className="home">
                 <MainWindow/>
                 <Brand/>
-                <Content/>
+                <Content setCharacter={this.props.setCharacter} />
                 <AboutCompany/>
                 <InfoProduct/>
             </div>

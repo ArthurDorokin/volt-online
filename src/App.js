@@ -46,6 +46,7 @@ import Oplatadostavka from "./components/sidebar/Oplatadostavka";
 import Obmenvozvrat from "./components/sidebar/Obmenvozvrat";
 import Contacts from "./components/sidebar/Contacts";
 import {catalog, selectProduct} from "./components/sidebar/constant";
+import Content from "./components/content";
 
 // <-- Route infoSidebar
 
@@ -70,7 +71,8 @@ class App extends Component {
         return (
             <Layout>
                 <Switch>
-                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/"
+                           render={(props) => <Home setCharacter={this.setCharacter}/>}/>
                     <Route path="/card-product/"
                            render={(props) => <CardProduct stateProduct={this.state.selectProduct} setCharacter={this.setCharacter}/>}/>
                     {/*brandInfo*/}
@@ -105,7 +107,7 @@ class App extends Component {
                     <Route path="/chto-takoe-sigvey/" component={ChtoTakoeSigvey}/>
                     {/*infoProduct*/}
                     <Route path="/catalog/"
-                           render={(props) => <Catalog {...props} setCharacter={this.setCharacter} {...props} />}/>
+                           render={(props) => <Catalog setCharacter={this.setCharacter}/>}/>
                     <Route path="/o-nas/" component={Onas}/>
                     <Route path="/oplata-i-dostavka/" component={Oplatadostavka}/>
                     <Route path="/obmen-i-vozvrat/" component={Obmenvozvrat}/>
