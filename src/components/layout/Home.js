@@ -12,7 +12,6 @@ class Home extends Component {
             <div className="home">
                 <MainWindow/>
                 <Brand/>
-                <BasketProduct toggleClass={this.props.toggleClass} stateToggleClass={this.props.active}/>
                 <Content setCharacter={this.props.setCharacter}/>
                 <AboutCompany/>
                 <InfoProduct/>
