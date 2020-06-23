@@ -5,6 +5,7 @@ import withBreadcrumbs from "react-router-breadcrumbs-hoc";
 import Home from "./Home";
 import {NavLink} from "react-router-dom";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
+import {catalog} from "../sidebar/constant";
 
 const Breadcrumbs = withBreadcrumbs()(({breadcrumbs}) => (
     <div className="breadcrumbs">
@@ -16,10 +17,9 @@ const Breadcrumbs = withBreadcrumbs()(({breadcrumbs}) => (
 
 class Layout extends Component {
 
-
     render() {
         return (
-            <div className={`${"layout"} ${this.props.active ? "active" : ""}`}>
+            <div className={`${"layout"} ${this.props.stateToggleClass ? "active" : ""}`}>
                 <main>
                     <ScrollToTop/>
                     <Header toggleClass={this.props.toggleClass} />

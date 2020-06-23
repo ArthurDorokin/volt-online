@@ -4,6 +4,7 @@ import '../basketProduct/bascketProduct.css'
 class BasketProduct extends Component {
 
     render() {
+
         return (
             <div className="wrapBasketBg">
                 <div className="basketProduct">
