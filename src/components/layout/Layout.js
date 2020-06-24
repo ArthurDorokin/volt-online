@@ -22,7 +22,7 @@ class Layout extends Component {
         return (
             <div className={`${"layout"} ${this.props.stateToggleClass ? "active" : ""}`}>
                 <main>
-                    <BasketProduct toggleClass={this.props.toggleClass} stateToggleClass={this.props.active}/>
+                    <BasketProduct setCharacter={this.props.setCharacter} toggleClass={this.props.toggleClass} stateToggleClass={this.props.active}/>
                     <ScrollToTop/>
                     <Header toggleClass={this.props.toggleClass} />
                     <div className="breadcrumb">

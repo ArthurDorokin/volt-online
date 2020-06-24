@@ -1,6 +1,7 @@
 .layout.active .wrapBasketBg {
     display: block;
 }
+
 .wrapBasketBg {
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -11,30 +12,36 @@
     z-index: 15;
     display: none;
 }
+
 .basketProduct {
     position: relative;
     top: 10%;
     right: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
     background: #ffffff;
     width: 800px;
     margin: 0 auto;
     height: 630px;
     padding: 30px;
 }
+
 .wrapBasketBg .basketProduct .title {
     width: 100%;
 }
-.wrapBasketBg .basketProduct .title .wrap{
+
+.wrapBasketBg .basketProduct .title .wrap {
     display: flex;
     justify-content: space-between;
 }
+
 .wrapBasketBg .basketProduct .close {
     position: relative;
     width: 20px;
     cursor: pointer;
 }
+
 .wrapBasketBg .basketProduct .close span:nth-of-type(1) {
     content: '';
     position: absolute;
@@ -45,6 +52,7 @@
     background: #000000;
     transform: rotate(45deg);
 }
+
 .wrapBasketBg .basketProduct .close span:nth-of-type(2) {
     content: '';
     position: absolute;
@@ -54,4 +62,132 @@
     right: 0;
     background: #000000;
     transform: rotate(-45deg);
+}
+
+.wrapBasketBg .product-item-wrap .product-item {
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.wrapBasketBg .product-item-wrap .block-left {
+    display: flex;
+    align-items: center;
+}
+
+.wrapBasketBg .product-item-wrap .product-item a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+}
+
+.wrapBasketBg .product-item-wrap .product-item .description {
+    margin: 0 0 0 50px;
+}
+
+.wrapBasketBg .product-item-wrap .product-item .title-product {
+    margin: 0 0 10px 0;
+}
+
+.wrapBasketBg .product-item-wrap .product-item img {
+    width: 100px;
+    height: 100px;
+}
+
+.wrapBasketBg .order-btn {
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0 0 0;
+    padding: 20px 10px;
+    justify-content: space-between;
+}
+
+.wrapBasketBg .order-btn .back-site-btn p {
+    cursor: pointer;
+    position: relative;
+    margin: 0 0 0 60px;
+    transition: .5s;
+}
+
+.wrapBasketBg .order-btn .back-site-btn p:hover {
+    color: #FF7901;
+    transition: .5s;
+}
+
+.wrapBasketBg .order-btn .back-site-btn p:hover:before {
+    transition: .5s;
+    left: -50px;
+}
+
+.wrapBasketBg .order-btn .back-site-btn p:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 16px;
+    background-size: contain;
+    top: 0;
+    left: -40px;
+    background: url(/img/arrow.png);
+    transition: .5s;
+}
+
+.wrapBasketBg .order-btn .finalPriceNum {
+    margin: 0 0 10px 0;
+}
+
+.wrapBasketBg .order-btn .finalPriceNum span {
+    font-size: 14px;
+}
+
+.wrapBasketBg .order-btn .finalPriceBtn button {
+    background: #FF7901;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 7px 15px 7px 15px;
+    border-radius: 3px;
+}
+
+.wrapBasketBg .block-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.wrapBasketBg .block-right .quan {
+    position: relative;
+}
+
+.wrapBasketBg .block-right .quan span {
+    position: absolute;
+    cursor: pointer;
+}
+
+.wrapBasketBg .block-right .quan span:nth-of-type(1) {
+    left: 5px;
+    top: 2px;
+    font-size: 25px;
+}
+
+.wrapBasketBg .block-right .quan span:nth-of-type(2) {
+    right: 5px;
+    font-size: 20px;
+    top: 7px;
+}
+
+.wrapBasketBg .block-right .quan input {
+    border: 1px solid #8c8b8b;
+    outline: 0;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
 }

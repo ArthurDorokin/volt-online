@@ -71,7 +71,6 @@ class App extends Component {
     // toggleClass basket
     toggleClass = () => {
         const active = this.state.active;
-        console.log(1)
         this.setState({
             active: !active
         })
@@ -81,7 +80,7 @@ class App extends Component {
 
     render() {
         return (
-            <Layout toggleClass={this.toggleClass} stateToggleClass={this.state.active}>
+            <Layout setCharacter={this.setCharacter} toggleClass={this.toggleClass} stateToggleClass={this.state.active}>
                 <Switch>
                     <Route exact path="/"
                            render={(props) => <Home setCharacter={this.setCharacter} toggleClass={this.toggleClass} stateToggleClass={this.state.active} />}/>
