@@ -9,9 +9,9 @@ import {catalog} from "../sidebar/constant";
 import BasketProduct from "../basketProduct/BascketProduct";
 
 const Breadcrumbs = withBreadcrumbs()(({breadcrumbs}) => (
-    <div className="breadcrumbs">
+    <div className={`${"breadcrumbs"} ${window.location.href === 'http://localhost:3000/' ? "home-page" : ""}`}>
         {breadcrumbs.map(({breadcrumb, match}, index) => (
-            <NavLink key={match.url} to={match.url || ""}>{breadcrumb}</NavLink>
+            <NavLink key={match.url} to={match.url || ""} >{breadcrumb}</NavLink>
         ))}
     </div>
 ));
@@ -22,12 +22,19 @@ class Layout extends Component {
         return (
             <div className={`${"layout"} ${this.props.stateToggleClass ? "active" : ""}`}>
                 <main>
-                    <BasketProduct setCharacter={this.props.setCharacter} toggleClass={this.props.toggleClass} stateToggleClass={this.props.active}/>
+                    <BasketProduct
+                        basketList={this.props.basketList}
+                        toggleClass={this.props.toggleClass}
+                        stateToggleClass={this.props.active}
+                    />
                     <ScrollToTop/>
-                    <Header toggleClass={this.props.toggleClass} />
+                    <Header
+                        toggleClass={this.props.toggleClass}
+                        basketList={this.props.basketList}
+                    />
                     <div className="breadcrumb">
                         <div className="container">
-                            {(window.location.href) === 'http://localhost:3000/' ? "" : <Breadcrumbs/>}
+                            <Breadcrumbs/>
                         </div>
                     </div>
                     {this.props.children}

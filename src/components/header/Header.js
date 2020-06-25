@@ -6,6 +6,8 @@ import {NavLink} from "react-router-dom";
 class Header extends Component {
 
     render() {
+        const {basketList} = this.props
+        const basketListLength = basketList.length
         return (
             <div className="header">
                 <div className="wrapper">
@@ -28,6 +30,7 @@ class Header extends Component {
                                     <p><strong>Сб:</strong> 12:00–18:00</p>
                                 </div>
                                 <div className="cart" onClick={() => this.props.toggleClass()}>
+                                    <span className="countItem">{basketListLength}</span>
                                     <img src="/img/header/63007shoppingcart_109353.svg" alt=""/>
                                 </div>
                             </div>

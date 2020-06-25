@@ -98,4 +98,20 @@
 }
 .header .cart{
     cursor: pointer;
+    position: relative;
+}
+.header .cart .countItem{
+    position: absolute;
+    right: 13px;
+    top: -13px;
+    color: #fe9f1a;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fe9f1a;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-size: 12px;
 }

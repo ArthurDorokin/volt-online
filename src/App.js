@@ -55,7 +55,21 @@ class App extends Component {
     state = {
         catalog,
         selectProduct: '',
-        active: false
+        active: false,
+        basketList: [
+            {
+                id: 0,
+                link: "/card-product/elektrosamokat-sns-aluminium-65-duymov-black/",
+                img: "/img/content/elektrosamokat-sns-aluminium-65-duymov-black-91963412592561_small4.png",
+                alt: "Электросамокат",
+                info: "Электросамокат OIO CITY BIKE Elite White",
+                price: "22 990",
+                buy: "Купить",
+                filterIcon: {name: "распродажа", classFilter: "sale", val: 0},
+                typeProduct: 1
+
+            }
+        ]
     };
 
     //take the value of the card -->
@@ -64,6 +78,18 @@ class App extends Component {
         const res = catalog.filter(item => item.id === id);
         const [card] = res;
         this.setState({selectProduct: {...card}});
+    };
+
+    // take the value of the card  <--
+
+    //take the value of the card -->
+    setForBasket = (id) => {
+        const catalog = this.state.catalog;
+        const res = catalog.filter(item => item.id === id);
+        const [card] = res;
+        const basketList = this.state.basketList
+        basketList.push({...card})
+        this.setState({basketList : basketList})
     };
 
     // take the value of the card  <--
@@ -79,13 +105,27 @@ class App extends Component {
 
 
     render() {
+        {console.log(this.state.basketList)}
         return (
-            <Layout setCharacter={this.setCharacter} toggleClass={this.toggleClass} stateToggleClass={this.state.active}>
+            <Layout
+                setCharacter={this.setCharacter}
+                basketList={this.state.basketList}
+                toggleClass={this.toggleClass}
+                stateToggleClass={this.state.active}
+            >
                 <Switch>
                     <Route exact path="/"
-                           render={(props) => <Home setCharacter={this.setCharacter} toggleClass={this.toggleClass} stateToggleClass={this.state.active} />}/>
+                           render={(props) => <Home
+                               setForBasket={this.setForBasket}
+                               setCharacter={this.setCharacter}
+                               toggleClass={this.toggleClass}
+                               tateToggleClass={this.state.active}
+                           />}/>
                     <Route path="/card-product/"
-                           render={(props) => <CardProduct stateProduct={this.state.selectProduct} setCharacter={this.setCharacter}/>}/>
+                           render={(props) => <CardProduct
+                               stateProduct={this.state.selectProduct}
+                               setCharacter={this.setCharacter}
+                           />}/>
                     {/*brandInfo*/}
                     <Route path="/airwheel/" component={Airwheel}/>
                     <Route path="/citycoco/" component={Citycoco}/>
@@ -93,7 +133,7 @@ class App extends Component {
                     <Route path="/mijia/" component={Mijia}/>
                     <Route path="/ninebot/" component={Ninebot}/>
                     <Route path="/segway/" component={Segway}/>
-                    <Route path="/smartBalance/" component={SmartBalance}/>
+                    <Route path="/smart-balance/" component={SmartBalance}/>
                     <Route path="/xiaomi/" component={Xiaomi}/>
                     {/*catalogProduct*/}
                     <Route path="/skeyt/"

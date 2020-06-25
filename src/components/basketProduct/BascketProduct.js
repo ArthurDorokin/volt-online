@@ -4,21 +4,7 @@ import '../basketProduct/bascketProduct.css'
 
 class BasketProduct extends Component {
     state = {
-        counter: 1,
-        basketList: [
-            {
-                id: 0,
-                link: "/card-product/elektrosamokat-sns-aluminium-65-duymov-black/",
-                img: "/img/content/elektrosamokat-sns-aluminium-65-duymov-black-91963412592561_small4.png",
-                alt: "Электросамокат",
-                info: "Электросамокат OIO CITY BIKE Elite White",
-                price: "22 990",
-                buy: "Купить",
-                filterIcon: {name: "распродажа", classFilter: "sale", val: 0},
-                typeProduct: 1
-
-            }
-        ]
+        counter: 1
     }
 
     increment = () => this.setState({counter: this.state.counter + 1});
@@ -28,6 +14,7 @@ class BasketProduct extends Component {
     onChangeHandle = (event) => this.setState({counter: event.value});
 
     render() {
+        const {basketList} = this.props
 
         return (
             <div className="wrapBasketBg">
@@ -42,7 +29,7 @@ class BasketProduct extends Component {
                         </div>
                     </div>
                     <div className="product-item-wrap">
-                        {this.state.basketList.map((item) =>
+                        {basketList.map((item) =>
                             <div key={item.id} className="product-item">
                                 <div className="block-left">
                                     <div className="img" onClick={() => this.props.setCharacter(item.id)}>

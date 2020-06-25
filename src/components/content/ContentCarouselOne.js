@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import Slider from "react-slick";
 import {NavLink} from "react-router-dom";
 
-export const ContentCarouselOne = ({carouselOneProps, setCharacter}) => {
+export const ContentCarouselOne = ({carouselOneProps, setCharacter, setForBasket}) => {
     const settings = {
         dots: false,
         infinite: false,
@@ -34,7 +34,7 @@ export const ContentCarouselOne = ({carouselOneProps, setCharacter}) => {
                         <div className="info-title">{item.info}</div>
                         <div className="btn-product">
                             <div className="info-price">{item.price} грн</div>
-                            <div className="btn-buy">
+                            <div className="btn-buy" onClick={() => setForBasket(item.id)}>
                                 <button>{item.buy}</button>
                             </div>
                         </div>

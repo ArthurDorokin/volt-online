@@ -64,6 +64,25 @@
     transform: rotate(-45deg);
 }
 
+.wrapBasketBg .product-item-wrap {
+    overflow-y: scroll;
+    height: 340px;
+}
+
+.wrapBasketBg .product-item-wrap::-webkit-scrollbar {
+    width: 5px;
+}
+
+.wrapBasketBg .product-item-wrap::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 50px;
+}
+
+.wrapBasketBg .product-item-wrap::-webkit-scrollbar-thumb {
+    background: #FF7901;
+    border-radius: 50px;
+}
+
 .wrapBasketBg .product-item-wrap .product-item {
     border: 1px solid #e1e1e1;
     border-radius: 5px;
@@ -71,6 +90,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    margin: 0 5px 5px 0;
+}
+
+.essay_writing .writing-service .tab-item {
+    scrollbar-color: #7FA4E6 #ffffff;
+    scrollbar-width: thin;
 }
 
 .wrapBasketBg .product-item-wrap .block-left {
