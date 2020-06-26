@@ -26,6 +26,7 @@ class Layout extends Component {
                         basketList={this.props.basketList}
                         toggleClass={this.props.toggleClass}
                         stateToggleClass={this.props.active}
+                        setCharacter={this.props.setCharacter}
                     />
                     <ScrollToTop/>
                     <Header
