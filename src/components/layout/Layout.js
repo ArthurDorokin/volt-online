@@ -27,6 +27,7 @@ class Layout extends Component {
                         toggleClass={this.props.toggleClass}
                         stateToggleClass={this.props.active}
                         setCharacter={this.props.setCharacter}
+                        deleteProduct={this.props.deleteProduct}
                     />
                     <ScrollToTop/>
                     <Header

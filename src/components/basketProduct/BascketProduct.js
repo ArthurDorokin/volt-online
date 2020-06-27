@@ -7,10 +7,16 @@ import '../basketProduct/bascketProduct.css'
 class BasketProduct extends Component {
 
     render() {
-        const {basketList, setCharacter, toggleClass} = this.props
+        const {basketList, setCharacter, toggleClass, deleteProduct} = this.props
+
         const basketListItems = basketList.map((item) => {
             return (
-                    <ProductItem setCharacter={setCharacter} toggleClass={toggleClass} {...item}/>
+                <ProductItem key={item.id}
+                             deleteProduct={deleteProduct}
+                             setCharacter={setCharacter}
+                             toggleClass={toggleClass}
+                             {...item}
+                />
             )
         });
         return (

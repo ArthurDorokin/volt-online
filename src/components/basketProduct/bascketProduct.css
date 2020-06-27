@@ -91,8 +91,22 @@
     justify-content: space-between;
     padding: 10px;
     margin: 0 5px 5px 0;
+    position: relative;
 }
-
+.wrapBasketBg .product-item-wrap .product-item .delete{
+    cursor: pointer;
+    /*background: #e30505;*/
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapBasketBg .product-item-wrap .product-item .delete img{
+    width: 25px;
+    height: 30px;
+}
 .essay_writing .writing-service .tab-item {
     scrollbar-color: #7FA4E6 #ffffff;
     scrollbar-width: thin;
@@ -184,7 +198,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 20%;
+    width: 30%;
 }
 
 .wrapBasketBg .block-right .quan {
@@ -195,7 +209,10 @@
     position: absolute;
     cursor: pointer;
 }
-
+.wrapBasketBg .block-right .quan span.off {
+    pointer-events: none;
+    cursor: default;
+}
 .wrapBasketBg .block-right .quan span:nth-of-type(1) {
     left: 5px;
     top: 2px;
@@ -214,5 +231,6 @@
     width: 70px;
     height: 30px;
     text-align: center;
+    pointer-events: none;
     border-radius: 5px;
 }

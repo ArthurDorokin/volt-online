@@ -56,20 +56,8 @@ class App extends Component {
         catalog,
         selectProduct: '',
         active: false,
-        basketList: [
-            {
-                id: 0,
-                link: "/card-product/elektrosamokat-sns-aluminium-65-duymov-black/",
-                img: "/img/content/elektrosamokat-sns-aluminium-65-duymov-black-91963412592561_small4.png",
-                alt: "Электросамокат",
-                info: "Электросамокат OIO CITY BIKE Elite White",
-                price: "22 990",
-                buy: "Купить",
-                filterIcon: {name: "распродажа", classFilter: "sale", val: 0},
-                typeProduct: 1
-
-            }
-        ]
+        basketList: [],
+        sumPrice: []
     };
 
     //take the value of the card -->
@@ -79,10 +67,9 @@ class App extends Component {
         const [card] = res;
         this.setState({selectProduct: {...card}});
     };
-
     // take the value of the card  <--
 
-    //take the value of the card -->
+    //take the value of the card Basket -->
     setForBasket = (id) => {
         const catalog = this.state.catalog;
         const res = catalog.filter(item => item.id === id);
@@ -90,9 +77,17 @@ class App extends Component {
         const basketList = this.state.basketList
         basketList.push({...card})
         this.setState({basketList : basketList})
-    };
 
-    // take the value of the card  <--
+    };
+    // take the value of the card Basket  <--
+
+    // delete product in basket
+    deleteProduct = (id) => {
+        this.setState(prevState => ({
+            basketList: prevState.basketList.filter(item => item.id !== id)
+        }));
+    }
+    // delete product in basket
 
     // toggleClass basket
     toggleClass = () => {
@@ -105,12 +100,13 @@ class App extends Component {
 
 
     render() {
-        {console.log(this.state.basketList)}
+        // {console.log(this.state.basketList)}
         return (
             <Layout
                 setCharacter={this.setCharacter}
                 basketList={this.state.basketList}
                 toggleClass={this.toggleClass}
+                deleteProduct={this.deleteProduct}
                 stateToggleClass={this.state.active}
             >
                 <Switch>

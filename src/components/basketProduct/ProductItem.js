@@ -4,16 +4,32 @@ import {NavLink} from "react-router-dom";
 
 class ProductItem extends Component {
     state = {
-        counter: 1
+        counter: 1,
+        finalSum: this.props.price
     }
 
-    increment = () => this.setState({counter: this.state.counter + 1});
+    increment = () => {
+        this.setState({counter: this.state.counter + 1});
+        const propsPrice = this.props.price;
+        const stateCounter = this.state.counter + 1;
+        const sum = (stateCounter * parseInt(propsPrice.replace(/\s+/g, ''),10));
+        this.setState({finalSum: sum});
+    }
 
-    decrement = () => this.setState({counter: Math.max(this.state.counter - 1, 1)});
+    decrement = () => {
+        this.setState({counter: Math.max(this.state.counter - 1, 1)});
+        const propsPrice = this.props.price;
+        const countPrice = this.state.finalSum
+        const minus = countPrice - parseInt(propsPrice.replace(/\s+/g, ''),10);
+        this.setState({finalSum: minus});
+    }
 
     onChangeHandle = (event) => this.setState({counter: event.value});
 
+
+
     render() {
+        {console.log('finalSum render', this.state.finalSum)}
         const {id, link, img, alt, info, price} = this.props
         return (
             <div key={id} className="product-item">
@@ -33,14 +49,17 @@ class ProductItem extends Component {
                     </div>
                 </div>
                 <div className="block-right">
+                    <div className="delete" onClick={() => this.props.deleteProduct(id)}>
+                        <img src="/img/baskets.png" alt=""/>
+                    </div>
                     <div className="quantity">
                         <div className="quan">
-                            <span onClick={this.decrement}>-</span>
+                            <span onClick={this.decrement} className={this.state.counter === 1 ? 'off' : "on"}>-</span>
                             <input type="text" value={this.state.counter} onChange={this.onChangeHandle}/>
                             <span onClick={this.increment}>+</span>
                         </div>
                     </div>
-                    <div className="cost">12 222</div>
+                    <div className="cost">{this.state.finalSum} грн</div>
                 </div>
             </div>
         )
