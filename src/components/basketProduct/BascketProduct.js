@@ -5,6 +5,17 @@ import '../basketProduct/bascketProduct.css'
 
 
 class BasketProduct extends Component {
+    state = {
+        finalSum: [0]
+    }
+
+    // updateData = (finalSum) => {
+    //     //this.setState({ finalSum: finalSum })
+    //     this.setState({ finalSum: finalSum })
+    //     // const basketList = this.state.finalSum
+    //     // basketList.push(finalSum)
+    //     // this.setState({finalSum : basketList})
+    // }
 
     render() {
         const {basketList, setCharacter, toggleClass, deleteProduct} = this.props
@@ -14,11 +25,13 @@ class BasketProduct extends Component {
                 <ProductItem key={item.id}
                              deleteProduct={deleteProduct}
                              setCharacter={setCharacter}
+                             //updateData={this.updateData}
                              toggleClass={toggleClass}
                              {...item}
                 />
             )
         });
+        // {console.log(this.state.finalSum)}
         return (
 
             <div className="wrapBasketBg">
@@ -33,7 +46,9 @@ class BasketProduct extends Component {
                         </div>
                     </div>
                     <div className="product-item-wrap">
+                        {/*component*/}
                         {basketListItems}
+                        {/*component*/}
                     </div>
                     <div className="order-btn">
                         <div className="back-site-btn" onClick={() => this.props.toggleClass()}>
@@ -41,7 +56,7 @@ class BasketProduct extends Component {
                         </div>
                         <div className="final-price-btn">
                             <div className="finalPriceNum">
-                                <span>Итого</span> 18 889 грн
+                                <span>Итого</span> {this.state.finalSum} грн
                             </div>
                             <div className="finalPriceBtn">
                                 <button>Оформить заказ</button>

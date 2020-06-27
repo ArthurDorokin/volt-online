@@ -26,10 +26,10 @@ class ProductItem extends Component {
 
     onChangeHandle = (event) => this.setState({counter: event.value});
 
-
-
     render() {
+
         {console.log('finalSum render', this.state.finalSum)}
+
         const {id, link, img, alt, info, price} = this.props
         return (
             <div key={id} className="product-item">
@@ -62,6 +62,7 @@ class ProductItem extends Component {
                     <div className="cost">{this.state.finalSum} грн</div>
                 </div>
             </div>
+
         )
     }
 
