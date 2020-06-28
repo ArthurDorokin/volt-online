@@ -27,7 +27,7 @@ class BasketProduct extends Component {
                 />
             )
         });
-        // {console.log(this.state.arrTotalAmount)}
+        //{console.log(this.state.arrTotalAmount)}
         return (
 
             <div className="wrapBasketBg">

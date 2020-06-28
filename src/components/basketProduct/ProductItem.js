@@ -19,12 +19,12 @@ class ProductItem extends Component {
 
         //for component basketProduct
 
-        // const arrTotalAmount = this.state.arrTotalAmount;
-        // arrTotalAmount.push({"id": this.state.counter - 1, "sum": sum});
-        // this.state.arrTotalAmount.map((item) => {
-        //    this.setState({totalAmountFinal: item});
-        //     this.props.totalAmount(item);
-        // })
+        const arrTotalAmount = this.state.arrTotalAmount;
+        arrTotalAmount.push({"id": this.state.counter - 1, "sum": sum});
+        this.state.arrTotalAmount.map((item) => {
+           this.setState({totalAmountFinal: item});
+            this.props.totalAmount(item);
+        })
     }
 
     decrement = () => {
@@ -36,12 +36,12 @@ class ProductItem extends Component {
 
         //for component basketProduct
 
-        // const arrTotalAmount = this.state.arrTotalAmount;
-        // arrTotalAmount.push({"id": this.state.counter - 1, "sum": minus});
-        // this.state.arrTotalAmount.map((item) => {
-        //     this.setState({totalAmountFinal: item});
-        //     this.props.totalAmount(item);
-        // })
+        const arrTotalAmount = this.state.arrTotalAmount;
+        arrTotalAmount.push({"id": this.state.counter - 1, "sum": minus});
+        this.state.arrTotalAmount.map((item) => {
+            this.setState({totalAmountFinal: item});
+            this.props.totalAmount(item);
+        })
     }
 
     onChangeHandle = (event) => this.setState({counter: event.value});
@@ -49,7 +49,7 @@ class ProductItem extends Component {
     render() {
 
         // {console.log('finalSum render', this.state.finalSum)}
-        //{console.log('arrTotalAmount', this.state.arrTotalAmount)}
+        {console.log('arrTotalAmount', this.state.totalAmountFinal)}
 
         const {id, link, img, alt, info, price} = this.props
         return (
