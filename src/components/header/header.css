@@ -55,6 +55,7 @@
 .header .infoTime{
     display: flex;
     align-items: center;
+    position: relative;
 }
 .header .infoTime img{
     width: 40px;
@@ -96,14 +97,27 @@
     color: #ffffff;
     text-decoration: none;
 }
+.header .block-cart{
+    width: 40px;
+    height: 45px;
+    position: relative;
+}
 .header .cart{
     cursor: pointer;
-    position: relative;
+    position: fixed;
+    background: #181818;
+    height: 55px;
+    display: flex;
+    align-items: flex-end;
+    z-index: 14;
+    border-radius: 15px;
+    padding: 5px;
+    right: 3px;
 }
 .header .cart .countItem{
     position: absolute;
-    right: 13px;
-    top: -13px;
+    right: 17px;
+    top: 4px;
     color: #fe9f1a;
     width: 20px;
     height: 20px;

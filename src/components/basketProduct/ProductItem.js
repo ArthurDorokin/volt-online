@@ -5,7 +5,9 @@ import {NavLink} from "react-router-dom";
 class ProductItem extends Component {
     state = {
         counter: 1,
-        finalSum: this.props.price
+        finalSum: this.props.price,
+        arrTotalAmount: [],
+        totalAmountFinal: []
     }
 
     increment = () => {
@@ -14,21 +16,40 @@ class ProductItem extends Component {
         const stateCounter = this.state.counter + 1;
         const sum = (stateCounter * parseInt(propsPrice.replace(/\s+/g, ''),10));
         this.setState({finalSum: sum});
+
+        //for component basketProduct
+
+        // const arrTotalAmount = this.state.arrTotalAmount;
+        // arrTotalAmount.push({"id": this.state.counter - 1, "sum": sum});
+        // this.state.arrTotalAmount.map((item) => {
+        //    this.setState({totalAmountFinal: item});
+        //     this.props.totalAmount(item);
+        // })
     }
 
     decrement = () => {
         this.setState({counter: Math.max(this.state.counter - 1, 1)});
         const propsPrice = this.props.price;
-        const countPrice = this.state.finalSum
+        const countPrice = this.state.finalSum;
         const minus = countPrice - parseInt(propsPrice.replace(/\s+/g, ''),10);
         this.setState({finalSum: minus});
+
+        //for component basketProduct
+
+        // const arrTotalAmount = this.state.arrTotalAmount;
+        // arrTotalAmount.push({"id": this.state.counter - 1, "sum": minus});
+        // this.state.arrTotalAmount.map((item) => {
+        //     this.setState({totalAmountFinal: item});
+        //     this.props.totalAmount(item);
+        // })
     }
 
     onChangeHandle = (event) => this.setState({counter: event.value});
 
     render() {
 
-        {console.log('finalSum render', this.state.finalSum)}
+        // {console.log('finalSum render', this.state.finalSum)}
+        //{console.log('arrTotalAmount', this.state.arrTotalAmount)}
 
         const {id, link, img, alt, info, price} = this.props
         return (

@@ -29,9 +29,11 @@ class Header extends Component {
                                     <p><strong>Будние:</strong> 10:00–19:00</p>
                                     <p><strong>Сб:</strong> 12:00–18:00</p>
                                 </div>
-                                <div className="cart" onClick={() => this.props.toggleClass()}>
-                                    <span className="countItem">{basketListLength}</span>
-                                    <img src="/img/header/63007shoppingcart_109353.svg" alt=""/>
+                                <div className="block-cart">
+                                    <div className="cart" onClick={() => this.props.toggleClass()}>
+                                        <span className="countItem">{basketListLength}</span>
+                                        <img src="/img/header/63007shoppingcart_109353.svg" alt=""/>
+                                    </div>
                                 </div>
                             </div>
                         </div>

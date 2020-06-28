@@ -6,16 +6,12 @@ import '../basketProduct/bascketProduct.css'
 
 class BasketProduct extends Component {
     state = {
-        finalSum: [0]
+        totalAmountFinal: []
     }
 
-    // updateData = (finalSum) => {
-    //     //this.setState({ finalSum: finalSum })
-    //     this.setState({ finalSum: finalSum })
-    //     // const basketList = this.state.finalSum
-    //     // basketList.push(finalSum)
-    //     // this.setState({finalSum : basketList})
-    // }
+    totalAmount = (totalAmountFinal) => {
+        this.setState({ totalAmountFinal: totalAmountFinal })
+    }
 
     render() {
         const {basketList, setCharacter, toggleClass, deleteProduct} = this.props
@@ -25,13 +21,13 @@ class BasketProduct extends Component {
                 <ProductItem key={item.id}
                              deleteProduct={deleteProduct}
                              setCharacter={setCharacter}
-                             //updateData={this.updateData}
+                             totalAmount={this.totalAmount}
                              toggleClass={toggleClass}
                              {...item}
                 />
             )
         });
-        // {console.log(this.state.finalSum)}
+        // {console.log(this.state.arrTotalAmount)}
         return (
 
             <div className="wrapBasketBg">
@@ -56,7 +52,7 @@ class BasketProduct extends Component {
                         </div>
                         <div className="final-price-btn">
                             <div className="finalPriceNum">
-                                <span>Итого</span> {this.state.finalSum} грн
+                                <span>Итого</span> {this.state.totalAmountFinal.sum} грн
                             </div>
                             <div className="finalPriceBtn">
                                 <button>Оформить заказ</button>
