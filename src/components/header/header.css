@@ -2,36 +2,43 @@
     background: #181818;
     color: #ffffff;
 }
-.header .container .header-info{
+
+.header .container .header-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
 }
-.header .wrap{
+
+.header .wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.header .logo img{
+
+.header .logo img {
     max-width: 200px;
 }
-.header .phone{
+
+.header .phone {
     display: flex;
     align-items: center;
     color: #ffffff;
 }
-.header .phone a{
+
+.header .phone a {
     color: #ffffff;
     text-decoration: none;
     position: relative;
     margin: 0 0 0 50px;
 }
-.header .phone p{
+
+.header .phone p {
     margin: 0 0 0 20px;
     cursor: pointer;
 
 }
+
 .header .phone a:nth-of-type(1):before {
     content: '';
     position: absolute;
@@ -42,6 +49,7 @@
     top: -2px;
     left: -30px;
 }
+
 .header .phone a:nth-of-type(2):before {
     content: '';
     position: absolute;
@@ -52,24 +60,30 @@
     top: -2px;
     left: -30px;
 }
-.header .infoTime{
+
+.header .infoTime {
     display: flex;
     align-items: center;
     position: relative;
 }
-.header .infoTime img{
+
+.header .infoTime img {
     width: 40px;
 }
-.header .infoTime .schedule{
+
+.header .infoTime .schedule {
     margin: 0 15px 0 0;
 }
-.header .infoTime .schedule p{
+
+.header .infoTime .schedule p {
     margin: 5px 0;
 }
-.header .infoTime .schedule p:nth-of-type(1){
+
+.header .infoTime .schedule p:nth-of-type(1) {
     position: relative;
 }
-.header .infoTime .schedule p:nth-of-type(1):before{
+
+.header .infoTime .schedule p:nth-of-type(1):before {
     content: '';
     position: absolute;
     background: url("/img/header/preferencessystemtime_9451.svg");
@@ -79,10 +93,12 @@
     top: -2px;
     left: -30px;
 }
+
 .header .header-navigation {
 
     background: #272727;
 }
+
 .header .header-navigation ul {
     width: 55%;
     padding: 10px 0;
@@ -92,19 +108,22 @@
     list-style-type: none;
     margin: 20px 0 0 0;
 }
-.header .header-navigation ul li a{
+
+.header .header-navigation ul li a {
     font-size: 15px;
     color: #ffffff;
     text-decoration: none;
 }
-.header .block-cart{
+
+.header .block-cart {
     width: 40px;
     height: 45px;
     position: relative;
 }
-.header .cart{
+
+.header .cart {
     cursor: pointer;
-    position: fixed;
+    position: relative;
     background: #181818;
     height: 55px;
     display: flex;
@@ -114,10 +133,20 @@
     padding: 5px;
     right: 3px;
 }
-.header .cart .countItem{
-    position: absolute;
+
+.header.basket .cart {
+    position: fixed;
+    right: 10px;
+}
+
+.header.basket .cart .countItem {
     right: 17px;
-    top: 4px;
+}
+
+.header .cart .countItem {
+    position: absolute;
+    right: 8px;
+    top: 7px;
     color: #fe9f1a;
     width: 20px;
     height: 20px;

@@ -4,12 +4,29 @@ import {header} from "../header/constans"
 import {NavLink} from "react-router-dom";
 
 class Header extends Component {
+    state = {
+        lastScrollY: 0
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll, true);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        const lastScrollY = window.scrollY;
+        this.setState({ lastScrollY: lastScrollY })
+    };
 
     render() {
+
         const {basketList} = this.props
         const basketListLength = basketList.length
         return (
-            <div className="header">
+            <div className={`${"header"} ${this.state.lastScrollY > 100 ? 'basket' : '' }`}>
                 <div className="wrapper">
                     <div className="container">
                         <div className="header-info">
