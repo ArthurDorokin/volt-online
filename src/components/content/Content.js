@@ -13,7 +13,10 @@ class Content extends Component {
                 <div className="container">
                     <div className="wrap-content">
                         <div className="carousel-init carousel-one">
-                            <ContentCarouselOne carouselOneProps={catalog} setCharacter={this.props.setCharacter} setForBasket={this.props.setForBasket}/>
+                            <ContentCarouselOne carouselOneProps={catalog}
+                                                setCharacter={this.props.setCharacter}
+                                                wordReplacement={this.props.wordReplacement}
+                                                setForBasket={this.props.setForBasket}/>
                         </div>
                         <div className="carousel-init carousel-two">
                             <ContentCarouselTwo carouselTwoProps={catalog} setCharacter={this.props.setCharacter}/>

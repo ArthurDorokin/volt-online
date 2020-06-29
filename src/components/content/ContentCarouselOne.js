@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import Slider from "react-slick";
 import {NavLink} from "react-router-dom";
 
-export const ContentCarouselOne = ({carouselOneProps, setCharacter, setForBasket}) => {
+export const ContentCarouselOne = ({carouselOneProps, setCharacter, setForBasket, wordReplacement}) => {
     const settings = {
         dots: false,
         infinite: false,
@@ -35,7 +35,8 @@ export const ContentCarouselOne = ({carouselOneProps, setCharacter, setForBasket
                         <div className="btn-product">
                             <div className="info-price">{item.price} грн</div>
                             <div className="btn-buy" onClick={() => setForBasket(item.id)}>
-                                <button>{item.buy}</button>
+                                {/*<button>{item.buy}</button>*/}
+                                <button onClick={() => wordReplacement(item.id)}>{item.id === 1 ? item.inBasket : item.buy}</button>
                             </div>
                         </div>
                     </div>

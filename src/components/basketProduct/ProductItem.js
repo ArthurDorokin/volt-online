@@ -49,7 +49,7 @@ class ProductItem extends Component {
     render() {
 
         // {console.log('finalSum render', this.state.finalSum)}
-        {console.log('arrTotalAmount', this.state.totalAmountFinal)}
+        //{console.log('arrTotalAmount', this.state.totalAmountFinal)}
 
         const {id, link, img, alt, info, price} = this.props
         return (

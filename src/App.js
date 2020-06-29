@@ -57,7 +57,8 @@ class App extends Component {
         selectProduct: '',
         active: false,
         basketList: [],
-        sumPrice: []
+        sumPrice: [],
+
     };
 
     //take the value of the card -->
@@ -98,9 +99,16 @@ class App extends Component {
     }
     // toggleClass basket
 
+    wordReplacement = (id) => {
+        const catalog = this.state.catalog;
+        const res = catalog.filter(item => item.id === id);
+
+        console.log(res)
+    }
+
 
     render() {
-        // {console.log(this.state.basketList)}
+        //{console.log(this.state.basketList)}
         return (
             <Layout
                 setCharacter={this.setCharacter}
@@ -116,6 +124,7 @@ class App extends Component {
                                setCharacter={this.setCharacter}
                                toggleClass={this.toggleClass}
                                tateToggleClass={this.state.active}
+                               wordReplacement={this.wordReplacement}
                            />}/>
                     <Route path="/card-product/"
                            render={(props) => <CardProduct

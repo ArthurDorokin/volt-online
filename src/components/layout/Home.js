@@ -18,6 +18,7 @@ class Home extends Component {
                 <Content
                     setCharacter={this.props.setCharacter}
                     setForBasket={this.props.setForBasket}
+                    wordReplacement={this.props.wordReplacement}
                 />
                 <AboutCompany/>
                 <InfoProduct/>

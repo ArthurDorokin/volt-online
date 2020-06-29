@@ -7,6 +7,7 @@ const catalog = [
         info: "Электросамокат OIO CITY BIKE Elite White",
         price: "22 990",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "распродажа", classFilter: "sale", val: 0},
         typeProduct: 1
 
@@ -19,6 +20,7 @@ const catalog = [
         info: "Электроскейт Like.Bike Teens Skate",
         price: "13 999",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "распродажа", classFilter: "sale", val: 0},
         typeProduct: 2
 
@@ -31,6 +33,7 @@ const catalog = [
         info: "Электровелосипед ZPAO SPORT’250",
         price: "18 600",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "новинка", classFilter: "new", val: 1},
         typeProduct: 3
 
@@ -43,6 +46,7 @@ const catalog = [
         info: "Моноколесо InMotion SCV V5F Black",
         price: "16 000",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "хит", classFilter: "hit", val: 2},
         typeProduct: 4 
 
@@ -55,6 +59,7 @@ const catalog = [
         info: "Электроскейт Like.Bike Teens Skate",
         price: "15 568",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "хит", classFilter: "hit", val: 2},
         typeProduct: 2
 
@@ -67,6 +72,7 @@ const catalog = [
         info: "Электроскейт GTF Jetskate Classic Two Edition",
         price: "10 999",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon:
             {name: "новинка", classFilter: "new", val: 1},
         typeProduct: 2
@@ -80,6 +86,7 @@ const catalog = [
         info: "Электросамокат Segway Ninebot KickScooter ES2 Gray",
         price: "15 999",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "распродажа", classFilter: "sale", val: 0},
         typeProduct: 1
 
@@ -92,6 +99,7 @@ const catalog = [
         info: "Электросамокат SNS T9",
         price: "18 199",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "новинка", classFilter: "new", val: 1},
         typeProduct: 1
 
@@ -104,6 +112,7 @@ const catalog = [
         info: "Моноколесо Segway Ninebot A1 Белый",
         price: "12 999",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "новинка", classFilter: "new", val: 1},
         typeProduct: 4
 
@@ -117,6 +126,7 @@ const catalog = [
         info: "Электровелосипед OIO CITY BIKE Elite White",
         price: "11 000",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "хит", classFilter: "hit", val: 2},
         typeProduct: 3
 
@@ -129,6 +139,7 @@ const catalog = [
         info: "Электровелосипед складной Kerambit sport Bolids 36 500",
         price: "23 899",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "хит", classFilter: "hit", val: 2},
         typeProduct: 3
 
@@ -141,6 +152,7 @@ const catalog = [
         info: "Сигвей Black edition 2000",
         price: "13 986",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "новинка", classFilter: "new", val: 1},
         typeProduct: 5
 
@@ -153,6 +165,7 @@ const catalog = [
         info: "Сигвей White edition 2001",
         price: "18 100",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "новинка", classFilter: "new", val: 1},
         typeProduct: 5
 
@@ -165,6 +178,7 @@ const catalog = [
         info: "Гироскутер Color pro 100",
         price: "16 500",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "новинка", classFilter: "new", val: 1},
         typeProduct: 6
 
@@ -177,6 +191,7 @@ const catalog = [
         info: "Гироскутер Fire sport 5000",
         price: "11 800",
         buy: "Купить",
+        inBasket: "В корзине",
         filterIcon: {name: "новинка", classFilter: "new", val: 1},
         typeProduct: 6
 
