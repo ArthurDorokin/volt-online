@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./sidebar.css"
 import InfoProduct from "../infoProduct";
 import {NavLink} from "react-router-dom";
+import MapGoogle from "../mapGoogle/MapGoogle"
 
 export const Contacts = () => {
     return (
@@ -62,6 +63,9 @@ export const Contacts = () => {
                         <div className="street">
                             <h3>Адрес</h3>
                             <p>Киев, ул. Крещатик</p>
+                            <div className="map">
+                                <MapGoogle />
+                            </div>
                         </div>
                     </div>
                 </div>

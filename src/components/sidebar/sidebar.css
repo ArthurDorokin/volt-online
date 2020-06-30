@@ -10,12 +10,17 @@
 
 .contacts .wrap {
     display: flex;
+    padding: 0 0 100px 0;
 }
 
 .contacts .wrap .street {
     margin: 0 0 0 100px;
 }
-
+.contacts .wrap .map {
+    width: 600px;
+    height: 500px;
+    position: relative;
+}
 .contacts .info p {
     color: #272727;
     font-size: 17px;
