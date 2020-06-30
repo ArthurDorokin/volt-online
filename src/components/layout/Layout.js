@@ -4,7 +4,7 @@ import Footer from "../footer";
 import withBreadcrumbs from "react-router-breadcrumbs-hoc";
 import Home from "./Home";
 import {NavLink} from "react-router-dom";
-import ScrollToTop from "../ScrollToTop/ScrollToTop";
+import ScrollToTop from "../include/ScrollToTop/ScrollToTop";
 import {catalog} from "../sidebar/constant";
 import BasketProduct from "../basketProduct/BascketProduct";
 

@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./sidebar.css"
 import InfoProduct from "../infoProduct";
 import {NavLink} from "react-router-dom";
-import MapGoogle from "../mapGoogle/MapGoogle"
+import MapGoogle from "../include/mapGoogle/MapGoogle"
 
 export const Contacts = () => {
     return (
