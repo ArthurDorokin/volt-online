@@ -51,6 +51,11 @@ import Brand from "./components/brand";
 
 // <-- Route infoSidebar
 
+//Route OrderPage -->
+import OrderPage from "./components/orderPage/OrderPage";
+
+// <-- Route OrderPage
+
 class App extends Component {
     state = {
         catalog,
@@ -77,7 +82,7 @@ class App extends Component {
         const [card] = res;
         const basketList = this.state.basketList
         basketList.push({...card})
-        this.setState({basketList : basketList})
+        this.setState({basketList: basketList})
 
     };
     // take the value of the card Basket  <--
@@ -168,6 +173,8 @@ class App extends Component {
                     <Route path="/oplata-i-dostavka/" component={Oplatadostavka}/>
                     <Route path="/obmen-i-vozvrat/" component={Obmenvozvrat}/>
                     <Route path="/contacts/" component={Contacts}/>
+                    {/*OrderPage*/}
+                    <Route path="/order/" component={OrderPage}/>
                     {/*404*/}
                     <Route path='*' exact={true} component={NotFound}/>
                 </Switch>

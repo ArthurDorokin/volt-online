@@ -1,0 +1,93 @@
+.orderPage .wrap-block {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 100px 0;
+}
+
+.orderPage .wrap-block .left-block {
+    width: 62%;
+    padding: 25px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.orderPage .wrap-block .right-block {
+    width: 32%;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.orderPage .wrap-block .deliveryWrap .delivery {
+    display: flex;
+    align-items: center;
+}
+
+.orderPage .wrap-block .deliveryWrap {
+    border-top: 1px dashed rgba(0, 0, 0, .2);
+}
+
+.orderPage .wrap-block .paymentWrap {
+    border-top: 1px dashed rgba(0, 0, 0, .2);
+    border-bottom: 1px dashed rgba(0, 0, 0, .2);
+    margin: 0 0 50px 0;
+}
+
+.orderPage .wrap-block .paymentWrap .payment {
+    display: flex;
+    align-items: center;
+}
+
+
+.orderPage .wrap-block .flex {
+    display: flex;
+    align-items: center;
+}
+
+.orderPage .wrap-block .flex p {
+    width: 170px;
+}
+
+.orderPage .wrap-block .flex .errorMessage{
+    font-size: 12px;
+    margin: 0 0 0 10px;
+    color: #f00;
+}
+
+.orderPage .wrap-block .delivery h3 {
+    margin: 0;
+}
+
+.orderPage .wrap-block .payment h3 {
+    margin: 0;
+}
+
+.orderPage .wrap-block input {
+    border: 1px solid #acacac;
+    background: #fff;
+    border-radius: 4px;
+    line-height: normal;
+    vertical-align: middle;
+    transition: border-color 0.1s;
+    padding: 6px 8px;
+    font-size: 16px;
+    height: 20px;
+    width: 250px;
+}
+
+.orderPage .wrap-block .deliverySelect {
+    width: 268px;
+    padding: 0 0 0 66px;
+}
+
+.orderPage .wrap-block .paymentSelect {
+    width: 268px;
+    padding: 0 0 0 87px;
+}
+.orderPage .btn-order {
+    background: #FF7901;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 7px 15px 7px 15px;
+    border-radius: 3px;
+}
