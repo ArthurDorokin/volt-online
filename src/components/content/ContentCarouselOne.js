@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React, {Component, useState} from "react";
 import Slider from "react-slick";
 import {NavLink} from "react-router-dom";
 
-export const ContentCarouselOne = ({carouselOneProps, setCharacter, setForBasket, wordReplacement}) => {
+export const ContentCarouselOne = ({carouselOneProps, setCharacter, setForBasket, wordReplacement, basketList}) => {
     const settings = {
         dots: false,
         infinite: false,
@@ -10,6 +10,16 @@ export const ContentCarouselOne = ({carouselOneProps, setCharacter, setForBasket
         slidesToShow: 5,
         slidesToScroll: 1
     }
+
+    const basketListSort = (basketList.map((item) => item.id))
+    const carouselOnePropsSort = (carouselOneProps.map((item) => item.id))
+    const res = basketListSort.filter(value => carouselOnePropsSort.includes(value))
+    //const res = basketListSort.filter(value => carouselOnePropsSort.includes(value)).join(',')
+
+   console.log('basketListSort', basketListSort)
+   console.log('carouselOnePropsSort', carouselOnePropsSort)
+   console.log('res', res)
+
 
     return (
         <Slider {...settings}>
@@ -35,8 +45,9 @@ export const ContentCarouselOne = ({carouselOneProps, setCharacter, setForBasket
                         <div className="btn-product">
                             <div className="info-price">{item.price} грн</div>
                             <div className="btn-buy" onClick={() => setForBasket(item.id)}>
-                                {/*<button>{item.buy}</button>*/}
-                                <button onClick={() => wordReplacement(item.id)}>{item.id === 1 ? item.inBasket : item.buy}</button>
+                                <button className={item.id  === 2 ? 'inBasket' : 'noBasket'} onClick={() => wordReplacement(item.id)}>
+                                    {item.id === 2 ? item.inBasket : item.buy}
+                                </button>
                             </div>
                         </div>
                     </div>

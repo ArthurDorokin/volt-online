@@ -63,6 +63,7 @@ class App extends Component {
         active: false,
         basketList: [],
         sumPrice: [],
+        listInBasket: []
 
     };
 
@@ -107,12 +108,19 @@ class App extends Component {
     wordReplacement = (id) => {
         const catalog = this.state.catalog;
         const res = catalog.filter(item => item.id === id);
+        const listInBasket = this.state.listInBasket
+        listInBasket.push({...res})
+        this.setState({basketList: listInBasket})
 
-        console.log(res)
+        // this.state.listInBasket.map((item) => {
+        //     console.log([item.id])
+        // })
+        //console.log(res)
     }
 
 
     render() {
+        //{console.log(this.state.listInBasket)}
         //{console.log(this.state.basketList)}
         return (
             <Layout
@@ -130,6 +138,7 @@ class App extends Component {
                                toggleClass={this.toggleClass}
                                tateToggleClass={this.state.active}
                                wordReplacement={this.wordReplacement}
+                               basketList={this.state.basketList}
                            />}/>
                     <Route path="/card-product/"
                            render={(props) => <CardProduct

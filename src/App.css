@@ -194,7 +194,12 @@ h4 {
     width: 100%;
 }
 /*catalog*/
-
+.content .btn-product button.inBasket {
+    background: #ffffff;
+    border: 1px solid #e92f11;
+    color: #e92f11;
+    pointer-events: none;
+}
 
 @media (max-width: 1390px) {
     .brand .wrapBrand .btn-more-brand {

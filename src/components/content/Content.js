@@ -16,7 +16,9 @@ class Content extends Component {
                             <ContentCarouselOne carouselOneProps={catalog}
                                                 setCharacter={this.props.setCharacter}
                                                 wordReplacement={this.props.wordReplacement}
-                                                setForBasket={this.props.setForBasket}/>
+                                                setForBasket={this.props.setForBasket}
+                                                basketList={this.props.basketList}
+                            />
                         </div>
                         <div className="carousel-init carousel-two">
                             <ContentCarouselTwo carouselTwoProps={catalog} setCharacter={this.props.setCharacter}/>
