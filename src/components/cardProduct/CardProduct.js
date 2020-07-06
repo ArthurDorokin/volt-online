@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {catalog, selectProduct} from "../sidebar/constant";
+import {catalog} from "../sidebar/constant";
 import './cardProduct.css'
 import {NavLink} from "react-router-dom";
 

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {BrowserRouter as Router, Switch, Route, NavLink} from "react-router-dom";
-import AboutCompany from "./components/aboutCompany";
+import { Switch, Route} from "react-router-dom";
+// import AboutCompany from "./components/aboutCompany";
 import Layout from "./components/layout/Layout";
 import Home from "./components/layout/Home";
 import NotFound from "./components/notFound/NotFound";
@@ -45,9 +45,9 @@ import Onas from "./components/sidebar/Onas";
 import Oplatadostavka from "./components/sidebar/Oplatadostavka";
 import Obmenvozvrat from "./components/sidebar/Obmenvozvrat";
 import Contacts from "./components/sidebar/Contacts";
-import {catalog, selectProduct} from "./components/sidebar/constant";
-import Content from "./components/content";
-import Brand from "./components/brand";
+import {catalog} from "./components/sidebar/constant";
+// import Content from "./components/content";
+// import Brand from "./components/brand";
 
 // <-- Route infoSidebar
 

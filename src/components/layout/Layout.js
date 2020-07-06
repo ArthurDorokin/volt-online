@@ -2,10 +2,10 @@ import React, {Component} from "react";
 import Header from "../header";
 import Footer from "../footer";
 import withBreadcrumbs from "react-router-breadcrumbs-hoc";
-import Home from "./Home";
+// import Home from "./Home";
 import {NavLink} from "react-router-dom";
 import ScrollToTop from "../include/ScrollToTop/ScrollToTop";
-import {catalog} from "../sidebar/constant";
+//import {catalog} from "../sidebar/constant";
 import BasketProduct from "../basketProduct/BascketProduct";
 
 const Breadcrumbs = withBreadcrumbs()(({breadcrumbs}) => (

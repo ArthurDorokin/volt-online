@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import {infoProductCarousel} from '../infoProduct/constans.js';
 import Slider from "react-slick";
 import {NavLink} from 'react-router-dom'

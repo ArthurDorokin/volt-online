@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React from "react";
 
-export const Haibike = () => {
+const Haibike = () => {
     return (
         <div className="main-catalogs">
             <div className="container">

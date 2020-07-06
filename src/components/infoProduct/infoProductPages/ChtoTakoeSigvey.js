@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React from "react";
 import InfoProduct from "../index";
 import {NavLink} from "react-router-dom";
 
-export const ChtoTakoeSigvey = () => {
+const ChtoTakoeSigvey = () => {
     return (
         <div className="info-page">
             <div className="article-text">

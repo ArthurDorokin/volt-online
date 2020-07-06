@@ -4,8 +4,8 @@ import Brand from "../brand";
 import Content from "../content";
 import AboutCompany from "../aboutCompany";
 import InfoProduct from "../infoProduct";
-import BasketProduct from "../basketProduct/BascketProduct";
-import {catalog} from "../sidebar/constant";
+// import BasketProduct from "../basketProduct/BascketProduct";
+// import {catalog} from "../sidebar/constant";
 
 class Home extends Component {
     render() {

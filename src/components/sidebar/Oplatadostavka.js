@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React from "react";
 import "./sidebar.css"
 import InfoProduct from "../infoProduct";
 import {NavLink} from "react-router-dom";
 
-export const Oplatadostavka = () => {
+const Oplatadostavka = () => {
     return (
         <div className="info-page">
             <div className="article-text">

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Select from "react-select";
-import {selectCheckbox, selectSort} from "./constant";
+import {selectCheckbox} from "./constant";
 
 
 class SelectIcon extends Component {

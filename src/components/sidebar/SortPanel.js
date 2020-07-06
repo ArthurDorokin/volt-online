@@ -23,25 +23,25 @@ class SortPanel extends Component {
     handleChangeCheckbox = (valueCheckbox) => {
 
         this.setState({catalog});
-        if (valueCheckbox.value == 0) {
+        if (valueCheckbox.value === 0) {
             const byFilterIconData = this.state.default.catalog;
             const sortFilterIconDataOne = byFilterIconData.filter((item) => item.filterIcon.val === 0);
             this.setState({catalog: sortFilterIconDataOne});
             this.props.handleChangeCheckbox(sortFilterIconDataOne)
         }
-        if (valueCheckbox.value == 1) {
+        if (valueCheckbox.value === 1) {
             const byFilterIconData = this.state.default.catalog;
             const sortFilterIconDataTwo = byFilterIconData.filter((item) => item.filterIcon.val === 1);
             this.setState({catalog: sortFilterIconDataTwo});
             this.props.handleChangeCheckbox(sortFilterIconDataTwo)
         }
-        if (valueCheckbox.value == 2) {
+        if (valueCheckbox.value === 2) {
             const byFilterIconData = this.state.default.catalog;
             const sortFilterIconDataThree = byFilterIconData.filter((item) => item.filterIcon.val === 2);
             this.setState({catalog: sortFilterIconDataThree});
             this.props.handleChangeCheckbox(sortFilterIconDataThree)
         }
-        if (valueCheckbox.value == 3) {
+        if (valueCheckbox.value === 3) {
             const byRestIconData = this.state.default.catalog;
             this.setState({catalog: byRestIconData});
             this.props.handleChangeCheckbox(byRestIconData)
@@ -84,19 +84,19 @@ class SortPanel extends Component {
 
     //<---------- sort right
     handleChange = valueSort => {
-        if (valueSort.value == 0) {
+        if (valueSort.value === 0) {
             const byPopularityDate = this.state.catalog;
             const sortPopularityDate = byPopularityDate.sort((a, b) => a.id > b.id ? 1 : -1);
             this.setState({catalog: sortPopularityDate});
             this.props.handleChange(sortPopularityDate);
         }
-        if (valueSort.value == 1) {
+        if (valueSort.value === 1) {
             const byPriceDate = this.state.catalog;
             const sortPriceDate = byPriceDate.sort((a, b) => a.price > b.price ? 1 : -1);
             this.setState({catalog: sortPriceDate});
             this.props.handleChange(sortPriceDate);
         }
-        if (valueSort.value == 2) {
+        if (valueSort.value === 2) {
             const byNameDate = this.state.catalog;
             const sortNameData = byNameDate.sort((a, b) => a.info > b.info ? 1 : -1);
             this.setState({catalog: sortNameData});
