@@ -190,6 +190,7 @@ h4 {
 /*catalog*/
 .btn-product .btn-buy.inBasket {
     pointer-events: none;
+    height: 32px;
 }
 
 .btn-product .btn-buy.inBasket button {

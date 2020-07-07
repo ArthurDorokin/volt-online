@@ -11,19 +11,8 @@ export const ContentCarouselOne = ({catalog, setCharacter, setForBasket, basketL
         slidesToScroll: 1
     }
 
-    //const basketListSort = (basketList.map((item) => item.id))
-    //const carouselOnePropsSort = (carouselOneProps.map((item) => item.id))
-    //const res = basketListSort.filter(value => carouselOnePropsSort.includes(value))
-    //const res = basketListSort.filter(value => carouselOnePropsSort.includes(value)).join(',')
-
-   //console.log('basketListSort', basketListSort)
-   //console.log('carouselOnePropsSort', carouselOnePropsSort)
-   //console.log('res', res)
-
-    //console.log(basketList);
     return (
         <Slider {...settings}>
-            {/*{this.state.catalog.filter((item) => item.typeProduct === 1).map((item) =>*/}
             {catalog.filter((item) => item.filterIcon.val === 1).map((item) =>
                 <div className="item-product" key={item.id}>
                     <div className="catalog-product">

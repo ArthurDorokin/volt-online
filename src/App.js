@@ -97,7 +97,6 @@ class App extends Component {
 
         //* change text btn
         const selectProduct1 = basketList.map(item => item.id)
-        console.log(selectProduct1);
         const result1 = res.map(item => {
             item.idBasket = selectProduct1.indexOf(item.id) >= 0;
             return item
@@ -136,12 +135,9 @@ class App extends Component {
             active: !active
         })
     }
-
     // toggleClass basket
 
-
     render() {
-        console.log(this.state.selectProduct);
         return (
             <Layout
                 setCharacter={this.setCharacter}

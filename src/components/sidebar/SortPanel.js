@@ -141,8 +141,6 @@ class SortPanel extends Component {
                                      onClick={this.addStateNumRange}>
                                     ok
                                 </div>
-                                {/*{console.log(sliderValues[0])}*/}
-                                {/*{console.log(sliderValues[1])}*/}
                                 <div className={`${"btnClose"} ${this.state.activeRange ? "active" : ""}`}
                                      onClick={this.removeClassRange}>
                                     <span></span>

@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {catalog} from "../../sidebar/constant";
 import SortPanel from "../../sidebar/SortPanel";
 import {NavLink} from "react-router-dom";
 

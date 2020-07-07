@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {NavLink} from "react-router-dom";
 import InfoProduct from "../infoProduct";
-import {catalog} from "../sidebar/constant"
 import 'rc-slider/assets/index.css';
 import SortPanel from "./SortPanel";
 
