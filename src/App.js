@@ -59,7 +59,7 @@ import OrderPage from "./components/orderPage/OrderPage";
 class App extends Component {
     state = {
         catalog,
-        selectProduct: '',
+        selectProduct: [],
         active: false,
         basketList: [],
         listInBasket: [],
@@ -94,6 +94,19 @@ class App extends Component {
         this.setState({catalog: result})
         //* change text btn
 
+
+        //* change text btn
+        const selectProduct1 = basketList.map(item => item.id)
+        console.log(selectProduct1);
+        const result1 = res.map(item => {
+            item.idBasket = selectProduct1.indexOf(item.id) >= 0;
+            return item
+        })
+        this.setState({selectProduct: result1[0]})
+        //* change text btn
+
+
+
         // basketList.map((item) => {
         //     const array1 = parseInt(item.price.replace(/\s+/g, ''), 10)
         //     const totalAmount = this.state.totalAmount
@@ -123,15 +136,12 @@ class App extends Component {
             active: !active
         })
     }
+
     // toggleClass basket
 
 
     render() {
-        //{console.log('basketList', this.state.basketList)}
-        //{console.log('totalAmount', this.state.totalAmount)}
-        {
-            console.log('catalog', this.state.catalog)
-        }
+        console.log(this.state.selectProduct);
         return (
             <Layout
                 setCharacter={this.setCharacter}
@@ -155,6 +165,7 @@ class App extends Component {
                            render={(props) => <CardProduct
                                stateProduct={this.state.selectProduct}
                                setCharacter={this.setCharacter}
+                               setForBasket={this.setForBasket}
                            />}/>
                     {/*brandInfo*/}
                     <Route path="/airwheel/" component={Airwheel}/>
@@ -167,17 +178,41 @@ class App extends Component {
                     <Route path="/xiaomi/" component={Xiaomi}/>
                     {/*catalogProduct*/}
                     <Route path="/skeyt/"
-                           render={(props) => <Skeyt setCharacter={this.setCharacter}/>}/>
+                           render={(props) => <Skeyt
+                               setCharacter={this.setCharacter}
+                               catalog={this.state.catalog}
+                               setForBasket={this.setForBasket}
+                           />}/>
                     <Route path="/elektrosamokaty/"
-                           render={(props) => <Elektrosamokaty setCharacter={this.setCharacter}/>}/>
+                           render={(props) => <Elektrosamokaty
+                               setCharacter={this.setCharacter}
+                               catalog={this.state.catalog}
+                               setForBasket={this.setForBasket}
+                           />}/>
                     <Route path="/elektrovelosipedy/"
-                           render={(props) => <Elektrovelosipedy setCharacter={this.setCharacter}/>}/>
+                           render={(props) => <Elektrovelosipedy
+                               setCharacter={this.setCharacter}
+                               catalog={this.state.catalog}
+                               setForBasket={this.setForBasket}
+                           />}/>
                     <Route path="/monokolesa/"
-                           render={(props) => <Monokolesa setCharacter={this.setCharacter}/>}/>
+                           render={(props) => <Monokolesa
+                               setCharacter={this.setCharacter}
+                               catalog={this.state.catalog}
+                               setForBasket={this.setForBasket}
+                           />}/>
                     <Route path="/giroskutery/"
-                           render={(props) => <Giroskutery setCharacter={this.setCharacter}/>}/>
+                           render={(props) => <Giroskutery
+                               setCharacter={this.setCharacter}
+                               catalog={this.state.catalog}
+                               setForBasket={this.setForBasket}
+                           />}/>
                     <Route path="/segvei/"
-                           render={(props) => <Segvei setCharacter={this.setCharacter}/>}/>
+                           render={(props) => <Segvei
+                               setCharacter={this.setCharacter}
+                               catalog={this.state.catalog}
+                               setForBasket={this.setForBasket}
+                           />}/>
                     {/*infoProduct*/}
                     <Route path="/vidy-elektrosamokatov/" component={VidyElektrosamokatov}/>
                     <Route path="/kak-nauchitsya-katatsya-na-monokolese/" component={NauchitsyaKatatsya}/>
@@ -188,7 +223,11 @@ class App extends Component {
                     <Route path="/chto-takoe-sigvey/" component={ChtoTakoeSigvey}/>
                     {/*infoProduct*/}
                     <Route path="/catalog/"
-                           render={(props) => <Catalog setCharacter={this.setCharacter}/>}/>
+                           render={(props) => <Catalog
+                               setCharacter={this.setCharacter}
+                               catalog={this.state.catalog}
+                               setForBasket={this.setForBasket}
+                           />}/>
                     <Route path="/o-nas/" component={Onas}/>
                     <Route path="/oplata-i-dostavka/" component={Oplatadostavka}/>
                     <Route path="/obmen-i-vozvrat/" component={Obmenvozvrat}/>

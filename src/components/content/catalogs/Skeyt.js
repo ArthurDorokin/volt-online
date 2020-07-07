@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 
 class Skeyt extends Component {
     state = {
-        catalog
+        catalog: this.props.catalog
     };
 
     addStateNumRange = (catalog) => {
@@ -54,8 +54,10 @@ class Skeyt extends Component {
                                             <div className="info-title">{item.info}</div>
                                             <div className="btn-product">
                                                 <div className="info-price">{item.price} грн</div>
-                                                <div className="btn-buy">
-                                                    <button>{item.buy}</button>
+                                                <div className={`${"btn-buy"} ${item.idBasket === true ? 'inBasket' : 'noBasket'}`} onClick={() => this.props.setForBasket(item.id)}>
+                                                    <button>
+                                                        {item.idBasket === true ? item.inBasket : item.buy}
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>

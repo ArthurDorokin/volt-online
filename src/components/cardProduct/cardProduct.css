@@ -27,7 +27,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 270px;
+    width: 300px;
     margin: 30px 0 30px 0;
 }
 
@@ -50,6 +50,13 @@
     font-size: 16px;
     padding: 7px 15px 7px 15px;
     border-radius: 3px;
+}
+
+.wrap-cardProduct .buy.inBasket {
+    background: #ffffff;
+    border: 1px solid #e92f11;
+    color: #e92f11;
+    pointer-events: none;
 }
 
 .wrap-cardProduct .main-product {

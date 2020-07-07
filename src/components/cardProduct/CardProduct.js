@@ -9,7 +9,7 @@ class CardProduct extends Component {
     }
 
     render() {
-        const {stateProduct} = this.props
+        const {stateProduct, setForBasket} = this.props
         return (
             <div className="content">
                 <div className="container">
@@ -26,7 +26,9 @@ class CardProduct extends Component {
                                 </div>
                                 <div className="price">{stateProduct.price} грн</div>
                                 <div className="order">
-                                    <div className="buy">{stateProduct.buy}</div>
+                                    <div className={`${"buy"} ${stateProduct.idBasket === true ? 'inBasket' : 'noBasket'}`} onClick={() => setForBasket(stateProduct.id)}>
+                                        {stateProduct.idBasket === true ? stateProduct.inBasket : stateProduct.buy}
+                                    </div>
                                     <div className="quick-order">Быстрый заказ</div>
                                 </div>
                                 <div className="tabs-info-order">
@@ -110,8 +112,10 @@ class CardProduct extends Component {
                                                     <div className="info-title">{item.info}</div>
                                                     <div className="btn-product">
                                                         <div className="info-price">{item.price} грн</div>
-                                                        <div className="btn-buy">
-                                                            <button>{item.buy}</button>
+                                                        <div className={`${"btn-buy"} ${item.idBasket === true ? 'inBasket' : 'noBasket'}`} onClick={() => this.props.setForBasket(item.id)}>
+                                                            <button>
+                                                                {item.idBasket === true ? item.inBasket : item.buy}
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>

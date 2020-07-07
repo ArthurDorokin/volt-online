@@ -106,7 +106,7 @@
     margin: 0;
 }
 
-.content .btn-product button {
+.btn-product button {
     background: #FF7901;
     outline: none;
     border: none;
@@ -117,7 +117,7 @@
     border-radius: 3px;
 }
 
-.content .btn-product {
+.btn-product {
     display: flex;
     align-items: center;
     justify-content: space-between;
