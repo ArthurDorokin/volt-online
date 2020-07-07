@@ -28,6 +28,7 @@ class Layout extends Component {
                         stateToggleClass={this.props.active}
                         setCharacter={this.props.setCharacter}
                         deleteProduct={this.props.deleteProduct}
+                        totalAmountSum={this.props.totalAmountSum}
                     />
                     <ScrollToTop/>
                     <Header

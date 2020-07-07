@@ -132,6 +132,10 @@
     padding: 0 10px 5px 10px;
 }
 
+.item-product .catalogCard-info .info-title{
+    min-height: 38px;
+}
+
 .slick-arrow {
     position: absolute;
     z-index: 9;

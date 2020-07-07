@@ -3,7 +3,7 @@ import './content.css'
 import {ContentCarouselOne} from './ContentCarouselOne';
 import {ContentCarouselTwo} from './ContentCarouselTwo';
 import {ContentCarouselThree} from './ContentCarouselThree';
-import {catalog} from "../sidebar/constant"
+//import {catalog} from "../sidebar/constant"
 import {Banner} from './Banner';
 
 class Content extends Component {
@@ -13,19 +13,26 @@ class Content extends Component {
                 <div className="container">
                     <div className="wrap-content">
                         <div className="carousel-init carousel-one">
-                            <ContentCarouselOne carouselOneProps={catalog}
+                            <ContentCarouselOne catalog={this.props.catalog}
                                                 setCharacter={this.props.setCharacter}
-                                                wordReplacement={this.props.wordReplacement}
                                                 setForBasket={this.props.setForBasket}
                                                 basketList={this.props.basketList}
                             />
                         </div>
                         <div className="carousel-init carousel-two">
-                            <ContentCarouselTwo carouselTwoProps={catalog} setCharacter={this.props.setCharacter}/>
+                            <ContentCarouselTwo catalog={this.props.catalog}
+                                                setCharacter={this.props.setCharacter}
+                                                setForBasket={this.props.setForBasket}
+                                                basketList={this.props.basketList}
+                            />
                         </div>
                         <Banner />
                         <div className="carousel-init carousel-three">
-                            <ContentCarouselThree carouselThreeProps={catalog} setCharacter={this.props.setCharacter}/>
+                            <ContentCarouselThree catalog={this.props.catalog}
+                                                  setCharacter={this.props.setCharacter}
+                                                  setForBasket={this.props.setForBasket}
+                                                  basketList={this.props.basketList}
+                            />
                         </div>
                     </div>
                 </div>

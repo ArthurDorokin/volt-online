@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Switch, Route} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 // import AboutCompany from "./components/aboutCompany";
 import Layout from "./components/layout/Layout";
 import Home from "./components/layout/Home";
@@ -62,9 +62,9 @@ class App extends Component {
         selectProduct: '',
         active: false,
         basketList: [],
-        sumPrice: [],
-        listInBasket: []
-
+        listInBasket: [],
+        totalAmount: [],
+        totalAmountSum: []
     };
 
     //take the value of the card -->
@@ -79,11 +79,31 @@ class App extends Component {
     //take the value of the card Basket -->
     setForBasket = (id) => {
         const catalog = this.state.catalog;
-        const res = catalog.filter(item => item.id === id);
+        const res = catalog.filter(item => item.id === id)
         const [card] = res;
+
         const basketList = this.state.basketList
         basketList.push({...card})
-        this.setState({basketList: basketList})
+
+        //* change text btn
+        const selectProduct = basketList.map(item => item.id)
+        const result = catalog.map(item => {
+            item.idBasket = selectProduct.indexOf(item.id) >= 0;
+            return item;
+        })
+        this.setState({catalog: result})
+        //* change text btn
+
+        // basketList.map((item) => {
+        //     const array1 = parseInt(item.price.replace(/\s+/g, ''), 10)
+        //     const totalAmount = this.state.totalAmount
+        //     totalAmount.push(array1)
+        //     this.setState({totalAmount: totalAmount})
+        //
+        //     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        //     const reduceTotal = totalAmount.reduce(reducer);
+        //     this.setState({totalAmountSum: reduceTotal})
+        // })
 
     };
     // take the value of the card Basket  <--
@@ -105,23 +125,13 @@ class App extends Component {
     }
     // toggleClass basket
 
-    wordReplacement = (id) => {
-        const catalog = this.state.catalog;
-        const res = catalog.filter(item => item.id === id);
-        const listInBasket = this.state.listInBasket
-        listInBasket.push({...res})
-        this.setState({basketList: listInBasket})
-
-        // this.state.listInBasket.map((item) => {
-        //     console.log([item.id])
-        // })
-        //console.log(res)
-    }
-
 
     render() {
-        //{console.log(this.state.listInBasket)}
-        //{console.log(this.state.basketList)}
+        //{console.log('basketList', this.state.basketList)}
+        //{console.log('totalAmount', this.state.totalAmount)}
+        {
+            console.log('catalog', this.state.catalog)
+        }
         return (
             <Layout
                 setCharacter={this.setCharacter}
@@ -129,15 +139,16 @@ class App extends Component {
                 toggleClass={this.toggleClass}
                 deleteProduct={this.deleteProduct}
                 stateToggleClass={this.state.active}
+                totalAmountSum={this.state.totalAmountSum}
             >
                 <Switch>
                     <Route exact path="/"
                            render={(props) => <Home
+                               catalog={this.state.catalog}
                                setForBasket={this.setForBasket}
                                setCharacter={this.setCharacter}
                                toggleClass={this.toggleClass}
                                tateToggleClass={this.state.active}
-                               wordReplacement={this.wordReplacement}
                                basketList={this.state.basketList}
                            />}/>
                     <Route path="/card-product/"

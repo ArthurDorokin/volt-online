@@ -11,14 +11,12 @@ class Home extends Component {
     render() {
         return (
             <div className="home">
-
-                {/*<div className={`${"layout"} ${this.props.stateToggleClass ? "active" : ""}`}>*/}
                 <MainWindow/>
                 <Brand/>
                 <Content
+                    catalog={this.props.catalog}
                     setCharacter={this.props.setCharacter}
                     setForBasket={this.props.setForBasket}
-                    wordReplacement={this.props.wordReplacement}
                     basketList={this.props.basketList}
                 />
                 <AboutCompany/>

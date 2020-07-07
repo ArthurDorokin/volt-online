@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import {NavLink} from "react-router-dom";
 
-export const ContentCarouselTwo = ({carouselTwoProps, setCharacter}) => {
+export const ContentCarouselTwo = ({catalog, setCharacter, setForBasket}) => {
 
     const settings = {
         dots: false,
@@ -14,7 +14,7 @@ export const ContentCarouselTwo = ({carouselTwoProps, setCharacter}) => {
 
     return (
         <Slider {...settings}>
-            {carouselTwoProps.map((item) =>
+            {catalog.filter((item) => item.filterIcon.val === 0).map((item) =>
                 <div className="item-product" key={item.id}>
                     <div className="catalog-product">
                         <NavLink to={item.link ? item.link : ''} onClick={() => setCharacter(item.id)} className="link-product">
@@ -35,8 +35,10 @@ export const ContentCarouselTwo = ({carouselTwoProps, setCharacter}) => {
                         <div className="info-title">{item.info}</div>
                         <div className="btn-product">
                             <div className="info-price">{item.price} грн</div>
-                            <div className="btn-buy">
-                                <button>{item.buy}</button>
+                            <div className={`${"btn-buy"} ${item.idBasket === true ? 'inBasket' : 'noBasket'}`} onClick={() => setForBasket(item.id)}>
+                                <button>
+                                    {item.idBasket === true ? item.inBasket : item.buy}
+                                </button>
                             </div>
                         </div>
                     </div>
