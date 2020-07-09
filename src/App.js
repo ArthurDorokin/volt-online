@@ -64,7 +64,7 @@ class App extends Component {
         basketList: [],
         listInBasket: [],
         totalAmount: [],
-        totalAmountSum: []
+        //totalAmountSum: []
     };
 
     //take the value of the card -->
@@ -81,10 +81,8 @@ class App extends Component {
         const catalog = this.state.catalog;
         const res = catalog.filter(item => item.id === id)
         const [card] = res;
-
         const basketList = this.state.basketList
         basketList.push({...card})
-
         //* change text btn
         const selectProduct = basketList.map(item => item.id)
         const result = catalog.map(item => {
@@ -93,17 +91,16 @@ class App extends Component {
         })
         this.setState({catalog: result})
         //* change text btn
-
-
+        //---------------//
         //* change text btn
         const selectProduct1 = basketList.map(item => item.id)
+        //console.log(selectProduct1);
         const result1 = res.map(item => {
             item.idBasket = selectProduct1.indexOf(item.id) >= 0;
             return item
         })
         this.setState({selectProduct: result1[0]})
-        //* change text btn
-
+        //* change text
 
 
         // basketList.map((item) => {
@@ -122,9 +119,21 @@ class App extends Component {
 
     // delete product in basket
     deleteProduct = (id) => {
-        this.setState(prevState => ({
-            basketList: prevState.basketList.filter(item => item.id !== id)
-        }));
+        //console.log([id]);
+        this.setState(prevState => ({basketList: prevState.basketList.filter(item => item.id !== id)}));
+        const result3 = this.state.catalog.map(item => {
+            item.idBasket = [id].indexOf(item.id) >= 0;
+            return item;
+        })
+        this.setState({catalog: result3})
+        //console.log(result3);
+        // const selectProduct3 = [id].map(item => item)
+        // console.log(selectProduct3);
+        // const result3 = this.state.catalog.map(item => {
+        //     item.idBasket = selectProduct3.indexOf(item.id) >= 0;
+        //     return item;
+        // })
+        // this.setState({catalog: result3})
     }
     // delete product in basket
 
@@ -135,9 +144,12 @@ class App extends Component {
             active: !active
         })
     }
+
     // toggleClass basket
 
     render() {
+        //{console.log('catalog', this.state.catalog)}
+        //{console.log('basketList', this.state.basketList)}
         return (
             <Layout
                 setCharacter={this.setCharacter}
@@ -145,7 +157,7 @@ class App extends Component {
                 toggleClass={this.toggleClass}
                 deleteProduct={this.deleteProduct}
                 stateToggleClass={this.state.active}
-                totalAmountSum={this.state.totalAmountSum}
+                //totalAmountSum={this.state.totalAmountSum}
             >
                 <Switch>
                     <Route exact path="/"
@@ -157,12 +169,11 @@ class App extends Component {
                                tateToggleClass={this.state.active}
                                basketList={this.state.basketList}
                            />}/>
-                    <Route path="/card-product/"
-                           render={(props) => <CardProduct
-                               stateProduct={this.state.selectProduct}
-                               setCharacter={this.setCharacter}
-                               setForBasket={this.setForBasket}
-                           />}/>
+                    <Route path="/card-product/" render={(props) => <CardProduct
+                        stateProduct={this.state.selectProduct}
+                        setCharacter={this.setCharacter}
+                        setForBasket={this.setForBasket}
+                    />}/>
                     {/*brandInfo*/}
                     <Route path="/airwheel/" component={Airwheel}/>
                     <Route path="/citycoco/" component={Citycoco}/>
