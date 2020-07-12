@@ -3,38 +3,6 @@ import '../basketProduct/bascketProduct.css'
 import {NavLink} from "react-router-dom";
 
 class ProductItem extends Component {
-    state = {
-        counter: 1,
-        finalSumItem: '',
-        finalSum: this.props.price,
-        arrTotalAmount: []
-    }
-
-    increment = () => {
-        this.setState({counter: this.state.counter + 1});
-        const propsPrice = this.props.price;
-        const stateCounter = this.state.counter + 1;
-        const sum = (stateCounter * parseInt(propsPrice.replace(/\s+/g, ''),10));
-        this.setState({finalSum: sum});
-        // const arrTotalAmount = this.state.arrTotalAmount;
-        // arrTotalAmount.push({"id": this.state.counter - 1, "sum": sum});
-        // this.state.arrTotalAmount.map((item) => {
-        //    this.setState({totalAmountFinal: item});
-        //     this.props.totalPrice(this.state.arrTotalAmount);
-        // })
-        //this.props.arrTotalAmount(arrTotalAmount);
-    }
-
-    decrement = () => {
-        this.setState({counter: Math.max(this.state.counter - 1, 1)});
-        const propsPrice = this.props.price;
-        const countPrice = this.state.finalSum;
-        const minus = countPrice - parseInt(propsPrice.replace(/\s+/g, ''),10);
-        this.setState({finalSum: minus});
-        this.props.totalPrice(minus);
-    }
-
-    onChangeHandle = (event) => this.setState({counter: event.value});
 
     render() {
         const {id, link, img, alt, info, price} = this.props
@@ -62,12 +30,12 @@ class ProductItem extends Component {
                     </div>
                     <div className="quantity">
                         <div className="quan">
-                            <span onClick={this.decrement} className={this.state.counter === 1 ? 'off' : "on"}>-</span>
-                            <input type="text" value={this.state.counter} onChange={this.onChangeHandle}/>
-                            <span onClick={this.increment}>+</span>
+                            <span onClick={this.props.decrement} className={this.props.counter === 1 ? 'off' : "on"}>-</span>
+                            <input type="text" value={this.props.counter} onChange={this.props.onChangeHandle}/>
+                            <span onClick={this.props.increment}>+</span>
                         </div>
                     </div>
-                    <div className="cost">{this.state.finalSum} грн</div>
+                    <div className="cost">{price} грн</div>
                 </div>
             </div>
 

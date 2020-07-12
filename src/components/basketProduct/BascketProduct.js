@@ -5,20 +5,40 @@ import '../basketProduct/bascketProduct.css'
 
 class BasketProduct extends Component {
     state = {
+        counter: 1,
+        finalSum: this.props.price,
+        basketListProps: this.props.basketList,
         arrTotalAmount: [],
-        totalPrice: ''
+        totalPrice: []
     };
 
-    totalPrice = (totalPrice) => {
-        this.setState({totalPrice})
+    increment = () => {
+        this.setState({counter: this.state.counter + 1});
+        console.log('increment');
+        //console.log('increment id', id);
+        // const propsPrice = this.props.price;
+        // const stateCounter = this.state.counter + 1;
+        // const sum = (stateCounter * parseInt(propsPrice.replace(/\s+/g, ''),10));
+        // this.setState({finalSum: sum});
+    }
 
-        // this.state.arrTotalAmount.map((item) => {
-        //     console.log(item)
-        // })
-    };
+    decrement = () => {
+        this.setState({counter: Math.max(this.state.counter - 1, 1)});
+        console.log('decrement');
+        //console.log('decrement id', id);
+        // const propsPrice = this.props.price;
+        // const countPrice = this.state.finalSum;
+        // const minus = countPrice - parseInt(propsPrice.replace(/\s+/g, ''),10);
+        // this.setState({finalSum: minus});
+    }
+
+    onChangeHandle = (event) => this.setState({counter: event.value});
+
 
     render() {
-        const {basketList, setCharacter, toggleClass, deleteProduct, totalAmountSum} = this.props
+        //console.log(this.state.totalPrice);
+
+        const {basketList, setCharacter, toggleClass, deleteProduct} = this.props
 
         const sumPrice = this.props.basketList.map((item) =>
             {return parseInt(item.price.replace(/\s+/g, ''),10)}
@@ -34,8 +54,12 @@ class BasketProduct extends Component {
                              deleteProduct={deleteProduct}
                              setCharacter={setCharacter}
                              toggleClass={toggleClass}
-                             totalPrice={this.totalPrice}
-                             sumPrice={sumPrice}
+
+                             counter={this.state.counter}
+                             increment={this.increment}
+                             decrement={this.decrement}
+                             onChangeHandle={this.onChangeHandle}
+
                              {...item}
                 />
             )

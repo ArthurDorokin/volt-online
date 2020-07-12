@@ -63,8 +63,7 @@ class App extends Component {
         active: false,
         basketList: [],
         listInBasket: [],
-        totalAmount: [],
-        //totalAmountSum: []
+        totalAmount: []
     };
 
     //take the value of the card -->
@@ -102,38 +101,22 @@ class App extends Component {
         this.setState({selectProduct: result1[0]})
         //* change text
 
-
-        // basketList.map((item) => {
-        //     const array1 = parseInt(item.price.replace(/\s+/g, ''), 10)
-        //     const totalAmount = this.state.totalAmount
-        //     totalAmount.push(array1)
-        //     this.setState({totalAmount: totalAmount})
-        //
-        //     const reducer = (accumulator, currentValue) => accumulator + currentValue;
-        //     const reduceTotal = totalAmount.reduce(reducer);
-        //     this.setState({totalAmountSum: reduceTotal})
-        // })
-
     };
     // take the value of the card Basket  <--
 
     // delete product in basket
     deleteProduct = (id) => {
-        //console.log([id]);
-        this.setState(prevState => ({basketList: prevState.basketList.filter(item => item.id !== id)}));
-        const result3 = this.state.catalog.map(item => {
-            item.idBasket = [id].indexOf(item.id) >= 0;
+        this.setState(prevState => ({
+            basketList: prevState.basketList.filter(item => item.id !== id)
+        }));
+
+        const result = catalog.map(item => {
+            if (item.id === id) {
+                item.idBasket = false
+            }
             return item;
         })
-        this.setState({catalog: result3})
-        //console.log(result3);
-        // const selectProduct3 = [id].map(item => item)
-        // console.log(selectProduct3);
-        // const result3 = this.state.catalog.map(item => {
-        //     item.idBasket = selectProduct3.indexOf(item.id) >= 0;
-        //     return item;
-        // })
-        // this.setState({catalog: result3})
+
     }
     // delete product in basket
 
