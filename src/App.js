@@ -3,7 +3,6 @@ import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Switch, Route} from "react-router-dom";
-// import AboutCompany from "./components/aboutCompany";
 import Layout from "./components/layout/Layout";
 import Home from "./components/layout/Home";
 import NotFound from "./components/notFound/NotFound";
@@ -46,8 +45,6 @@ import Oplatadostavka from "./components/sidebar/Oplatadostavka";
 import Obmenvozvrat from "./components/sidebar/Obmenvozvrat";
 import Contacts from "./components/sidebar/Contacts";
 import {catalog} from "./components/sidebar/constant";
-// import Content from "./components/content";
-// import Brand from "./components/brand";
 
 // <-- Route infoSidebar
 
@@ -93,7 +90,6 @@ class App extends Component {
         //---------------//
         //* change text btn
         const selectProduct1 = basketList.map(item => item.id)
-        //console.log(selectProduct1);
         const result1 = res.map(item => {
             item.idBasket = selectProduct1.indexOf(item.id) >= 0;
             return item
@@ -110,7 +106,7 @@ class App extends Component {
             basketList: prevState.basketList.filter(item => item.id !== id)
         }));
 
-        const result = catalog.map(item => {
+        catalog.map(item => {
             if (item.id === id) {
                 item.idBasket = false
             }
@@ -131,8 +127,6 @@ class App extends Component {
     // toggleClass basket
 
     render() {
-        //{console.log('catalog', this.state.catalog)}
-        //{console.log('basketList', this.state.basketList)}
         return (
             <Layout
                 setCharacter={this.setCharacter}
@@ -140,7 +134,6 @@ class App extends Component {
                 toggleClass={this.toggleClass}
                 deleteProduct={this.deleteProduct}
                 stateToggleClass={this.state.active}
-                //totalAmountSum={this.state.totalAmountSum}
             >
                 <Switch>
                     <Route exact path="/"

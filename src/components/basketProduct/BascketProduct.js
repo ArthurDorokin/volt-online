@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import ProductItem from './ProductItem';
 import '../basketProduct/bascketProduct.css'
-
+import {catalog} from "../sidebar/constant";
 
 class BasketProduct extends Component {
     state = {
@@ -12,55 +12,69 @@ class BasketProduct extends Component {
         totalPrice: []
     };
 
-    increment = () => {
+    increment = (id) => {
+        //console.log('increment', id);
         this.setState({counter: this.state.counter + 1});
-        console.log('increment');
-        //console.log('increment id', id);
-        // const propsPrice = this.props.price;
-        // const stateCounter = this.state.counter + 1;
-        // const sum = (stateCounter * parseInt(propsPrice.replace(/\s+/g, ''),10));
-        // this.setState({finalSum: sum});
+        const stateCounter = this.state.counter + 1;
+        const sumPrice = this.props.basketList.map((item) => {
+             return parseInt(item.price.replace(/\s+/g, ''), 10)
+         })
+         const sumPriceRes = (stateCounter * sumPrice);
+        this.props.basketList.map(item => {
+            if (item.id === id) {
+                item.priceSumBasket = sumPriceRes
+            }
+            return item;
+        })
+
     }
 
-    decrement = () => {
+    decrement = (id) => {
+        // console.log('decrement', id);
         this.setState({counter: Math.max(this.state.counter - 1, 1)});
-        console.log('decrement');
-        //console.log('decrement id', id);
-        // const propsPrice = this.props.price;
-        // const countPrice = this.state.finalSum;
-        // const minus = countPrice - parseInt(propsPrice.replace(/\s+/g, ''),10);
-        // this.setState({finalSum: minus});
+        const sumPrice = this.props.basketList.map((item) => {
+            return  item.priceSumBasket - parseInt(item.price.replace(/\s+/g, ''), 10)
+        })
+        this.props.basketList.map(item => {
+            if (item.id === id) {
+                item.priceSumBasket = sumPrice
+            }
+            return item;
+        })
     }
 
     onChangeHandle = (event) => this.setState({counter: event.value});
 
-
     render() {
-        //console.log(this.state.totalPrice);
-
+        console.log('basketListProps', this.state.basketListProps);
         const {basketList, setCharacter, toggleClass, deleteProduct} = this.props
 
-        const sumPrice = this.props.basketList.map((item) =>
-            {return parseInt(item.price.replace(/\s+/g, ''),10)}
+        //----------------
+        const sumPrice = this.props.basketList.map((item) => {
+                return item.priceSumBasket
+            }
         )
-        const sum = sumPrice.length === 0 ? [0] : sumPrice.reduce(function(a, b) {
+        console.log('sumPrice', sumPrice);
+        const sum = sumPrice.length === 0 ? [0] : sumPrice.reduce(function (a, b) {
             return a + b;
         });
-
+        console.log('sum', sum);
+        //----------------
         const basketListItems = basketList.map((item) => {
             return (
-                <ProductItem key={item.id}
-                             basketList={basketList}
-                             deleteProduct={deleteProduct}
-                             setCharacter={setCharacter}
-                             toggleClass={toggleClass}
+                <ProductItem
+                    key={item.id}
+                    basketList={basketList}
+                    deleteProduct={deleteProduct}
+                    setCharacter={setCharacter}
+                    toggleClass={toggleClass}
 
-                             counter={this.state.counter}
-                             increment={this.increment}
-                             decrement={this.decrement}
-                             onChangeHandle={this.onChangeHandle}
+                    counter={this.state.counter}
+                    increment={this.increment}
+                    decrement={this.decrement}
+                    onChangeHandle={this.onChangeHandle}
 
-                             {...item}
+                    {...item}
                 />
             )
         });
@@ -88,7 +102,7 @@ class BasketProduct extends Component {
                         </div>
                         <div className="final-price-btn">
                             <div className="finalPriceNum">
-                                <span>Итого</span> {sum} грн
+                                <span>Итого</span> {this.state.basketListProps.length === 0 ? 0 : sum} грн
                             </div>
                             <div className="finalPriceBtn">
                                 <button>Оформить заказ</button>

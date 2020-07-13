@@ -117,13 +117,14 @@ class OrderPage extends Component {
                                     </div>
                                     <div className="tel flex">
                                         <p>Телефон</p>
-                                        <InputMask {...this.props}
+                                        <InputMask
                                                    className={formErrors.tel.length > 0 ? "error" : null}
                                                    mask="+3\8 999 999 99 99"
                                                    noValidate
                                                    maskChar=""
                                                    value={this.state.value}
                                                    name="tel"
+                                                   placeholder="+38 999 999 99 99"
                                                    onChange={this.handleChange}
                                         />
                                         {formErrors.tel.length > 0 && (
