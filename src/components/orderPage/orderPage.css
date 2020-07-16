@@ -91,3 +91,20 @@
     padding: 7px 15px 7px 15px;
     border-radius: 3px;
 }
+.orderPage .wrapBasketBg._order {
+    z-index: 1;
+}
+.orderPage .wrapBasketBg._order {
+    display: flex;
+    background: none;
+    position: relative;
+}
+.orderPage .wrapBasketBg._order .basketProduct {
+    top: 0;
+    height: 450px;
+    justify-content: space-between;
+}
+
+.orderPage .wrapBasketBg._order .product-item-wrap {
+    height: 400px;
+}

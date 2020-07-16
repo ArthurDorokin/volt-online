@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Select from "react-select";
 import InputMask from 'react-input-mask';
 import "./orderPage.css"
+import {NavLink} from "react-router-dom";
 
 const formValid = ({formErrors, ...rest}) => {
     let valid = true;
@@ -32,7 +33,6 @@ class OrderPage extends Component {
             street: ""
         }
     }
-
 
     handleSubmit = e => {
         e.preventDefault();
@@ -91,8 +91,14 @@ class OrderPage extends Component {
             {value: 0, label: 'Наличными'},
             {value: 1, label: 'Оплата при получении'}
         ]
-
+        const sumPrice = this.props.basketListOrder.map((item) => {
+            return item.priceSumBasket
+        })
+        const sum = sumPrice.length === 0 ? [0] : sumPrice.reduce(function (a, b) {
+            return a + b;
+        });
         return (
+
             <div className="orderPage">
                 <div className="container">
                     <h1>OrderPage</h1>
@@ -118,14 +124,14 @@ class OrderPage extends Component {
                                     <div className="tel flex">
                                         <p>Телефон</p>
                                         <InputMask
-                                                   className={formErrors.tel.length > 0 ? "error" : null}
-                                                   mask="+3\8 999 999 99 99"
-                                                   noValidate
-                                                   maskChar=""
-                                                   value={this.state.value}
-                                                   name="tel"
-                                                   placeholder="+38 999 999 99 99"
-                                                   onChange={this.handleChange}
+                                            className={formErrors.tel.length > 0 ? "error" : null}
+                                            mask="+3\8 999 999 99 99"
+                                            noValidate
+                                            maskChar=""
+                                            value={this.state.value}
+                                            name="tel"
+                                            placeholder="+38 999 999 99 99"
+                                            onChange={this.handleChange}
                                         />
                                         {formErrors.tel.length > 0 && (
                                             <span className="errorMessage">{formErrors.tel}</span>
@@ -182,7 +188,35 @@ class OrderPage extends Component {
                             </form>
                         </div>
                         <div className="right-block">
+                            <div className="wrapBasketBg _order">
+                                <div className="basketProduct">
+                                    <div className="product-item-wrap">
+                                        {this.props.basketListOrder.map(item => (
+                                            <div key={item.id} className="product-item">
+                                                <div className="block-left">
+                                                    <div className="img">
+                                                        <NavLink to={item.link}>
+                                                            <img src={item.img} alt={item.alt}/>
+                                                        </NavLink>
+                                                    </div>
+                                                    <div className="description">
+                                                        <div className="title-product">
+                                                            <NavLink to={item.link}>
+                                                                {item.info}
+                                                            </NavLink>
+                                                        </div>
+                                                        <div className="price-product">{item.price} грн</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
 
+                                    </div>
+                                    <div className="finalPriceNum">
+                                        <span>Итого</span> {sum} грн
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

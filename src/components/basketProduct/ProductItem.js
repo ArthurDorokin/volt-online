@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 class ProductItem extends Component {
 
     render() {
-        const {id, link, img, alt, info, price, priceSumBasket} = this.props
+        const {id, link, img, alt, info, price, priceSumBasket, counterBasket} = this.props
 
         return (
             <div key={id} className="product-item">
@@ -29,9 +29,9 @@ class ProductItem extends Component {
                         <img src="/img/baskets.png" alt=""/>
                     </div>
                     <div className="quantity">
-                        <div className="quan">
-                            <span onClick={() => this.props.decrement(id)} className={this.props.counter === 1 ? 'off' : "on"}>-</span>
-                            <input type="text" value={this.props.counter} onChange={this.props.onChangeHandle}/>
+                        <div className="quan" onClick={this.props.Rerender}>
+                            <span onClick={() => this.props.decrement(id)} className={counterBasket === 1 ? 'off' : "on"}>-</span>
+                            <input type="text" value={counterBasket} onChange={(event)=>this.props.inputChangedHandler(event)}/>
                             <span onClick={() => this.props.increment(id)}>+</span>
                         </div>
                     </div>

@@ -108,7 +108,16 @@ class App extends Component {
 
         catalog.map(item => {
             if (item.id === id) {
-                item.idBasket = false
+                item.idBasket = false;
+            }
+            return item;
+        })
+
+        this.state.basketList.map(item => {
+            if (item.id === id) {
+                item.counterBasket = 1;
+                const price = parseInt(item.price.replace(/\s+/g, ''), 10);
+                item.priceSumBasket = price;
             }
             return item;
         })
@@ -216,7 +225,9 @@ class App extends Component {
                     <Route path="/obmen-i-vozvrat/" component={Obmenvozvrat}/>
                     <Route path="/contacts/" component={Contacts}/>
                     {/*OrderPage*/}
-                    <Route path="/order/" component={OrderPage}/>
+                    <Route path="/order/" render={(props) => <OrderPage
+                        basketListOrder={this.state.basketList}
+                    />}/>
                     {/*404*/}
                     <Route path='*' exact={true} component={NotFound}/>
                 </Switch>

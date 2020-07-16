@@ -15,8 +15,7 @@ class CardProduct extends Component {
                 <div className="container">
                     <div className="wrap-cardProduct">
                         <div className="main-product">
-                            <div className="img">
-                                <img src={stateProduct.img} alt={stateProduct.alt}/>
+                            <div className="img"><img src={stateProduct.img} alt={stateProduct.alt}/>
                             </div>
                             <div className="description">
                                 <div className="title"><h2>{stateProduct.info}</h2></div>
