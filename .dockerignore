@@ -1,0 +1,4 @@
+root@master-node:/usr/src/volt-online#
+cat
+.dockerignore
+node_modules
