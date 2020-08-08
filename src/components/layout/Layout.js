@@ -9,7 +9,7 @@ import ScrollToTop from "../include/ScrollToTop/ScrollToTop";
 import BasketProduct from "../basketProduct/BascketProduct";
 
 const Breadcrumbs = withBreadcrumbs()(({breadcrumbs}) => (
-    <div className={`${"breadcrumbs"} ${window.location.href === '/' ? "home-page" : ""}`}>
+    <div className={`${"breadcrumbs"} ${window.location.href === 'https://3.landing-test.net.ua/' ? "home-page" : ""}`}>
         {breadcrumbs.map(({breadcrumb, match}, index) => (
             <NavLink key={match.url} to={match.url || ""} >{breadcrumb}</NavLink>
         ))}
