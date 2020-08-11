@@ -204,4 +204,7 @@ h4 {
     .brand .wrapBrand .btn-more-brand {
         display: block;
     }
+    .container {
+        max-width: 1350px;
+    }
 }

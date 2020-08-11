@@ -127,7 +127,9 @@
 .content .banner {
     margin: 0 0 120px 0;
 }
-
+.content .banner img{
+    width: 100%;
+}
 .item-product .catalogCard-info {
     padding: 0 10px 5px 10px;
 }
@@ -209,4 +211,10 @@
 }
 .products .catalog .item-catalog {
     margin: 0 16px 33px 16px;
+}
+
+@media (max-width: 1400px) {
+    .content .slick-slide {
+        width: 304px !important;
+    }
 }

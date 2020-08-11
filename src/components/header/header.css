@@ -158,3 +158,9 @@
     align-content: center;
     font-size: 12px;
 }
+
+@media (max-width: 1400px) {
+    .header .header-navigation ul {
+        width: 65%;
+    }
+}

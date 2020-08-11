@@ -8,7 +8,15 @@ export const ContentCarouselOne = ({catalog, setCharacter, setForBasket, basketL
         infinite: false,
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                }
+            }]
     }
 
     return (
