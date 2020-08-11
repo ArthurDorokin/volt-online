@@ -240,7 +240,55 @@ const catalog = [
         filterIcon: {name: "новинка", classFilter: "new", val: 1},
         typeProduct: 6
 
-    }
+    },
+    {
+        id: 15,
+        link: "/card-product/elektrosamokat-sns-aluminium-65-duymov-black/",
+        img: "/img/content/elektrosamokat-sns-aluminium-65-duymov-black-91963412592561_small4.png",
+        alt: "Электросамокат1",
+        info: "Электросамокат OIO CITY BIKE Elite White",
+        price: "21 990",
+        priceSumBasket: 21990,
+        counterBasket: 1,
+        idBasket: false,
+        buy: "Купить",
+        inBasket: "В корзине",
+        filterIcon: {name: "распродажа", classFilter: "sale", val: 0},
+        typeProduct: 1
+
+    },
+    {
+        id: 16,
+        link: "/card-product/elektrovelosiped-skladnoy-kerambit-sport-bolids-36-500/",
+        img: "/img/content/elektrovelosiped-skladnoy-kerambit-sport-bolids-36-500-68989917908872_small4.png",
+        alt: "Электровелосипед1",
+        info: "Электровелосипед Kerambit Bolids 13 000",
+        price: "22 222",
+        priceSumBasket: 22222,
+        counterBasket: 1,
+        idBasket: false,
+        buy: "Купить",
+        inBasket: "В корзине",
+        filterIcon: {name: "хит", classFilter: "hit", val: 2},
+        typeProduct: 3
+
+    },
+    {
+        id: 17,
+        link: "/card-product/monokoleso-inmotion-scv-v5f-black/",
+        img: "/img/content/monokoleso-inmotion-scv-v5f-black-76769264824427_small4.jpg",
+        alt: "Моноколесо1",
+        info: "Моноколесо InMotion SCV V5F Silver",
+        price: "18 000",
+        priceSumBasket: 18000,
+        counterBasket: 1,
+        idBasket: false,
+        buy: "Купить",
+        inBasket: "В корзине",
+        filterIcon: {name: "хит", classFilter: "hit", val: 2},
+        typeProduct: 4
+
+    },
 ];
 
 const selectSort = [
